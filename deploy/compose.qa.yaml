@@ -1,0 +1,111 @@
+# Independent, private QA on a shared 4GB host. No original databases or uploads.
+# Runtime memory ceilings total 1664MiB, excluding the Docker daemon and setup job.
+name: mathmodel-qa-20261024
+x-app: &app
+  image: mathmodel-qa:${APP_VERSION:-20261024}
+  build:
+    context: ..
+    dockerfile: deploy/Dockerfile
+    args: {DEBIAN_MIRROR: 'https://mirrors.cloud.tencent.com', PYPI_INDEX: 'https://mirrors.cloud.tencent.com/pypi/simple'}
+  env_file: [qa.env]
+  environment: &app-env
+    DJANGO_SECRET_KEY_FILE: /run/secrets/qa_django_secret
+    POSTGRES_PASSWORD_FILE: /run/secrets/qa_postgres_password
+    POSTGRES_HOST: postgres
+    POSTGRES_PORT: '5432'
+    REDIS_URL: redis://redis:6379/0
+    MATHMODEL_DATA_DIR: /data
+    MEDIA_MODEL_DIR: /models
+    OMP_NUM_THREADS: '1'
+    OPENBLAS_NUM_THREADS: '1'
+    MKL_NUM_THREADS: '1'
+    NUMEXPR_NUM_THREADS: '1'
+  secrets: [qa_django_secret, qa_postgres_password]
+  volumes: [qa_data:/data, qa_models:/models:ro]
+  restart: unless-stopped
+  read_only: true
+  tmpfs: ['/tmp:rw,noexec,nosuid,size=64m']
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  cpu_shares: 128
+  cgroup_parent: mathmodel-qa.slice
+  depends_on:
+    postgres: {condition: service_healthy}
+    redis: {condition: service_healthy}
+  logging: {driver: json-file, options: {max-size: 5m, max-file: '2'}}
+services:
+  postgres:
+    cgroup_parent: mathmodel-qa.slice
+    image: postgres:17-bookworm
+    mem_limit: 256m
+    memswap_limit: 256m
+    cpus: 0.25
+    cpu_shares: 128
+    environment:
+      POSTGRES_DB: mathmodel_qa
+      POSTGRES_USER: mathmodel_qa
+      POSTGRES_PASSWORD_FILE: /run/secrets/qa_postgres_password
+    command: [postgres, -c, shared_buffers=64MB, -c, max_connections=30, -c, work_mem=2MB, -c, maintenance_work_mem=32MB]
+    secrets: [qa_postgres_password]
+    volumes: [qa_pg:/var/lib/postgresql/data]
+    healthcheck: {test: [CMD-SHELL, 'pg_isready -U mathmodel_qa -d mathmodel_qa'], interval: 10s, timeout: 5s, retries: 12}
+    restart: unless-stopped
+    logging: {driver: json-file, options: {max-size: 5m, max-file: '2'}}
+  redis:
+    cgroup_parent: mathmodel-qa.slice
+    image: redis:7.4-bookworm
+    mem_limit: 64m
+    memswap_limit: 64m
+    cpus: 0.1
+    cpu_shares: 128
+    command: [redis-server, --appendonly, 'yes', --maxmemory, 32mb, --maxmemory-policy, noeviction]
+    volumes: [qa_redis:/data]
+    healthcheck: {test: [CMD, redis-cli, ping], interval: 10s, timeout: 3s, retries: 12}
+    restart: unless-stopped
+    logging: {driver: json-file, options: {max-size: 5m, max-file: '2'}}
+  init:
+    <<: *app
+    user: '0:0'
+    cap_drop: []
+    volumes: [qa_data:/data, qa_models:/models]
+    mem_limit: 256m
+    cpus: 0.5
+    command: [sh, -ec, 'chown -R 10001:10001 /data /models; chmod 700 /data; su -s /bin/sh mathmodel -c "python backend/manage.py migrate --noinput && python backend/manage.py provision_access"']
+    restart: 'no'
+    profiles: [setup]
+  web:
+    <<: *app
+    mem_limit: 192m
+    memswap_limit: 192m
+    cpus: 0.4
+    ports: ['127.0.0.1:9180:8000']
+    command: [uvicorn, config.asgi:application, --host, 0.0.0.0, --port, '8000', --workers, '1', --no-access-log, --no-proxy-headers, --ws-max-size, '65536']
+    healthcheck: {test: [CMD, python, -c, 'import urllib.request; urllib.request.urlopen("http://127.0.0.1:8000/health", timeout=3)'], interval: 20s, timeout: 5s, retries: 8}
+  maintenance:
+    <<: *app
+    mem_limit: 128m
+    memswap_limit: 128m
+    cpus: 0.1
+    command: [celery, -A, config.celery:app, worker, -Q, celery, -l, WARNING, --pool=solo, --concurrency=1, --hostname=qa-maintenance@%h]
+  media:
+    <<: *app
+    mem_limit: 768m
+    memswap_limit: 768m
+    cpus: 0.4
+    command: [celery, -A, config.celery:app, worker, -Q, media, -l, WARNING, --concurrency=1, --hostname=qa-media@%h, --time-limit=240, --soft-time-limit=220, --max-tasks-per-child=10, --max-memory-per-child=380000]
+  execution:
+    <<: *app
+    mem_limit: 160m
+    memswap_limit: 160m
+    cpus: 0.1
+    command: [celery, -A, config.celery:app, worker, -Q, execution, -l, WARNING, --concurrency=1, --hostname=qa-execution@%h, --time-limit=300, --soft-time-limit=270]
+  beat:
+    <<: *app
+    mem_limit: 96m
+    memswap_limit: 96m
+    cpus: 0.05
+    command: [celery, -A, config.celery:app, beat, -l, WARNING, --scheduler, django_celery_beat.schedulers:DatabaseScheduler, --pidfile=/tmp/celerybeat.pid]
+volumes: {qa_pg: {}, qa_redis: {}, qa_data: {}, qa_models: {}}
+secrets:
+  qa_django_secret: {file: ./qa-secrets/django_secret}
+  qa_postgres_password: {file: ./qa-secrets/postgres_password}

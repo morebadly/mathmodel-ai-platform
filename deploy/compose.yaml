@@ -1,0 +1,86 @@
+name: mathmodel
+x-app: &app
+  image: mathmodel:${APP_VERSION:-local}
+  build: {context: .., dockerfile: deploy/Dockerfile}
+  env_file: [runtime.env]
+  environment: &app-env
+    DJANGO_SECRET_KEY_FILE: /run/secrets/django_secret
+    POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+    POSTGRES_HOST: postgres
+    POSTGRES_PORT: '5432'
+    REDIS_URL: redis://redis:6379/0
+    MATHMODEL_DATA_DIR: /data
+    MEDIA_MODEL_DIR: /models
+  secrets: [django_secret, postgres_password]
+  volumes: [app_data:/data, media_models:/models]
+  restart: unless-stopped
+  read_only: true
+  tmpfs: ['/tmp:rw,noexec,nosuid,size=256m']
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  depends_on:
+    postgres: {condition: service_healthy}
+    redis: {condition: service_healthy}
+  logging: {driver: json-file, options: {max-size: 10m, max-file: '3'}}
+services:
+  postgres:
+    mem_limit: 2g
+    cpus: 1.5
+    image: postgres:17-bookworm
+    environment:
+      POSTGRES_DB: mathmodel
+      POSTGRES_USER: mathmodel
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+    secrets: [postgres_password]
+    volumes: [pg_data:/var/lib/postgresql/data]
+    healthcheck: {test: [CMD-SHELL, 'pg_isready -U mathmodel -d mathmodel'], interval: 10s, timeout: 5s, retries: 10}
+    restart: unless-stopped
+  redis:
+    mem_limit: 384m
+    image: redis:7.4-bookworm
+    command: [redis-server, --appendonly, 'yes', --maxmemory, 256mb, --maxmemory-policy, noeviction]
+    volumes: [redis_data:/data]
+    healthcheck: {test: [CMD, redis-cli, ping], interval: 10s, timeout: 3s, retries: 10}
+    restart: unless-stopped
+  init:
+    <<: *app
+    user: '0:0'
+    read_only: true
+    cap_drop: []
+    command: [sh, -c, 'chown -R 10001:10001 /data /models && chmod 700 /data && su -s /bin/sh mathmodel -c "python backend/manage.py migrate --noinput"']
+    restart: 'no'
+    profiles: [setup]
+  web:
+    <<: *app
+    mem_limit: 1536m
+    cpus: 1.5
+    expose: ['8000']
+    healthcheck: {test: [CMD, python, -c, 'import urllib.request; urllib.request.urlopen("http://127.0.0.1:8000/health", timeout=3)'], interval: 15s, timeout: 5s, retries: 5}
+  maintenance:
+    <<: *app
+    mem_limit: 768m
+    command: [celery, -A, config.celery:app, worker, -Q, celery, -l, WARNING, --concurrency=1, --hostname=maintenance@%h]
+  media:
+    <<: *app
+    mem_limit: 2g
+    cpus: 2
+    command: [celery, -A, config.celery:app, worker, -Q, media, -l, WARNING, --concurrency=1, --hostname=media@%h, --time-limit=240, --soft-time-limit=220, --max-memory-per-child=1200000]
+  execution:
+    <<: *app
+    mem_limit: 1g
+    command: [celery, -A, config.celery:app, worker, -Q, execution, -l, WARNING, --concurrency=2, --hostname=execution@%h, --time-limit=300, --soft-time-limit=270]
+  beat:
+    <<: *app
+    mem_limit: 512m
+    command: [celery, -A, config.celery:app, beat, -l, WARNING, --scheduler, django_celery_beat.schedulers:DatabaseScheduler, --pidfile=/tmp/celerybeat.pid]
+  proxy:
+    image: caddy:2.10-alpine
+    env_file: [runtime.env]
+    ports: ['80:80', '443:443', '443:443/udp']
+    volumes: [./Caddyfile:/etc/caddy/Caddyfile:ro, caddy_data:/data, caddy_config:/config]
+    depends_on: [web]
+    restart: unless-stopped
+volumes: {pg_data: {}, redis_data: {}, app_data: {}, media_models: {}, caddy_data: {}, caddy_config: {}}
+secrets:
+  django_secret: {file: ./secrets/django_secret}
+  postgres_password: {file: ./secrets/postgres_password}

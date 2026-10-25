@@ -1,0 +1,12 @@
+# Apply after compose.yaml for a small trial; verify with actual workload before increasing limits.
+services:
+  postgres: {mem_limit: 1536m}
+  web:
+    mem_limit: 768m
+    command: [uvicorn, config.asgi:application, --host, 0.0.0.0, --port, '8000', --workers, '1', --no-access-log, --no-proxy-headers, --ws-max-size, '65536']
+  media: {mem_limit: 1536m, cpus: 1}
+  maintenance: {mem_limit: 512m}
+  execution:
+    mem_limit: 512m
+    command: [celery, -A, config.celery:app, worker, -Q, execution, -l, WARNING, --concurrency=1, --hostname=execution@%h, --time-limit=300, --soft-time-limit=270]
+  beat: {mem_limit: 256m}

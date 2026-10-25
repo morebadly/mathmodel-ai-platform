@@ -1,0 +1,78 @@
+# INACTIVE example: do not load this file unchanged.
+# Replace EVERY REPLACE_* placeholder after PUBLIC-HTTPS.md prerequisites pass.
+# Add as a separate include inside the existing nginx http {} context.
+# Do not replace nginx.conf, existing virtual hosts, or the default_server.
+map $http_upgrade $mathmodel_public_connection {
+    default upgrade;
+    '' close;
+}
+
+server {
+    listen 80;
+    server_name REPLACE_WITH_PUBLIC_HOSTNAME.invalid;
+    access_log off;
+    # nginx error logs cannot redact token-bearing request URIs. Discard this
+    # vhost's request errors too; use health checks and sanitized application
+    # logs for diagnosis. nginx -t/startup errors still reach their caller.
+    error_log /dev/null crit;
+    # Fixed destination prevents untrusted Host values entering redirects.
+    return 308 https://REPLACE_WITH_PUBLIC_HOSTNAME.invalid$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name REPLACE_WITH_PUBLIC_HOSTNAME.invalid;
+
+    # Existing expired certificates are NOT valid deployment inputs.
+    ssl_certificate /REPLACE_WITH_VALID_CERTIFICATE/fullchain.pem;
+    ssl_certificate_key /REPLACE_WITH_VALID_CERTIFICATE/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+
+    # Verification, reset, invitation, and unsubscribe URLs can contain tokens.
+    access_log off;
+    error_log /dev/null crit;
+    client_max_body_size 52m;
+    client_body_timeout 60s;
+
+    # These headers apply to every proxied location below. Do not add a lone
+    # proxy_set_header in a child location: nginx then stops inheriting this set.
+    proxy_http_version 1.1;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-Host $host;
+    proxy_set_header X-Forwarded-Proto https;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $remote_addr;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $mathmodel_public_connection;
+    proxy_connect_timeout 5s;
+    proxy_read_timeout 300s;
+    proxy_send_timeout 300s;
+
+    location ~* ^/(?:\.data|\.env|\.git|\.runtime|\.venv|backend|deploy|tools|docs|dev-mailbox)(?:[/.]|$) {
+        return 404;
+    }
+
+    # This is Django's native admin site. Keep it local unless an approved
+    # administrator source range is deliberately added. Platform admin features
+    # at / and authenticated /api/admin/* remain subject to application roles.
+    location = /admin {
+        return 308 /admin/;
+    }
+    location ^~ /admin/ {
+        allow 127.0.0.1;
+        allow ::1;
+        deny all;
+        proxy_pass http://127.0.0.1:9180;
+    }
+
+    location /ws/chat/ {
+        proxy_read_timeout 3600s;
+        proxy_send_timeout 3600s;
+        proxy_buffering off;
+        proxy_pass http://127.0.0.1:9180;
+    }
+
+    location / {
+        proxy_pass http://127.0.0.1:9180;
+    }
+}

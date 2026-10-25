@@ -1,0 +1,14 @@
+{$SITE_DOMAIN} {
+    request_body {
+        max_size 52MB
+    }
+    @hidden path /.data* /.env* /backend* /deploy* /tools* /docs* /vendor/*/LICENSE /dev-mailbox*
+    respond @hidden 404
+    # Caddy reverse_proxy supports WebSocket upgrades and keeps persistent connections.
+    # Access logs intentionally disabled: verification/invitation URLs contain private tokens.
+    reverse_proxy web:8000 {
+        header_up X-Forwarded-Proto https
+        header_up X-Forwarded-Host {host}
+    }
+    header X-Content-Type-Options nosniff
+}

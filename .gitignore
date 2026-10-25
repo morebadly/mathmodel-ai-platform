@@ -1,0 +1,17 @@
+.venv/
+.runtime/
+.data/
+.env*
+!.env.example
+**/private-access/
+**/__pycache__/
+*.pyc
+*.log
+*.sqlite3
+node_modules/
+outputs/
+deploy/secrets/
+deploy/qa-secrets/
+deploy/runtime.env
+deploy/qa.env
+deploy/compose.credentials.yaml

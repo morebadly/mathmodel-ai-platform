@@ -1,0 +1,11 @@
+[Unit]
+Description=MathModel AI QA build resource ceiling
+
+[Slice]
+CPUAccounting=yes
+MemoryAccounting=yes
+CPUQuota=80%
+MemoryMax=1024M
+MemorySwapMax=0
+IOWeight=50
+TasksMax=256

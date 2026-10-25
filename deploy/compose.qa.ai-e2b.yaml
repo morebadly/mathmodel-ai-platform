@@ -1,0 +1,27 @@
+# Apply after the existing QA, SMTP and public HTTPS overlays.
+# Secret files are external to the image and must be root-owned 0600 (Docker
+# mounts them readably for UID 10001 via the existing deployment ACL policy).
+services:
+  web:
+    environment:
+      AI_API_KEY_FILE: /run/secrets/qa_ai_key
+      AI_BASE_URL: https://api.yhlxj.ai/v1
+      AI_MODEL: gpt-6.1-sol
+      AI_MAX_OUTPUT_TOKENS: '2048'
+      AI_MAX_INPUT_CHARS: '30000'
+      AI_DAILY_REQUESTS: '20'
+      AI_GLOBAL_DAILY_REQUESTS: '100'
+      AI_CONCURRENCY: '2'
+      E2B_API_KEY_FILE: /run/secrets/qa_e2b_key
+    secrets: [qa_ai_key, qa_e2b_key]
+  execution:
+    environment:
+      E2B_API_KEY_FILE: /run/secrets/qa_e2b_key
+    secrets: [qa_e2b_key]
+  maintenance:
+    environment:
+      E2B_API_KEY_FILE: /run/secrets/qa_e2b_key
+    secrets: [qa_e2b_key]
+secrets:
+  qa_ai_key: {file: ./qa-secrets/ai_key}
+  qa_e2b_key: {file: ./qa-secrets/e2b_key}

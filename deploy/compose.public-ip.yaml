@@ -1,0 +1,65 @@
+# INACTIVE IPv4 trial overlay. Read PUBLIC-IP-HTTPS.md before use.
+# Order: compose.qa.yaml + compose.qa.smtp.yaml + compose.public-ip.yaml.
+# Do not combine with the separate DNS compose.public.yaml overlay.
+# All three variables are required; no certificate or listener is created here.
+x-public-ip-environment: &public-ip-environment
+  MATHMODEL_DEBUG: '0'
+  MATHMODEL_INSTANCE_KIND: production
+  MATHMODEL_INSTANCE_LABEL: '公网 IP 试运行'
+  MATHMODEL_SITE_URL: 'https://${MATHMODEL_PUBLIC_IP:?Set the verified public IPv4 first}:${MATHMODEL_PUBLIC_HTTPS_PORT:?Set the verified separate HTTPS port first}'
+  DJANGO_ALLOWED_HOSTS: '${MATHMODEL_PUBLIC_IP:?Set the verified public IPv4 first},127.0.0.1,localhost,web'
+  # Uvicorn validates the exact TCP peer before setting the ASGI scheme.
+  # Do not independently trust the unfiltered header a second time in Django.
+  TRUST_HTTPS_PROXY: '0'
+  MATHMODEL_QA_ADMIN_MAILBOX: '0'
+  MATHMODEL_QA_LOOPBACK_SESSIONS: '0'
+  MATHMODEL_PRIMARY_URL: ''
+  MAIL_TRANSPORT: smtp
+  SECURE_HSTS_INCLUDE_SUBDOMAINS: '0'
+  SECURE_HSTS_PRELOAD: '0'
+
+# Validate every app process before executing its existing command. The proxy
+# check retains the DNS overlay's exact-address trust boundary: never '*'.
+x-public-ip-entrypoint: &public-ip-entrypoint
+  - python
+  - -c
+  - |
+    import ipaddress, os, sys
+    try:
+        public_ip = ipaddress.IPv4Address(sys.argv[1])
+        if not public_ip.is_global or public_ip.is_multicast:
+            raise ValueError('A public unicast IPv4 address is required')
+    except ValueError:
+        raise SystemExit('MATHMODEL_PUBLIC_IP must be one public unicast IPv4 address, without scheme, port, path, network or wildcard.')
+    port = sys.argv[2]
+    if not port.isascii() or not port.isdecimal() or len(port) > 5 or str(int(port)) != port or not 1024 <= int(port) <= 65535 or int(port) == 9180:
+        raise SystemExit('MATHMODEL_PUBLIC_HTTPS_PORT must be one canonical decimal port from 1024 to 65535, excluding the private app port 9180.')
+    try:
+        proxy = ipaddress.ip_address(sys.argv[3])
+        if getattr(proxy, 'scope_id', None):
+            raise ValueError('Scoped addresses are not supported')
+    except ValueError:
+        raise SystemExit('MATHMODEL_PUBLIC_PROXY_IP must be one verified unscoped IP address; wildcards, networks, lists and hostnames are forbidden.')
+    os.execvp(sys.argv[4], sys.argv[4:])
+  - '${MATHMODEL_PUBLIC_IP:?Set the verified public IPv4 first}'
+  - '${MATHMODEL_PUBLIC_HTTPS_PORT:?Set the verified separate HTTPS port first}'
+  - '${MATHMODEL_PUBLIC_PROXY_IP:?Set the observed Nginx-to-container peer IP first}'
+
+services:
+  web:
+    environment: *public-ip-environment
+    entrypoint: *public-ip-entrypoint
+    ports: ['127.0.0.1:9180:8000']
+    command: [uvicorn, config.asgi:application, --host, 0.0.0.0, --port, '8000', --workers, '1', --no-access-log, --proxy-headers, --forwarded-allow-ips, '${MATHMODEL_PUBLIC_PROXY_IP:?Set the observed Nginx-to-container peer IP first}', --ws-max-size, '65536']
+  maintenance:
+    environment: *public-ip-environment
+    entrypoint: *public-ip-entrypoint
+  media:
+    environment: *public-ip-environment
+    entrypoint: *public-ip-entrypoint
+  execution:
+    environment: *public-ip-environment
+    entrypoint: *public-ip-entrypoint
+  beat:
+    environment: *public-ip-environment
+    entrypoint: *public-ip-entrypoint

@@ -1,0 +1,12 @@
+# Real SMTP overlay. Credentials are mounted only into the mail worker.
+# Configure non-secret EMAIL_* values and MAIL_TRANSPORT=smtp in private qa.env.
+# docker compose -f compose.qa.yaml -f compose.qa.smtp.yaml up -d
+services:
+  maintenance:
+    environment:
+      EMAIL_HOST_PASSWORD_FILE: /run/secrets/qa_smtp_password
+    secrets:
+      - qa_smtp_password
+secrets:
+  qa_smtp_password:
+    file: ./qa-secrets/smtp_password

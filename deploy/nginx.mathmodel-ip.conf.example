@@ -1,0 +1,67 @@
+# INACTIVE IPv4 HTTPS trial. Replace EVERY REPLACE_* value after prerequisites.
+# Include independently inside the existing http {} context; keep old vhosts.
+# This file does not configure port 80 or ACME. Use a free, approved TLS port.
+map $http_upgrade $mathmodel_ip_connection {
+    default upgrade;
+    '' close;
+}
+
+server {
+    listen REPLACE_WITH_PUBLIC_HTTPS_PORT ssl;
+    server_name REPLACE_WITH_PUBLIC_IPV4;
+    # Keep local redirects relative so global port_in_redirect settings cannot
+    # send a non-default-port client to the old 443 business.
+    absolute_redirect off;
+
+    # Must be a trusted, unexpired certificate with this exact iPAddress SAN.
+    ssl_certificate /REPLACE_WITH_VALID_IP_CERTIFICATE/fullchain.pem;
+    ssl_certificate_key /REPLACE_WITH_VALID_IP_CERTIFICATE/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+
+    # Mail links may contain tokens: retain neither request access/error logs.
+    access_log off;
+    error_log /dev/null crit;
+    client_max_body_size 52m;
+    client_body_timeout 60s;
+
+    # A return-only host guard is safe here. Reject unexpected authorities before
+    # replacing the upstream Host with the verified fixed IP:port authority.
+    if ($http_host != "REPLACE_WITH_PUBLIC_IPV4:REPLACE_WITH_PUBLIC_HTTPS_PORT") {
+        return 421;
+    }
+
+    # Keep this complete set inherited by every proxied location.
+    proxy_http_version 1.1;
+    proxy_set_header Host REPLACE_WITH_PUBLIC_IPV4:REPLACE_WITH_PUBLIC_HTTPS_PORT;
+    proxy_set_header X-Forwarded-Host REPLACE_WITH_PUBLIC_IPV4:REPLACE_WITH_PUBLIC_HTTPS_PORT;
+    proxy_set_header X-Forwarded-Proto https;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $remote_addr;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $mathmodel_ip_connection;
+    proxy_connect_timeout 5s;
+    proxy_read_timeout 300s;
+    proxy_send_timeout 300s;
+
+    location ~* ^/(?:\.data|\.env|\.git|\.runtime|\.venv|backend|deploy|tools|docs|dev-mailbox)(?:[/.]|$) {
+        return 404;
+    }
+    location = /admin {
+        return 308 /admin/;
+    }
+    location ^~ /admin/ {
+        allow 127.0.0.1;
+        allow ::1;
+        deny all;
+        proxy_pass http://127.0.0.1:9180;
+    }
+    location /ws/chat/ {
+        proxy_read_timeout 3600s;
+        proxy_send_timeout 3600s;
+        proxy_buffering off;
+        proxy_pass http://127.0.0.1:9180;
+    }
+    location / {
+        proxy_pass http://127.0.0.1:9180;
+    }
+}

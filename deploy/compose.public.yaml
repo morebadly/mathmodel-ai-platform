@@ -1,0 +1,48 @@
+# INACTIVE overlay. Use only after the prerequisites in PUBLIC-HTTPS.md pass.
+# Order: compose.qa.yaml + compose.qa.smtp.yaml + compose.public.yaml.
+# MATHMODEL_PUBLIC_DOMAIN must be one exact DNS hostname, without scheme/port/path.
+# MATHMODEL_PUBLIC_PROXY_IP must be the observed single Nginx-to-container peer IP.
+# No credentials, cookies, new volumes, init service, or public app ports here.
+x-public-environment: &public-environment
+  MATHMODEL_DEBUG: '0'
+  MATHMODEL_INSTANCE_KIND: production
+  MATHMODEL_SITE_URL: 'https://${MATHMODEL_PUBLIC_DOMAIN:?Set the approved public DNS hostname first}'
+  DJANGO_ALLOWED_HOSTS: '${MATHMODEL_PUBLIC_DOMAIN:?Set the approved public DNS hostname first},127.0.0.1,localhost,web'
+  # Use Uvicorn's scheme after its exact TCP peer check. Django must not
+  # independently trust an unfiltered X-Forwarded-Proto header.
+  TRUST_HTTPS_PROXY: '0'
+  MATHMODEL_QA_ADMIN_MAILBOX: '0'
+  MATHMODEL_QA_LOOPBACK_SESSIONS: '0'
+  MATHMODEL_PRIMARY_URL: ''
+  MAIL_TRANSPORT: smtp
+  SECURE_HSTS_INCLUDE_SUBDOMAINS: '0'
+  SECURE_HSTS_PRELOAD: '0'
+
+services:
+  web:
+    environment: *public-environment
+    # Identical to the base QA mapping: remains available only on host loopback.
+    ports: ['127.0.0.1:9180:8000']
+    # Trust one verified proxy peer only. Reject '*', networks, lists and hostnames
+    # before Uvicorn starts; the QA command deliberately remains unchanged.
+    command:
+      - python
+      - -c
+      - |
+        import ipaddress, os, sys
+        try:
+            proxy = ipaddress.ip_address(sys.argv[1])
+            if getattr(proxy, 'scope_id', None):
+                raise ValueError('Scoped addresses are not supported')
+        except ValueError:
+            raise SystemExit('MATHMODEL_PUBLIC_PROXY_IP must be one verified unscoped IP address; wildcards, networks, lists and hostnames are forbidden.')
+        os.execvp('uvicorn', ['uvicorn', 'config.asgi:application', '--host', '0.0.0.0', '--port', '8000', '--workers', '1', '--no-access-log', '--proxy-headers', '--forwarded-allow-ips', str(proxy), '--ws-max-size', '65536'])
+      - '${MATHMODEL_PUBLIC_PROXY_IP:?Set the observed Nginx-to-container peer IP first}'
+  maintenance:
+    environment: *public-environment
+  media:
+    environment: *public-environment
+  execution:
+    environment: *public-environment
+  beat:
+    environment: *public-environment
