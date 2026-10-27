@@ -4,6 +4,7 @@ import secrets
 import hashlib
 from urllib.parse import urlsplit
 from dotenv import load_dotenv
+from config.origins import additional_https_origins
 
 BASE_DIR = Path(__file__).resolve().parents[2]
 load_dotenv(BASE_DIR / '.env.local', override=False)
@@ -29,7 +30,8 @@ if not SECRET_KEY:
     SECRET_KEY = secret_file.read_text(encoding='utf-8').strip()
 ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '127.0.0.1,localhost,testserver').split(',')
 SITE_URL = os.getenv('MATHMODEL_SITE_URL', 'http://127.0.0.1:8765').rstrip('/')
-CHAT_ALLOWED_ORIGINS = [SITE_URL]
+ADDITIONAL_HTTPS_ORIGINS=additional_https_origins(os.getenv('MATHMODEL_ADDITIONAL_HTTPS_ORIGINS',''),ALLOWED_HOSTS)
+CHAT_ALLOWED_ORIGINS = list(dict.fromkeys([SITE_URL,*ADDITIONAL_HTTPS_ORIGINS]))
 if os.getenv('MATHMODEL_QA_LOOPBACK_SESSIONS','0') == '1':
     qa_site=urlsplit(SITE_URL)
     if not DEBUG or INSTANCE_KIND!='test' or qa_site.scheme!='http' or qa_site.hostname not in ['127.0.0.1','localhost'] or not qa_site.port:
@@ -143,7 +145,7 @@ SANDBOX_DAILY_JOBS=int(os.getenv('SANDBOX_DAILY_JOBS','20'))
 if SANDBOX_PROVIDER not in ['e2b','gateway']:raise RuntimeError('SANDBOX_PROVIDER must be e2b or gateway.')
 CELERY_TASK_ROUTES={'platform_app.tasks.media_tick':{'queue':'media'},'platform_app.tasks.execution_tick':{'queue':'execution'}}
 CELERY_BEAT_SCHEDULE.update({'media-tick':{'task':'platform_app.tasks.media_tick','schedule':10.0},'execution-tick':{'task':'platform_app.tasks.execution_tick','schedule':5.0}})
-CSRF_TRUSTED_ORIGINS = [SITE_URL] if not DEBUG else []
+CSRF_TRUSTED_ORIGINS = list(dict.fromkeys([SITE_URL,*ADDITIONAL_HTTPS_ORIGINS])) if not DEBUG else []
 SECURE_SSL_REDIRECT = not DEBUG
 SECURE_HSTS_SECONDS = 31536000 if not DEBUG else 0
 SECURE_HSTS_INCLUDE_SUBDOMAINS=os.getenv('SECURE_HSTS_INCLUDE_SUBDOMAINS','0')=='1'

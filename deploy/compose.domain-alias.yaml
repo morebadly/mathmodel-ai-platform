@@ -1,0 +1,20 @@
+# Apply AFTER the existing QA, SMTP, public-IP and AI/E2B overlays.
+# Keep the current IP endpoint as an exact alias while email links use the domain.
+# Optional MATHMODEL_DOMAIN_PORT_SUFFIX is empty for 443, or an explicit :PORT.
+# Same five services, image, database, volumes, secret mounts and loopback port.
+x-domain-environment: &domain-environment
+  MATHMODEL_SITE_URL: 'https://${MATHMODEL_PUBLIC_DOMAIN:?Set the exact domain hostname}${MATHMODEL_DOMAIN_PORT_SUFFIX:-}'
+  MATHMODEL_ADDITIONAL_HTTPS_ORIGINS: 'https://${MATHMODEL_PUBLIC_IP:?Set the existing public IP}:${MATHMODEL_PUBLIC_HTTPS_PORT:?Set the existing public HTTPS port}'
+  DJANGO_ALLOWED_HOSTS: '${MATHMODEL_PUBLIC_DOMAIN:?Set the exact domain hostname},${MATHMODEL_PUBLIC_IP:?Set the existing public IP},127.0.0.1,localhost,web'
+  MATHMODEL_INSTANCE_LABEL: '公网域名试运行'
+services:
+  web:
+    environment: *domain-environment
+  maintenance:
+    environment: *domain-environment
+  media:
+    environment: *domain-environment
+  execution:
+    environment: *domain-environment
+  beat:
+    environment: *domain-environment
