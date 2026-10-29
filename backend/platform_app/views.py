@@ -9,6 +9,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 import httpx
 from django.conf import settings
+from django.contrib.sessions.models import Session
 from django.core import signing
 from django.db import transaction
 from django.http import FileResponse,HttpResponse,JsonResponse,Http404
@@ -262,14 +263,37 @@ def readiness(request):
 def account_role(request,key):
     require_verified(request.user)
     if request.user.role!='admin':raise PermissionDenied('需要管理员权限。')
-    user=User.objects.filter(id=key).first()
-    if not user:raise NotFound('账号不存在。')
-    if user.role=='admin' or user.is_superuser or user.is_staff:raise PermissionDenied('管理账号请在 Django 管理后台维护。')
     if request.data.get('role') not in ['student','mentor']:raise ValidationError('角色无效。')
-    if not isinstance(request.data.get('isActive'),bool):raise ValidationError('账号状态无效。')
-    user.role=request.data['role'];user.is_active=request.data['isActive'];user.save(update_fields=['role','is_active'])
-    Audit.objects.create(actor=request.user,action='account-role:'+user.role,target=str(user.id))
+    if 'isActive' in request.data and not isinstance(request.data['isActive'],bool):raise ValidationError('账号状态无效。')
+    with transaction.atomic():
+        user=User.objects.select_for_update().filter(id=key).first()
+        if not user:raise NotFound('账号不存在。')
+        if user.role=='admin' or user.is_superuser or user.is_staff:raise PermissionDenied('管理账号请在 Django 管理后台维护。')
+        user.role=request.data['role'];fields=['role']
+        if 'isActive' in request.data:
+            user.is_active=request.data['isActive'];fields.append('is_active')
+            if not user.is_active:revoke_account_sessions(user)
+        user.save(update_fields=fields)
+        Audit.objects.create(actor=request.user,action='account-role:'+user.role,target=str(user.id))
     return Response({'updated':True})
+
+def revoke_account_sessions(user):
+    keys=[session.session_key for session in Session.objects.filter(expire_date__gt=timezone.now()).iterator() if str(session.get_decoded().get('_auth_user_id',''))==str(user.id)]
+    if keys:Session.objects.filter(session_key__in=keys).delete()
+
+@api_view(['POST'])
+def account_status(request,key):
+    require_verified(request.user)
+    if request.user.role!='admin':raise PermissionDenied('需要管理员权限。')
+    if set(request.data)!={'isActive'} or not isinstance(request.data['isActive'],bool):raise ValidationError('只允许设置账号启用状态。')
+    with transaction.atomic():
+        user=User.objects.select_for_update().filter(id=key).first()
+        if not user:raise NotFound('账号不存在。')
+        if user.role=='admin' or user.is_superuser or user.is_staff:raise PermissionDenied('固定管理账号受保护。')
+        user.is_active=request.data['isActive'];user.save(update_fields=['is_active'])
+        if not user.is_active:revoke_account_sessions(user)
+        Audit.objects.create(actor=request.user,action='account-enable' if user.is_active else 'account-disable',target=str(user.id))
+    return Response({'updated':True,'isActive':user.is_active})
 
 @api_view(['POST'])
 def ai(request,operation):

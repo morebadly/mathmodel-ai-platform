@@ -14,6 +14,6 @@ urlpatterns=[
     path('api/files/<str:key>/parse',media.status),
     path('api/execution/runtimes',execution.runtimes),path('api/execution/jobs',execution.jobs),path('api/execution/jobs/<uuid:key>',execution.job_detail),path('api/execution/artifacts/<uuid:key>',execution.artifact),
     path('api/reminders/<str:key>/send',views.send_reminder),path('api/mail-jobs',views.mail_jobs),path('api/teams/<str:key>/invite',views.invite),path('api/invitations/accept',views.accept_invite),path('api/teams/<str:key>/publish',views.publish),path('api/reminders/unsubscribe',views.unsubscribe),
-    path('api/admin/accounts/<uuid:key>/role',views.account_role),path('api/admin/readiness',views.readiness),path('api/ai/<str:operation>',views.ai),path('dev-mailbox/',views.dev_mailbox),path('health',lambda request:__import__('django.http',fromlist=['JsonResponse']).JsonResponse({'app':'MathModel AI','version':'2.0-django','mode':'django-local'})),
+    path('api/admin/accounts/<uuid:key>/role',views.account_role),path('api/admin/accounts/<uuid:key>/status',views.account_status),path('api/admin/readiness',views.readiness),path('api/ai/<str:operation>',views.ai),path('dev-mailbox/',views.dev_mailbox),path('health',lambda request:__import__('django.http',fromlist=['JsonResponse']).JsonResponse({'app':'MathModel AI','version':'2.0-django','mode':'django-local'})),
     path('',views.static_frontend),re_path(r'^(?P<path>.+)$',views.static_frontend)
 ]

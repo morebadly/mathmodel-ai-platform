@@ -99,9 +99,15 @@ def action(request,mode):
             if challenge:consume(challenge)
         return JsonResponse({'verified':True})
     if mode=='login':
-        user=authenticate(request,email=email,password=body.get('password',''))
-        if not user or user.role=='admin' or not verified(user):return error('邮箱、密码或验证状态不正确。',401)
-        login(request,user,backend='django.contrib.auth.backends.ModelBackend');Audit.objects.create(actor=user,action='login')
+        with transaction.atomic():
+            # Share the account lock with disable, and persist before releasing it.
+            # SessionMiddleware otherwise saves too late for concurrent revocation.
+            User.objects.select_for_update().filter(email__iexact=email).first()
+            user=authenticate(request,email=email,password=body.get('password',''))
+            if not user or user.role=='admin' or not verified(user):return error('邮箱、密码或验证状态不正确。',401)
+            login(request,user,backend='django.contrib.auth.backends.ModelBackend')
+            request.session.save()
+            Audit.objects.create(actor=user,action='login')
         return JsonResponse({'user':identity(user)})
     if mode=='admin-login':
         user=authenticate(request,email=ADMIN_EMAILS.get(account,''),password=body.get('password','')) if account in ADMIN_LOGINS else None
