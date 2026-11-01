@@ -53,9 +53,9 @@
   if(host&&!host.querySelector('.academic-controls')){const box=controls();if(host.matches('.portal-page'))host.querySelector('.portal-brand').after(box);else host.prepend(box);}
   document.querySelectorAll('.brand-symbol').forEach(el=>{if(!el.querySelector('img'))el.innerHTML='<img class="academic-logo" src="design/uiux-b-prototype/assets/association-logo.png" alt="数学建模协会会标">';});
   // A shared action helper also renders filenames. Only these fixed action captions are system text.
-  const fixedActions=new Set(['new-project','save-stage','new-task','new-team','new-plan','new-writing','open-training','open-tutor','server-sync','server-export-draft','server-logout','email-auth-mode','email-resend-code','menu','guide']);
+  const fixedActions=new Set(['new-project','save-stage','new-task','new-team','new-plan','new-writing','open-training','open-tutor','view-task','start-task','view-submission','review-submission','server-sync','server-export-draft','server-logout','email-auth-mode','email-resend-code','menu','guide']);
   document.querySelectorAll('button[data-action]').forEach(button=>{if(!fixedActions.has(button.dataset.action))return;for(const node of [...button.childNodes]){if(node.nodeType===Node.TEXT_NODE&&node.textContent.trim()){const span=document.createElement('span');span.setAttribute('data-ui-label','');span.textContent=node.textContent;node.replaceWith(span);}}});
-  mark('.nav-item>span:not(.count),.nav-label,.space-identity strong,.breadcrumb span,.breadcrumb strong,.portal-login>.eyebrow,.portal-login>h2,.portal-login>p,.portal-role-cards strong,.portal-role-cards small,.portal-admin-link,.form-field>label,.form-field>small,.email-auth-fields>button,.email-tabs button,.email-inline button');
+  mark('.nav-item>span:not(.count),.nav-group,.space-identity strong,.breadcrumb span,.breadcrumb strong,.academic-teacher-todo .badge,.academic-task-card>.badge,.portal-login>.eyebrow,.portal-login>h2,.portal-login>p,.portal-role-cards strong,.portal-role-cards small,.portal-admin-link,.form-field>label,.form-field>small,.email-auth-fields>button,.email-tabs button,.email-inline button');
   if(view.recordId==='')mark('.page-head h1,.page-head .subhead');
   translate();sync();
  }
