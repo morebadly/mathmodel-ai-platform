@@ -1,0 +1,87 @@
+{
+  "checks": [
+    {
+      "name": "One current language visible",
+      "pass": true
+    },
+    {
+      "name": "Original selects hidden but retained",
+      "pass": true
+    },
+    {
+      "name": "Right arrow advances English",
+      "pass": true
+    },
+    {
+      "name": "Next advances Russian",
+      "pass": true
+    },
+    {
+      "name": "Three-language wrap",
+      "pass": true
+    },
+    {
+      "name": "Previous wraps Russian",
+      "pass": true
+    },
+    {
+      "name": "Leftward swipe advances",
+      "pass": true
+    },
+    {
+      "name": "Rightward swipe reverses",
+      "pass": true
+    },
+    {
+      "name": "Small movement does not switch",
+      "pass": true
+    },
+    {
+      "name": "Vertical scroll does not switch",
+      "pass": true
+    },
+    {
+      "name": "Cancelled gesture does not switch",
+      "pass": true
+    },
+    {
+      "name": "Keyboard right advances",
+      "pass": true
+    },
+    {
+      "name": "Keyboard left reverses",
+      "pass": true
+    },
+    {
+      "name": "Theme dark uses existing preference path",
+      "pass": true
+    },
+    {
+      "name": "Theme system uses existing preference path",
+      "pass": true
+    },
+    {
+      "name": "Theme light uses existing preference path",
+      "pass": true
+    },
+    {
+      "name": "Selection survives rerender",
+      "pass": true
+    },
+    {
+      "name": "Three language tooltips updated",
+      "pass": true
+    },
+    {
+      "name": "Localization cache follows current labels",
+      "pass": true
+    },
+    {
+      "name": "Language changes capture edits and dispatch save handler",
+      "pass": true
+    }
+  ],
+  "total": 20,
+  "passed": 20,
+  "method": "Isolated control interaction checks; not a browser rendering test"
+}

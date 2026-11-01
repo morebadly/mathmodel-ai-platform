@@ -1,0 +1,14 @@
+/* Stage 6: reference-based campus concept artwork, independent review copy only. */
+.campus-band::after{background-image:url('assets/campus-watercolor-v1.png');background-size:contain;background-position:right center;width:35%;right:12px;opacity:.46;filter:none}
+.campus-band.compact::after{width:35%;opacity:.35}
+.campus-band.compact .intro{max-width:61%}
+.campus-band.campus-home{min-height:262px;padding:30px;display:flex;align-items:center}
+.campus-band.campus-home::after{width:51%;right:10px;opacity:.96}
+.campus-band.campus-home .intro{max-width:46%}
+.campus-home h1{font-size:clamp(28px,2.6vw,39px);line-height:1.35;text-wrap:balance}
+.campus-home p{max-width:36em}
+.sidebar-bottom img{width:100%;height:68px;object-fit:contain}
+:root[data-theme=dark] .campus-band::after{filter:saturate(.78) brightness(.94);opacity:.38}
+:root[data-theme=dark] .campus-band.campus-home::after{opacity:.85}
+:root[data-theme=dark] .sidebar-bottom img{filter:saturate(.7) brightness(1.1);opacity:.78}
+@media(max-width:1350px){.campus-band.campus-home{min-height:250px;padding:24px}.campus-home h1{font-size:29px}.campus-band.campus-home .intro{max-width:46%}}

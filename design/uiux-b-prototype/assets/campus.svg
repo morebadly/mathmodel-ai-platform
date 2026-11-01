@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 260" fill="none">
+<defs><linearGradient id="paper" x2="1" y2="1"><stop stop-color="#FFFDF8" stop-opacity="0"/><stop offset="1" stop-color="#E8E1D6" stop-opacity=".6"/></linearGradient><pattern id="lines" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0H0V22" stroke="#7B8EA3" stroke-opacity=".09"/></pattern></defs>
+<path fill="url(#paper)" d="M0 0h860v260H0z"/><path fill="url(#lines)" d="M95 0h720v250H95z"/>
+<g stroke="#8091A7" stroke-width="1" opacity=".55"><circle cx="476" cy="132" r="109"/><ellipse cx="476" cy="132" rx="188" ry="62"/><path d="M230 213 476 12l246 201zM260 132h467M476 0v246"/><path d="M279 240c51-132 102-160 149-109s82 73 123-1 88-88 177-54"/></g>
+<g fill="#E9E4DA" stroke="#526E8C" stroke-width="1.5"><path d="M127 224v-71h165v71zm457 0v-71h165v71z"/><path d="M112 151h195l-15-11H127zm458 0h194l-15-11H584z"/><path d="M285 224v-97h103v97zm280 0v-97h103v97z"/><path d="M276 127h122l-11-12h-99zm279 0h123l-12-12H566z"/></g>
+<g fill="#D4DCE2" stroke="#355372" stroke-width="1.8"><path d="M385 224v-98h28V85h29V55h27V31h16v24h27v30h29v41h28v98z"/><path d="M476 9v23m-9 0h18M438 54h79M406 84h142M376 125h202"/></g>
+<g fill="#14395D"><path d="M420 141h9v62h-9zm21 0h9v62h-9zm22 0h9v62h-9zm22 0h9v62h-9zm22 0h9v62h-9zm22 0h9v62h-9zM452 94h8v24h-8zm22 0h8v24h-8zm22 0h8v24h-8zM466 64h6v14h-6zm17 0h6v14h-6z"/><path d="M457 224v-13q18-26 38 0v13z"/></g>
+<g stroke="#6D8298" stroke-width="6" stroke-dasharray="7 12"><path d="M143 167h132m-132 23h132m330-23h132m-132 23h132"/></g>
+<g stroke="#697D81" stroke-width="1.5"><path d="M89 237v-77m0 40-22-18m22 8 19-30M782 237v-79m0 46-24-25m24 12 20-34"/><path d="M45 187q42-70 82-20-14 28-82 20m694-4q38-65 85-17-20 30-85 17" fill="#C6C9B4" fill-opacity=".6"/></g>
+<path d="M77 227h742M58 235h777M38 243h812" stroke="#576E84" stroke-width="1.5"/><path d="M132 252h624" stroke="#AC0037" opacity=".45"/>
+<g fill="#70869C" font-family="Georgia,serif" font-size="30" opacity=".65"><text x="202" y="66">∑</text><text x="695" y="74">π</text><text x="627" y="35">∫</text><text x="340" y="53" font-size="18">x²</text></g>
+</svg>

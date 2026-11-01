@@ -1,0 +1,10 @@
+.language-carousel{height:36px;display:flex;align-items:center;border:1px solid var(--line);border-radius:22px;background:var(--surface-alt);padding:2px;gap:0;color:var(--text)}
+.language-step{display:grid;place-items:center;flex:none;width:25px;height:28px;border:0;border-radius:50%;background:transparent;color:var(--muted);padding:0;cursor:pointer}
+.language-step svg{width:14px;height:14px}.language-step:hover{background:var(--surface);color:var(--brand)}
+.language-window{width:72px;min-width:72px;display:grid;place-items:center;overflow:hidden;cursor:ew-resize;touch-action:pan-y;user-select:none;border-radius:16px;height:28px}
+.language-name{font:12px/1.4 var(--body);white-space:nowrap;display:block}
+.theme-icons{height:36px;display:flex;align-items:center;gap:2px;padding:2px;border:1px solid var(--line);border-radius:22px;background:var(--surface-alt)}
+.theme-icon{width:30px;height:30px;display:grid;place-items:center;padding:0;border:1px solid transparent;border-radius:50%;background:transparent;color:var(--muted);cursor:pointer;transition:background .16s ease,color .16s ease,border-color .16s ease}
+.theme-icon:hover{color:var(--brand);background:var(--surface)}.theme-icon[aria-pressed=true]{background:var(--surface);color:var(--accent);border-color:var(--line);box-shadow:0 1px 4px #14265012}
+.controls #language[hidden],.controls #theme[hidden]{display:none!important}
+@media(prefers-reduced-motion:reduce){.theme-icon{transition:none}}

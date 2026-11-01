@@ -1,0 +1,235 @@
+{
+  "scope": "Repository handoff checks; text normalized to LF; no browser rendering/backend test",
+  "passed": 57,
+  "total": 57,
+  "checks": [
+    {
+      "name": "JavaScript syntax: app.js",
+      "pass": true
+    },
+    {
+      "name": "JavaScript syntax: core.js",
+      "pass": true
+    },
+    {
+      "name": "JavaScript syntax: i18n-extra.js",
+      "pass": true
+    },
+    {
+      "name": "JavaScript syntax: i18n-messages.js",
+      "pass": true
+    },
+    {
+      "name": "JavaScript syntax: i18n.js",
+      "pass": true
+    },
+    {
+      "name": "JavaScript syntax: locale-runtime.js",
+      "pass": true
+    },
+    {
+      "name": "JavaScript syntax: preference-controls.js",
+      "pass": true
+    },
+    {
+      "name": "JavaScript syntax: screens.js",
+      "pass": true
+    },
+    {
+      "name": "JavaScript syntax: sites-compat.js",
+      "pass": true
+    },
+    {
+      "name": "JavaScript syntax: teacher-actions.js",
+      "pass": true
+    },
+    {
+      "name": "JavaScript syntax: teacher.js",
+      "pass": true
+    },
+    {
+      "name": "guide.html local link: 操作指南与验收说明.html",
+      "pass": true
+    },
+    {
+      "name": "index.html local link: base.css",
+      "pass": true
+    },
+    {
+      "name": "index.html local link: student.css",
+      "pass": true
+    },
+    {
+      "name": "index.html local link: campus-revision.css",
+      "pass": true
+    },
+    {
+      "name": "index.html local link: preference-controls.css",
+      "pass": true
+    },
+    {
+      "name": "index.html local link: sites-compat.js",
+      "pass": true
+    },
+    {
+      "name": "index.html local link: core.js",
+      "pass": true
+    },
+    {
+      "name": "index.html local link: screens.js",
+      "pass": true
+    },
+    {
+      "name": "index.html local link: app.js",
+      "pass": true
+    },
+    {
+      "name": "index.html local link: teacher.js",
+      "pass": true
+    },
+    {
+      "name": "index.html local link: teacher-actions.js",
+      "pass": true
+    },
+    {
+      "name": "index.html local link: i18n.js",
+      "pass": true
+    },
+    {
+      "name": "index.html local link: i18n-messages.js",
+      "pass": true
+    },
+    {
+      "name": "index.html local link: i18n-extra.js",
+      "pass": true
+    },
+    {
+      "name": "index.html local link: locale-runtime.js",
+      "pass": true
+    },
+    {
+      "name": "index.html local link: preference-controls.js",
+      "pass": true
+    },
+    {
+      "name": "index.html local link: assets/association-logo.png",
+      "pass": true
+    },
+    {
+      "name": "index.html local link: assets/campus-watercolor-v1.png",
+      "pass": true
+    },
+    {
+      "name": "base.css asset: assets/campus.svg",
+      "pass": true
+    },
+    {
+      "name": "campus-revision.css asset: assets/campus-watercolor-v1.png",
+      "pass": true
+    },
+    {
+      "name": "JSON parses: 三语界面文案表.json",
+      "pass": true
+    },
+    {
+      "name": "JSON parses: 交付文件清单.json",
+      "pass": true
+    },
+    {
+      "name": "JSON parses: 模块与交付边界.json",
+      "pass": true
+    },
+    {
+      "name": "Matches published source (LF normalized): app.js",
+      "pass": true
+    },
+    {
+      "name": "Matches published source (LF normalized): assets/association-logo.png",
+      "pass": true
+    },
+    {
+      "name": "Matches published source (LF normalized): assets/campus-watercolor-v1.png",
+      "pass": true
+    },
+    {
+      "name": "Matches published source (LF normalized): assets/campus.svg",
+      "pass": true
+    },
+    {
+      "name": "Matches published source (LF normalized): base.css",
+      "pass": true
+    },
+    {
+      "name": "Matches published source (LF normalized): campus-revision.css",
+      "pass": true
+    },
+    {
+      "name": "Matches published source (LF normalized): core.js",
+      "pass": true
+    },
+    {
+      "name": "Matches published source (LF normalized): guide.html",
+      "pass": true
+    },
+    {
+      "name": "Matches published source (LF normalized): i18n-extra.js",
+      "pass": true
+    },
+    {
+      "name": "Matches published source (LF normalized): i18n-messages.js",
+      "pass": true
+    },
+    {
+      "name": "Matches published source (LF normalized): i18n.js",
+      "pass": true
+    },
+    {
+      "name": "Matches published source (LF normalized): index.html",
+      "pass": true
+    },
+    {
+      "name": "Matches published source (LF normalized): locale-runtime.js",
+      "pass": true
+    },
+    {
+      "name": "Matches published source (LF normalized): preference-controls.css",
+      "pass": true
+    },
+    {
+      "name": "Matches published source (LF normalized): preference-controls.js",
+      "pass": true
+    },
+    {
+      "name": "Matches published source (LF normalized): screens.js",
+      "pass": true
+    },
+    {
+      "name": "Matches published source (LF normalized): sites-compat.js",
+      "pass": true
+    },
+    {
+      "name": "Matches published source (LF normalized): student.css",
+      "pass": true
+    },
+    {
+      "name": "Matches published source (LF normalized): teacher-actions.js",
+      "pass": true
+    },
+    {
+      "name": "Matches published source (LF normalized): teacher.js",
+      "pass": true
+    },
+    {
+      "name": "Matches published source (LF normalized): 三语术语与文案对照.html",
+      "pass": true
+    },
+    {
+      "name": "Matches published source (LF normalized): 三语界面文案表.json",
+      "pass": true
+    },
+    {
+      "name": "Matches published source (LF normalized): 模块与交付边界.json",
+      "pass": true
+    }
+  ]
+}

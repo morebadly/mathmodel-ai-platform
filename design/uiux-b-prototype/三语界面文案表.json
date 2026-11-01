@@ -1,0 +1,5461 @@
+{
+  "scope": "系统界面文案；不自动翻译个人正文、资料名称或教师原评语",
+  "languages": [
+    "zh-CN",
+    "en",
+    "ru"
+  ],
+  "human_russian_review": "尚未经过俄语母语者专业审校，发布前建议核对教育术语与语气",
+  "items": [
+    {
+      "zh": "跳至主要内容",
+      "en": "Skip to content",
+      "ru": "Перейти к содержимому"
+    },
+    {
+      "zh": "双端原型 · 阶段 4 与 5",
+      "en": "Student & teacher prototype · Stages 4–5",
+      "ru": "Прототип для студентов и преподавателей · Этапы 4–5"
+    },
+    {
+      "zh": "仅演示数据 · 不连接正式服务",
+      "en": "Demo data · No live services",
+      "ru": "Демоданные · Без подключения к рабочим службам"
+    },
+    {
+      "zh": "查看状态",
+      "en": "Review state",
+      "ru": "Состояние для проверки"
+    },
+    {
+      "zh": "正常",
+      "en": "Normal",
+      "ru": "Обычное"
+    },
+    {
+      "zh": "空白",
+      "en": "Empty",
+      "ru": "Пустое"
+    },
+    {
+      "zh": "加载中",
+      "en": "Loading",
+      "ru": "Загрузка"
+    },
+    {
+      "zh": "加载失败",
+      "en": "Loading failed",
+      "ru": "Ошибка загрузки"
+    },
+    {
+      "zh": "无权限",
+      "en": "No access",
+      "ru": "Нет доступа"
+    },
+    {
+      "zh": "保存失败",
+      "en": "Save failed",
+      "ru": "Ошибка сохранения"
+    },
+    {
+      "zh": "重置演示",
+      "en": "Reset demo",
+      "ru": "Сбросить демо"
+    },
+    {
+      "zh": "深圳北理莫斯科大学",
+      "en": "Shenzhen MSU–BIT University",
+      "ru": "Университет МГУ-ППИ в Шэньчжэне"
+    },
+    {
+      "zh": "数学建模协会",
+      "en": "Mathematical Modeling Association",
+      "ru": "Ассоциация математического моделирования"
+    },
+    {
+      "zh": "深圳北理莫斯科大学 · 数学建模协会",
+      "en": "SMBU · Mathematical Modeling Association",
+      "ru": "МГУ-ППИ · Ассоциация математического моделирования"
+    },
+    {
+      "zh": "教师端 · 演示账号",
+      "en": "Teacher · Demo account",
+      "ru": "Преподаватель · Демоаккаунт"
+    },
+    {
+      "zh": "学生端 · 演示账号",
+      "en": "Student · Demo account",
+      "ru": "Студент · Демоаккаунт"
+    },
+    {
+      "zh": "教学管理",
+      "en": "Teaching",
+      "ru": "Учебная работа"
+    },
+    {
+      "zh": "教学总览",
+      "en": "Teaching overview",
+      "ru": "Обзор учебной работы"
+    },
+    {
+      "zh": "我的团队",
+      "en": "My teams",
+      "ru": "Мои команды"
+    },
+    {
+      "zh": "训练任务",
+      "en": "Learning tasks",
+      "ru": "Учебные задания"
+    },
+    {
+      "zh": "提交与反馈",
+      "en": "Submissions & feedback",
+      "ru": "Работы и отзывы"
+    },
+    {
+      "zh": "学习监督",
+      "en": "Task progress",
+      "ru": "Ход выполнения заданий"
+    },
+    {
+      "zh": "邮箱提醒",
+      "en": "Email reminders",
+      "ru": "Напоминания по почте"
+    },
+    {
+      "zh": "任务与成绩对照",
+      "en": "Tasks & grades",
+      "ru": "Задания и оценки"
+    },
+    {
+      "zh": "成绩导入",
+      "en": "Import grades",
+      "ru": "Импорт оценок"
+    },
+    {
+      "zh": "教学资料与评阅",
+      "en": "Resources & review",
+      "ru": "Материалы и проверка"
+    },
+    {
+      "zh": "论文评阅",
+      "en": "Paper review",
+      "ru": "Проверка статей"
+    },
+    {
+      "zh": "知识中心",
+      "en": "Knowledge center",
+      "ru": "Центр знаний"
+    },
+    {
+      "zh": "团队协作",
+      "en": "Teamwork",
+      "ru": "Командная работа"
+    },
+    {
+      "zh": "团队聊天",
+      "en": "Team chat",
+      "ru": "Чат команды"
+    },
+    {
+      "zh": "资料与工具",
+      "en": "Resources & tools",
+      "ru": "Материалы и инструменты"
+    },
+    {
+      "zh": "代码运行",
+      "en": "Code runner",
+      "ru": "Запуск кода"
+    },
+    {
+      "zh": "解析与公式",
+      "en": "Parsing & formulas",
+      "ru": "Разбор и формулы"
+    },
+    {
+      "zh": "引用检索",
+      "en": "Source search",
+      "ru": "Поиск источников"
+    },
+    {
+      "zh": "账号与设置",
+      "en": "Account & settings",
+      "ru": "Аккаунт и настройки"
+    },
+    {
+      "zh": "我的账号",
+      "en": "My account",
+      "ru": "Мой аккаунт"
+    },
+    {
+      "zh": "教师端",
+      "en": "Teacher",
+      "ru": "Преподаватель"
+    },
+    {
+      "zh": "学生端",
+      "en": "Student",
+      "ru": "Студент"
+    },
+    {
+      "zh": "中文",
+      "en": "Chinese",
+      "ru": "Китайский"
+    },
+    {
+      "zh": "英文",
+      "en": "English",
+      "ru": "Английский"
+    },
+    {
+      "zh": "俄文",
+      "en": "Russian",
+      "ru": "Русский"
+    },
+    {
+      "zh": "亮色",
+      "en": "Light",
+      "ru": "Светлая"
+    },
+    {
+      "zh": "暗色",
+      "en": "Dark",
+      "ru": "Тёмная"
+    },
+    {
+      "zh": "跟随系统",
+      "en": "System",
+      "ru": "Системная"
+    },
+    {
+      "zh": "把指导落到每一次进步",
+      "en": "Turn guidance into progress",
+      "ru": "Помогайте двигаться вперёд"
+    },
+    {
+      "zh": "发布训练任务",
+      "en": "Publish a task",
+      "ru": "Опубликовать задание"
+    },
+    {
+      "zh": "管理团队",
+      "en": "Manage teams",
+      "ru": "Управление командами"
+    },
+    {
+      "zh": "待评阅",
+      "en": "Awaiting review",
+      "ru": "Ожидает проверки"
+    },
+    {
+      "zh": "退回后待跟进",
+      "en": "Revision follow-up",
+      "ru": "Контроль доработки"
+    },
+    {
+      "zh": "所带团队",
+      "en": "Your teams",
+      "ru": "Ваши команды"
+    },
+    {
+      "zh": "授权学生",
+      "en": "Students in scope",
+      "ru": "Доступные студенты"
+    },
+    {
+      "zh": "教师待办",
+      "en": "Teaching to-do",
+      "ru": "Задачи преподавателя"
+    },
+    {
+      "zh": "排序",
+      "en": "Sort by",
+      "ru": "Сортировка"
+    },
+    {
+      "zh": "可解释优先级",
+      "en": "Explained priority",
+      "ru": "Приоритет с пояснением"
+    },
+    {
+      "zh": "提交时间先后",
+      "en": "Submission time",
+      "ru": "Время сдачи"
+    },
+    {
+      "zh": "临近截止（小时）",
+      "en": "Due soon threshold (hours)",
+      "ru": "Порог приближения срока (часы)"
+    },
+    {
+      "zh": "学生与任务",
+      "en": "Student & task",
+      "ru": "Студент и задание"
+    },
+    {
+      "zh": "版本与提交时间",
+      "en": "Version & submission time",
+      "ru": "Версия и время сдачи"
+    },
+    {
+      "zh": "状态与依据",
+      "en": "Status & reason",
+      "ru": "Статус и основание"
+    },
+    {
+      "zh": "操作",
+      "en": "Actions",
+      "ru": "Действия"
+    },
+    {
+      "zh": "退回修改",
+      "en": "Revision requested",
+      "ru": "На доработке"
+    },
+    {
+      "zh": "反馈后待跟进",
+      "en": "Follow up after feedback",
+      "ru": "Контроль после отзыва"
+    },
+    {
+      "zh": "进入评阅",
+      "en": "Review submission",
+      "ru": "Проверить работу"
+    },
+    {
+      "zh": "校园概念装饰 · 数据仅供交互演示",
+      "en": "Concept campus artwork · Demo data",
+      "ru": "Концептуальный декор кампуса · Демоданные"
+    },
+    {
+      "zh": "学生模块导航",
+      "en": "Student navigation",
+      "ru": "Навигация студента"
+    },
+    {
+      "zh": "教师模块导航",
+      "en": "Teacher navigation",
+      "ru": "Навигация преподавателя"
+    },
+    {
+      "zh": "切换演示角色",
+      "en": "Switch demo role",
+      "ru": "Сменить роль"
+    },
+    {
+      "zh": "界面语言",
+      "en": "Interface language",
+      "ru": "Язык интерфейса"
+    },
+    {
+      "zh": "外观",
+      "en": "Appearance",
+      "ru": "Оформление"
+    },
+    {
+      "zh": "关闭",
+      "en": "Close",
+      "ru": "Закрыть"
+    },
+    {
+      "zh": "创建团队",
+      "en": "Create team",
+      "ru": "Создать команду"
+    },
+    {
+      "zh": "管理成员",
+      "en": "Manage members",
+      "ru": "Участники"
+    },
+    {
+      "zh": "创建任务",
+      "en": "Create task",
+      "ru": "Создать задание"
+    },
+    {
+      "zh": "已发布",
+      "en": "Published",
+      "ru": "Опубликовано"
+    },
+    {
+      "zh": "草稿",
+      "en": "Draft",
+      "ru": "Черновик"
+    },
+    {
+      "zh": "查看任务",
+      "en": "View task",
+      "ru": "Открыть задание"
+    },
+    {
+      "zh": "编辑",
+      "en": "Edit",
+      "ru": "Редактировать"
+    },
+    {
+      "zh": "全部",
+      "en": "All",
+      "ru": "Все"
+    },
+    {
+      "zh": "已评阅",
+      "en": "Reviewed",
+      "ru": "Проверено"
+    },
+    {
+      "zh": "制定任务跟进计划",
+      "en": "Create follow-up plan",
+      "ru": "Создать план контроля"
+    },
+    {
+      "zh": "学生任务进展",
+      "en": "Student task progress",
+      "ru": "Прогресс по заданиям"
+    },
+    {
+      "zh": "学生",
+      "en": "Student",
+      "ru": "Студент"
+    },
+    {
+      "zh": "任务相关记录",
+      "en": "Task records",
+      "ru": "Записи по заданиям"
+    },
+    {
+      "zh": "提交快照阶段",
+      "en": "Submitted stages",
+      "ru": "Этапы сданной работы"
+    },
+    {
+      "zh": "查看证据",
+      "en": "View evidence",
+      "ru": "Посмотреть основание"
+    },
+    {
+      "zh": "暂无任务提交",
+      "en": "No task submissions",
+      "ru": "Нет сданных работ"
+    },
+    {
+      "zh": "数据不足",
+      "en": "Insufficient data",
+      "ru": "Недостаточно данных"
+    },
+    {
+      "zh": "查看团队",
+      "en": "View team",
+      "ru": "Открыть команду"
+    },
+    {
+      "zh": "任务跟进计划",
+      "en": "Follow-up plans",
+      "ru": "Планы контроля"
+    },
+    {
+      "zh": "准备任务提醒",
+      "en": "Prepare reminder",
+      "ru": "Подготовить напоминание"
+    },
+    {
+      "zh": "还没有提醒记录",
+      "en": "No reminders yet",
+      "ru": "Напоминаний пока нет"
+    },
+    {
+      "zh": "成绩与任务记录",
+      "en": "Grades & task records",
+      "ru": "Оценки и задания"
+    },
+    {
+      "zh": "考核与日期",
+      "en": "Assessment & date",
+      "ru": "Работа и дата"
+    },
+    {
+      "zh": "得分",
+      "en": "Score",
+      "ru": "Баллы"
+    },
+    {
+      "zh": "依据",
+      "en": "Evidence",
+      "ru": "Основание"
+    },
+    {
+      "zh": "下载CSV模板",
+      "en": "Download CSV template",
+      "ru": "Скачать шаблон CSV"
+    },
+    {
+      "zh": "CSV内容",
+      "en": "CSV content",
+      "ru": "Содержимое CSV"
+    },
+    {
+      "zh": "预览并校验",
+      "en": "Preview & validate",
+      "ru": "Просмотр и проверка"
+    },
+    {
+      "zh": "取消",
+      "en": "Cancel",
+      "ru": "Отмена"
+    },
+    {
+      "zh": "暂无有权评阅的论文",
+      "en": "No papers available for review",
+      "ru": "Нет доступных для проверки статей"
+    },
+    {
+      "zh": "查看训练提交",
+      "en": "View task submissions",
+      "ru": "Открыть сданные работы"
+    },
+    {
+      "zh": "添加教学资料",
+      "en": "Add teaching resource",
+      "ru": "Добавить учебный материал"
+    },
+    {
+      "zh": "公共",
+      "en": "Public",
+      "ru": "Общие"
+    },
+    {
+      "zh": "团队",
+      "en": "Team",
+      "ru": "Командные"
+    },
+    {
+      "zh": "个人",
+      "en": "Personal",
+      "ru": "Личные"
+    },
+    {
+      "zh": "教师个人",
+      "en": "Teacher-private",
+      "ru": "Личные материалы преподавателя"
+    },
+    {
+      "zh": "阅读与共享",
+      "en": "Read & share",
+      "ru": "Читать и поделиться"
+    },
+    {
+      "zh": "消息",
+      "en": "Message",
+      "ru": "Сообщение"
+    },
+    {
+      "zh": "发送演示消息",
+      "en": "Send demo message",
+      "ru": "Отправить демосообщение"
+    },
+    {
+      "zh": "配置演示运行",
+      "en": "Configure demo run",
+      "ru": "Настроить демозапуск"
+    },
+    {
+      "zh": "没有教师运行记录",
+      "en": "No teacher runs yet",
+      "ru": "Запусков пока нет"
+    },
+    {
+      "zh": "开始演示",
+      "en": "Start demo",
+      "ru": "Начать демонстрацию"
+    },
+    {
+      "zh": "添加演示解析",
+      "en": "Add parsing demo",
+      "ru": "Добавить демонстрацию разбора"
+    },
+    {
+      "zh": "没有教师解析记录",
+      "en": "No teacher parsing records",
+      "ru": "Нет записей разбора"
+    },
+    {
+      "zh": "检索来源",
+      "en": "Search sources",
+      "ru": "Найти источники"
+    },
+    {
+      "zh": "先输入关键词",
+      "en": "Enter a keyword first",
+      "ru": "Введите ключевое слово"
+    },
+    {
+      "zh": "输入关键词",
+      "en": "Enter keywords",
+      "ru": "Введите ключевые слова"
+    },
+    {
+      "zh": "检索关键词",
+      "en": "Search keywords",
+      "ru": "Ключевые слова поиска"
+    },
+    {
+      "zh": "退出教师演示账号",
+      "en": "Sign out of teacher demo",
+      "ru": "Выйти из демоаккаунта преподавателя"
+    },
+    {
+      "zh": "教师资料",
+      "en": "Teacher profile",
+      "ru": "Профиль преподавателя"
+    },
+    {
+      "zh": "显示名称",
+      "en": "Display name",
+      "ru": "Отображаемое имя"
+    },
+    {
+      "zh": "演示邮箱",
+      "en": "Demo email",
+      "ru": "Демонстрационная почта"
+    },
+    {
+      "zh": "保存演示资料",
+      "en": "Save demo profile",
+      "ru": "Сохранить демопрофиль"
+    },
+    {
+      "zh": "我的学习",
+      "en": "My learning",
+      "ru": "Моя учёба"
+    },
+    {
+      "zh": "学习工作台",
+      "en": "Learning dashboard",
+      "ru": "Учебная панель"
+    },
+    {
+      "zh": "训练中心",
+      "en": "Training center",
+      "ru": "Центр практики"
+    },
+    {
+      "zh": "我的提交与反馈",
+      "en": "My submissions & feedback",
+      "ru": "Мои работы и отзывы"
+    },
+    {
+      "zh": "模拟竞赛",
+      "en": "Mock competition",
+      "ru": "Тренировочное соревнование"
+    },
+    {
+      "zh": "成长档案",
+      "en": "Progress record",
+      "ru": "История прогресса"
+    },
+    {
+      "zh": "建模与写作",
+      "en": "Modeling & writing",
+      "ru": "Моделирование и текст"
+    },
+    {
+      "zh": "建模工作台",
+      "en": "Modeling workspace",
+      "ru": "Рабочее пространство"
+    },
+    {
+      "zh": "AI 建模导师",
+      "en": "AI modeling tutor",
+      "ru": "ИИ-наставник по моделированию"
+    },
+    {
+      "zh": "论文实验室",
+      "en": "Paper lab",
+      "ru": "Лаборатория статей"
+    },
+    {
+      "zh": "写作工作室",
+      "en": "Writing studio",
+      "ru": "Студия текстов"
+    },
+    {
+      "zh": "团队通知",
+      "en": "Team notifications",
+      "ru": "Уведомления команды"
+    },
+    {
+      "zh": "让思考继续发生",
+      "en": "Keep your ideas moving",
+      "ru": "Продолжайте развивать идеи"
+    },
+    {
+      "zh": "新建建模项目",
+      "en": "New modeling project",
+      "ru": "Новый проект моделирования"
+    },
+    {
+      "zh": "我的项目",
+      "en": "My projects",
+      "ru": "Мои проекты"
+    },
+    {
+      "zh": "教师任务",
+      "en": "Teacher task",
+      "ru": "Задание преподавателя"
+    },
+    {
+      "zh": "待查看通知",
+      "en": "Unread notifications",
+      "ru": "Непрочитанные уведомления"
+    },
+    {
+      "zh": "待修改提交",
+      "en": "Revisions needed",
+      "ru": "Работы на доработке"
+    },
+    {
+      "zh": "当前任务",
+      "en": "Current task",
+      "ru": "Текущее задание"
+    },
+    {
+      "zh": "全部任务",
+      "en": "All tasks",
+      "ru": "Все задания"
+    },
+    {
+      "zh": "任务详情",
+      "en": "Task details",
+      "ru": "Описание задания"
+    },
+    {
+      "zh": "开始 / 继续",
+      "en": "Start / Continue",
+      "ru": "Начать / Продолжить"
+    },
+    {
+      "zh": "教师反馈",
+      "en": "Teacher feedback",
+      "ru": "Отзыв преподавателя"
+    },
+    {
+      "zh": "查看反馈与修改清单",
+      "en": "View feedback & checklist",
+      "ru": "Открыть отзыв и список исправлений"
+    },
+    {
+      "zh": "最近项目",
+      "en": "Recent projects",
+      "ru": "Недавние проекты"
+    },
+    {
+      "zh": "关联任务",
+      "en": "Linked task",
+      "ru": "Связанное задание"
+    },
+    {
+      "zh": "继续项目",
+      "en": "Continue project",
+      "ru": "Продолжить проект"
+    },
+    {
+      "zh": "导出记录",
+      "en": "Export record",
+      "ru": "Экспортировать запись"
+    },
+    {
+      "zh": "自主项目",
+      "en": "Independent project",
+      "ru": "Самостоятельный проект"
+    },
+    {
+      "zh": "创建个人练习",
+      "en": "Create personal practice",
+      "ru": "Создать личную практику"
+    },
+    {
+      "zh": "个人练习",
+      "en": "Personal practice",
+      "ru": "Личная практика"
+    },
+    {
+      "zh": "前往训练中心",
+      "en": "Go to training center",
+      "ru": "Перейти в центр практики"
+    },
+    {
+      "zh": "任务",
+      "en": "Task",
+      "ru": "Задание"
+    },
+    {
+      "zh": "版本与时间",
+      "en": "Version & time",
+      "ru": "Версия и время"
+    },
+    {
+      "zh": "状态",
+      "en": "Status",
+      "ru": "Статус"
+    },
+    {
+      "zh": "查看详情",
+      "en": "View details",
+      "ru": "Подробнее"
+    },
+    {
+      "zh": "配置模拟竞赛",
+      "en": "Configure mock competition",
+      "ru": "Настроить соревнование"
+    },
+    {
+      "zh": "开启一次模拟训练",
+      "en": "Begin a practice session",
+      "ru": "Начать тренировку"
+    },
+    {
+      "zh": "创建模拟竞赛",
+      "en": "Create mock competition",
+      "ru": "Создать соревнование"
+    },
+    {
+      "zh": "导出我的成长记录",
+      "en": "Export my progress",
+      "ru": "Экспортировать прогресс"
+    },
+    {
+      "zh": "个人项目",
+      "en": "Personal projects",
+      "ru": "Личные проекты"
+    },
+    {
+      "zh": "手动完成阶段",
+      "en": "Stages marked complete",
+      "ru": "Этапы, отмеченные выполненными"
+    },
+    {
+      "zh": "已提交版本",
+      "en": "Submitted versions",
+      "ru": "Сданные версии"
+    },
+    {
+      "zh": "教师已评阅",
+      "en": "Teacher-reviewed",
+      "ru": "Проверено преподавателем"
+    },
+    {
+      "zh": "项目过程",
+      "en": "Project history",
+      "ru": "История проекта"
+    },
+    {
+      "zh": "查看",
+      "en": "View",
+      "ru": "Открыть"
+    },
+    {
+      "zh": "能力评价依据",
+      "en": "Assessment evidence",
+      "ru": "Основания оценки"
+    },
+    {
+      "zh": "反馈与修订",
+      "en": "Feedback & revisions",
+      "ru": "Отзывы и доработки"
+    },
+    {
+      "zh": "回看",
+      "en": "Revisit",
+      "ru": "Пересмотреть"
+    },
+    {
+      "zh": "本机原型操作记录",
+      "en": "Local prototype activity",
+      "ru": "Действия в прототипе"
+    },
+    {
+      "zh": "新建项目",
+      "en": "New project",
+      "ru": "Новый проект"
+    },
+    {
+      "zh": "开始新对话",
+      "en": "New conversation",
+      "ru": "Новый диалог"
+    },
+    {
+      "zh": "历史对话",
+      "en": "Conversation history",
+      "ru": "История диалогов"
+    },
+    {
+      "zh": "指导模式",
+      "en": "Guidance mode",
+      "ru": "Режим помощи"
+    },
+    {
+      "zh": "基础解释",
+      "en": "Basic explanation",
+      "ru": "Базовое объяснение"
+    },
+    {
+      "zh": "方法探索",
+      "en": "Explore methods",
+      "ru": "Поиск подходов"
+    },
+    {
+      "zh": "分步指导",
+      "en": "Step-by-step guidance",
+      "ru": "Пошаговая помощь"
+    },
+    {
+      "zh": "深度研究",
+      "en": "Deeper exploration",
+      "ru": "Углублённое исследование"
+    },
+    {
+      "zh": "问题与当前思路",
+      "en": "Question & current ideas",
+      "ru": "Вопрос и текущие идеи"
+    },
+    {
+      "zh": "查看演示回复",
+      "en": "Show demo response",
+      "ru": "Показать демоответ"
+    },
+    {
+      "zh": "保存问题不生成回复",
+      "en": "Save question without a response",
+      "ru": "Сохранить вопрос без ответа"
+    },
+    {
+      "zh": "模拟生成失败",
+      "en": "Simulate generation failure",
+      "ru": "Смоделировать ошибку генерации"
+    },
+    {
+      "zh": "添加演示论文",
+      "en": "Add demo paper",
+      "ru": "Добавить демостатью"
+    },
+    {
+      "zh": "个人原件",
+      "en": "Private original",
+      "ru": "Личный оригинал"
+    },
+    {
+      "zh": "阅读与批注",
+      "en": "Read & annotate",
+      "ru": "Читать и комментировать"
+    },
+    {
+      "zh": "创建关联文稿",
+      "en": "Create linked draft",
+      "ru": "Создать связанный текст"
+    },
+    {
+      "zh": "新建文稿",
+      "en": "New draft",
+      "ru": "Новый текст"
+    },
+    {
+      "zh": "关联论文",
+      "en": "Linked paper",
+      "ru": "Связанная статья"
+    },
+    {
+      "zh": "继续写作",
+      "en": "Continue writing",
+      "ru": "Продолжить работу над текстом"
+    },
+    {
+      "zh": "导出",
+      "en": "Export",
+      "ru": "Экспорт"
+    },
+    {
+      "zh": "添加个人资料",
+      "en": "Add personal resource",
+      "ru": "Добавить личный материал"
+    },
+    {
+      "zh": "全部范围",
+      "en": "All scopes",
+      "ru": "Все области доступа"
+    },
+    {
+      "zh": "搜索",
+      "en": "Search",
+      "ru": "Поиск"
+    },
+    {
+      "zh": "建模方法",
+      "en": "Modeling methods",
+      "ru": "Методы моделирования"
+    },
+    {
+      "zh": "阅读与引用",
+      "en": "Read & cite",
+      "ru": "Читать и цитировать"
+    },
+    {
+      "zh": "收藏",
+      "en": "Save favorite",
+      "ru": "В избранное"
+    },
+    {
+      "zh": "已收藏",
+      "en": "Favorited",
+      "ru": "В избранном"
+    },
+    {
+      "zh": "数据资料",
+      "en": "Data resources",
+      "ru": "Данные"
+    },
+    {
+      "zh": "教学训练",
+      "en": "Teaching & practice",
+      "ru": "Обучение и практика"
+    },
+    {
+      "zh": "搜索方法、案例或关键词",
+      "en": "Search methods, cases or keywords",
+      "ru": "Найти метод, пример или слово"
+    },
+    {
+      "zh": "搜索资料",
+      "en": "Search resources",
+      "ru": "Поиск материалов"
+    },
+    {
+      "zh": "资料范围",
+      "en": "Resource scope",
+      "ru": "Область доступа"
+    },
+    {
+      "zh": "先输入检索关键词",
+      "en": "Enter search keywords first",
+      "ru": "Сначала введите ключевые слова"
+    },
+    {
+      "zh": "浏览知识中心",
+      "en": "Browse knowledge center",
+      "ru": "Открыть центр знаний"
+    },
+    {
+      "zh": "例如：约束 或 数据",
+      "en": "For example: constraints or data",
+      "ru": "Например: ограничения или данные"
+    },
+    {
+      "zh": "引用关键词",
+      "en": "Source keywords",
+      "ru": "Ключевые слова источников"
+    },
+    {
+      "zh": "添加演示解析任务",
+      "en": "Add demo parsing task",
+      "ru": "Добавить демозадачу разбора"
+    },
+    {
+      "zh": "还没有解析任务",
+      "en": "No parsing tasks yet",
+      "ru": "Задач разбора пока нет"
+    },
+    {
+      "zh": "添加演示任务",
+      "en": "Add demo task",
+      "ru": "Добавить демозадачу"
+    },
+    {
+      "zh": "还没有运行记录",
+      "en": "No runs yet",
+      "ru": "Запусков пока нет"
+    },
+    {
+      "zh": "全部标为已读",
+      "en": "Mark all as read",
+      "ru": "Отметить всё прочитанным"
+    },
+    {
+      "zh": "全部通知",
+      "en": "All notifications",
+      "ru": "Все уведомления"
+    },
+    {
+      "zh": "未读通知",
+      "en": "Unread notifications",
+      "ru": "Непрочитанные уведомления"
+    },
+    {
+      "zh": "查看通知",
+      "en": "View notification",
+      "ru": "Открыть уведомление"
+    },
+    {
+      "zh": "查看成员",
+      "en": "View members",
+      "ru": "Участники"
+    },
+    {
+      "zh": "关联教学任务：",
+      "en": "Linked teaching tasks:",
+      "ru": "Связанные учебные задания:"
+    },
+    {
+      "zh": "演示附件名称（不上传）",
+      "en": "Demo attachment name (no upload)",
+      "ru": "Имя демовложения (без загрузки)"
+    },
+    {
+      "zh": "发送",
+      "en": "Send",
+      "ru": "Отправить"
+    },
+    {
+      "zh": "退出演示账号",
+      "en": "Sign out of demo",
+      "ru": "Выйти из демоаккаунта"
+    },
+    {
+      "zh": "演示账号资料",
+      "en": "Demo profile",
+      "ru": "Демонстрационный профиль"
+    },
+    {
+      "zh": "保存个人资料",
+      "en": "Save profile",
+      "ru": "Сохранить профиль"
+    },
+    {
+      "zh": "演示重新验证",
+      "en": "Repeat demo verification",
+      "ru": "Повторить демопроверку"
+    },
+    {
+      "zh": "语言与外观",
+      "en": "Language & appearance",
+      "ru": "Язык и оформление"
+    },
+    {
+      "zh": "我的教学团队",
+      "en": "My teaching teams",
+      "ru": "Мои учебные команды"
+    },
+    {
+      "zh": "进入聊天",
+      "en": "Open chat",
+      "ru": "Открыть чат"
+    },
+    {
+      "zh": "本机演示数据",
+      "en": "Local demo data",
+      "ru": "Локальные демоданные"
+    },
+    {
+      "zh": "导出演示数据",
+      "en": "Export demo data",
+      "ru": "Экспортировать демоданные"
+    },
+    {
+      "zh": "重置原型演示",
+      "en": "Reset prototype data",
+      "ru": "Сбросить данные прототипа"
+    },
+    {
+      "zh": "教师账号",
+      "en": "Teacher account",
+      "ru": "Аккаунт преподавателя"
+    },
+    {
+      "zh": "教师登录",
+      "en": "Teacher sign-in",
+      "ru": "Вход преподавателя"
+    },
+    {
+      "zh": "管理员入口",
+      "en": "Administrator entry",
+      "ru": "Вход администратора"
+    },
+    {
+      "zh": "演示密码",
+      "en": "Demo password",
+      "ru": "Демонстрационный пароль"
+    },
+    {
+      "zh": "进入教师端",
+      "en": "Enter teacher area",
+      "ru": "Открыть кабинет преподавателя"
+    },
+    {
+      "zh": "教师注册",
+      "en": "Teacher registration",
+      "ru": "Регистрация преподавателя"
+    },
+    {
+      "zh": "找回演示密码",
+      "en": "Recover demo password",
+      "ru": "Восстановить демопароль"
+    },
+    {
+      "zh": "教师演示密钥",
+      "en": "Demo teacher key",
+      "ru": "Демонстрационный ключ преподавателя"
+    },
+    {
+      "zh": "下一步 验证邮箱",
+      "en": "Next: verify email",
+      "ru": "Далее: проверить почту"
+    },
+    {
+      "zh": "演示验证码",
+      "en": "Demo verification code",
+      "ru": "Демонстрационный код"
+    },
+    {
+      "zh": "完成验证",
+      "en": "Complete verification",
+      "ru": "Завершить проверку"
+    },
+    {
+      "zh": "继续重设",
+      "en": "Continue to reset",
+      "ru": "Продолжить сброс"
+    },
+    {
+      "zh": "演示码123456",
+      "en": "Demo code: 123456",
+      "ru": "Демонстрационный код: 123456"
+    },
+    {
+      "zh": "新演示密码",
+      "en": "New demo password",
+      "ru": "Новый демопароль"
+    },
+    {
+      "zh": "确认密码",
+      "en": "Confirm password",
+      "ru": "Подтвердить пароль"
+    },
+    {
+      "zh": "完成演示重设",
+      "en": "Complete demo reset",
+      "ru": "Завершить демонстрационный сброс"
+    },
+    {
+      "zh": "学生账号",
+      "en": "Student account",
+      "ru": "Аккаунт студента"
+    },
+    {
+      "zh": "登录后继续个人学习",
+      "en": "Sign in to continue learning",
+      "ru": "Войдите, чтобы продолжить учёбу"
+    },
+    {
+      "zh": "学生登录",
+      "en": "Student sign-in",
+      "ru": "Вход студента"
+    },
+    {
+      "zh": "教师入口说明",
+      "en": "Teacher sign-in",
+      "ru": "Вход преподавателя"
+    },
+    {
+      "zh": "进入学生工作区",
+      "en": "Enter student workspace",
+      "ru": "Открыть кабинет студента"
+    },
+    {
+      "zh": "注册演示账号",
+      "en": "Register demo account",
+      "ru": "Зарегистрировать демоаккаунт"
+    },
+    {
+      "zh": "注册与邮箱验证",
+      "en": "Registration & email verification",
+      "ru": "Регистрация и проверка почты"
+    },
+    {
+      "zh": "验证演示邮箱",
+      "en": "Verify demo email",
+      "ru": "Проверить демонстрационную почту"
+    },
+    {
+      "zh": "完成演示验证",
+      "en": "Complete demo verification",
+      "ru": "Завершить демонстрационную проверку"
+    },
+    {
+      "zh": "重新显示演示验证码",
+      "en": "Show demo code again",
+      "ru": "Снова показать демокод"
+    },
+    {
+      "zh": "找回与重设",
+      "en": "Recovery & reset",
+      "ru": "Восстановление и сброс"
+    },
+    {
+      "zh": "继续验证",
+      "en": "Continue verification",
+      "ru": "Продолжить проверку"
+    },
+    {
+      "zh": "重设演示密码",
+      "en": "Reset demo password",
+      "ru": "Сбросить демопароль"
+    },
+    {
+      "zh": "确认演示密码",
+      "en": "Confirm demo password",
+      "ru": "Подтвердить демопароль"
+    },
+    {
+      "zh": "返回任务",
+      "en": "Back to tasks",
+      "ru": "К заданиям"
+    },
+    {
+      "zh": "编辑任务",
+      "en": "Edit task",
+      "ru": "Редактировать задание"
+    },
+    {
+      "zh": "要求与评价",
+      "en": "Requirements & assessment",
+      "ru": "Требования и оценивание"
+    },
+    {
+      "zh": "评价依据",
+      "en": "Assessment criteria",
+      "ru": "Критерии оценивания"
+    },
+    {
+      "zh": "变更记录",
+      "en": "Change history",
+      "ru": "История изменений"
+    },
+    {
+      "zh": "返回提交列表",
+      "en": "Back to submissions",
+      "ru": "К списку работ"
+    },
+    {
+      "zh": "学生提交快照",
+      "en": "Student submission snapshot",
+      "ru": "Снимок сданной работы"
+    },
+    {
+      "zh": "问题理解",
+      "en": "Problem understanding",
+      "ru": "Понимание задачи"
+    },
+    {
+      "zh": "数据探索",
+      "en": "Data exploration",
+      "ru": "Исследование данных"
+    },
+    {
+      "zh": "模型设计",
+      "en": "Model design",
+      "ru": "Проектирование модели"
+    },
+    {
+      "zh": "算法实现",
+      "en": "Algorithm implementation",
+      "ru": "Реализация алгоритма"
+    },
+    {
+      "zh": "实验验证",
+      "en": "Experimental validation",
+      "ru": "Экспериментальная проверка"
+    },
+    {
+      "zh": "论文撰写",
+      "en": "Paper writing",
+      "ru": "Написание статьи"
+    },
+    {
+      "zh": "论文评价",
+      "en": "Paper evaluation",
+      "ru": "Оценка статьи"
+    },
+    {
+      "zh": "迭代优化",
+      "en": "Iterative refinement",
+      "ru": "Итерационное улучшение"
+    },
+    {
+      "zh": "本次提交附件",
+      "en": "Attachments in this submission",
+      "ru": "Вложения этой работы"
+    },
+    {
+      "zh": "已发布反馈历史",
+      "en": "Published feedback history",
+      "ru": "История опубликованных отзывов"
+    },
+    {
+      "zh": "评阅与反馈",
+      "en": "Review & feedback",
+      "ru": "Проверка и отзыв"
+    },
+    {
+      "zh": "教师原评语",
+      "en": "Teacher's original comment",
+      "ru": "Исходный отзыв преподавателя"
+    },
+    {
+      "zh": "必须修改（每行一项）",
+      "en": "Required changes (one per line)",
+      "ru": "Обязательные исправления (по одному в строке)"
+    },
+    {
+      "zh": "建议优化（每行一项）",
+      "en": "Suggestions (one per line)",
+      "ru": "Рекомендации (по одной в строке)"
+    },
+    {
+      "zh": "关联阶段（可选）",
+      "en": "Linked stage (optional)",
+      "ru": "Связанный этап (необязательно)"
+    },
+    {
+      "zh": "不关联具体阶段",
+      "en": "No specific stage",
+      "ru": "Без привязки к этапу"
+    },
+    {
+      "zh": "评阅处理",
+      "en": "Review outcome",
+      "ru": "Результат проверки"
+    },
+    {
+      "zh": "已评阅，不自动表示通过",
+      "en": "Reviewed; not automatically passed",
+      "ru": "Проверено; не означает зачёта"
+    },
+    {
+      "zh": "退回时的独立重交截止（北京时间）",
+      "en": "Revision deadline (Beijing time)",
+      "ru": "Срок повторной сдачи (пекинское время)"
+    },
+    {
+      "zh": "得分（可空）",
+      "en": "Score (optional)",
+      "ru": "Баллы (необязательно)"
+    },
+    {
+      "zh": "满分（填得分时必填）",
+      "en": "Maximum score (required with score)",
+      "ru": "Максимальный балл (обязателен при оценке)"
+    },
+    {
+      "zh": "考核名称",
+      "en": "Assessment name",
+      "ru": "Название контрольной работы"
+    },
+    {
+      "zh": "保存教师草稿",
+      "en": "Save private review draft",
+      "ru": "Сохранить черновик отзыва"
+    },
+    {
+      "zh": "预览反馈再发布",
+      "en": "Preview feedback before publishing",
+      "ru": "Проверить отзыв перед публикацией"
+    },
+    {
+      "zh": "成员与权限",
+      "en": "Members & access",
+      "ru": "Участники и доступ"
+    },
+    {
+      "zh": "邀请演示学生",
+      "en": "Invite demo student",
+      "ru": "Пригласить демостудента"
+    },
+    {
+      "zh": "移出团队",
+      "en": "Remove from team",
+      "ru": "Удалить из команды"
+    },
+    {
+      "zh": "待加入邀请",
+      "en": "Pending invitations",
+      "ru": "Ожидающие приглашения"
+    },
+    {
+      "zh": "发布团队任务",
+      "en": "Publish team task",
+      "ru": "Опубликовать задание команды"
+    },
+    {
+      "zh": "返回知识中心",
+      "en": "Back to knowledge center",
+      "ru": "В центр знаний"
+    },
+    {
+      "zh": "复制来源引用",
+      "en": "Copy source citation",
+      "ru": "Скопировать ссылку на источник"
+    },
+    {
+      "zh": "返回训练中心",
+      "en": "Back to training center",
+      "ru": "В центр практики"
+    },
+    {
+      "zh": "开始 / 关联项目",
+      "en": "Start / Link project",
+      "ru": "Начать / Связать проект"
+    },
+    {
+      "zh": "任务要求",
+      "en": "Task requirements",
+      "ru": "Требования задания"
+    },
+    {
+      "zh": "时间与提交规则",
+      "en": "Deadlines & submission rules",
+      "ru": "Сроки и правила сдачи"
+    },
+    {
+      "zh": "关联项目",
+      "en": "Linked project",
+      "ru": "Связанный проект"
+    },
+    {
+      "zh": "继续",
+      "en": "Continue",
+      "ru": "Продолжить"
+    },
+    {
+      "zh": "查看提交与反馈",
+      "en": "View submission & feedback",
+      "ru": "Открыть работу и отзыв"
+    },
+    {
+      "zh": "回到项目",
+      "en": "Back to project",
+      "ru": "К проекту"
+    },
+    {
+      "zh": "提交快照 · 不随项目编辑改变",
+      "en": "Submission snapshot · Unchanged by project edits",
+      "ru": "Снимок работы · Не меняется при редактировании проекта"
+    },
+    {
+      "zh": "本次提交",
+      "en": "This submission",
+      "ru": "Эта работа"
+    },
+    {
+      "zh": "本阶段未填写",
+      "en": "No content for this stage",
+      "ru": "Этап не заполнен"
+    },
+    {
+      "zh": "提交附件",
+      "en": "Submitted attachments",
+      "ru": "Сданные вложения"
+    },
+    {
+      "zh": "必须修改",
+      "en": "Required change",
+      "ru": "Обязательное исправление"
+    },
+    {
+      "zh": "加入修改清单",
+      "en": "Add to my checklist",
+      "ru": "Добавить в мой список исправлений"
+    },
+    {
+      "zh": "定位项目阶段",
+      "en": "Go to project stage",
+      "ru": "Перейти к этапу проекта"
+    },
+    {
+      "zh": "建议优化",
+      "en": "Suggestion",
+      "ru": "Рекомендация"
+    },
+    {
+      "zh": "我的修改清单",
+      "en": "My revision checklist",
+      "ru": "Мой список исправлений"
+    },
+    {
+      "zh": "修改后重新提交",
+      "en": "Resubmit after revision",
+      "ru": "Сдать повторно после доработки"
+    },
+    {
+      "zh": "历史版本",
+      "en": "Version history",
+      "ru": "История версий"
+    },
+    {
+      "zh": "返回项目",
+      "en": "Back to project",
+      "ru": "К проекту"
+    },
+    {
+      "zh": "编辑信息",
+      "en": "Edit details",
+      "ru": "Редактировать сведения"
+    },
+    {
+      "zh": "已手动完成",
+      "en": "Marked complete",
+      "ru": "Отмечено выполненным"
+    },
+    {
+      "zh": "阶段笔记",
+      "en": "Stage notes",
+      "ru": "Заметки этапа"
+    },
+    {
+      "zh": "保存笔记",
+      "en": "Save notes",
+      "ru": "Сохранить заметки"
+    },
+    {
+      "zh": "取消完成标记",
+      "en": "Unmark completion",
+      "ru": "Снять отметку о выполнении"
+    },
+    {
+      "zh": "标记完成",
+      "en": "Mark complete",
+      "ru": "Отметить выполненным"
+    },
+    {
+      "zh": "项目附件",
+      "en": "Project attachments",
+      "ru": "Вложения проекта"
+    },
+    {
+      "zh": "关联已有资料",
+      "en": "Attach existing resource",
+      "ru": "Приложить существующий материал"
+    },
+    {
+      "zh": "查看任务与提交要求",
+      "en": "View task & submission rules",
+      "ru": "Открыть задание и правила сдачи"
+    },
+    {
+      "zh": "提交成果快照",
+      "en": "Submit result snapshot",
+      "ru": "Сдать снимок результата"
+    },
+    {
+      "zh": "返回论文列表",
+      "en": "Back to papers",
+      "ru": "К списку статей"
+    },
+    {
+      "zh": "关联到项目",
+      "en": "Attach to project",
+      "ru": "Приложить к проекту"
+    },
+    {
+      "zh": "创建 / 打开关联文稿",
+      "en": "Create / Open linked draft",
+      "ru": "Создать / Открыть связанный текст"
+    },
+    {
+      "zh": "论文原件",
+      "en": "Original paper",
+      "ru": "Оригинал статьи"
+    },
+    {
+      "zh": "下载演示原文文本",
+      "en": "Download demo original text",
+      "ru": "Скачать демонстрационный исходный текст"
+    },
+    {
+      "zh": "评价与批注",
+      "en": "Evaluation & annotations",
+      "ru": "Оценка и комментарии"
+    },
+    {
+      "zh": "人工记录",
+      "en": "Manual records",
+      "ru": "Ручные записи"
+    },
+    {
+      "zh": "规范检查",
+      "en": "Format checks",
+      "ru": "Проверка оформления"
+    },
+    {
+      "zh": "AI建议",
+      "en": "AI suggestions",
+      "ru": "Подсказки ИИ"
+    },
+    {
+      "zh": "记录人工评价",
+      "en": "Record manual evaluation",
+      "ru": "Записать ручную оценку"
+    },
+    {
+      "zh": "添加个人批注",
+      "en": "Add private annotation",
+      "ru": "Добавить личный комментарий"
+    },
+    {
+      "zh": "完整填写的维度",
+      "en": "Completed dimensions",
+      "ru": "Заполненные критерии"
+    },
+    {
+      "zh": "返回文稿列表",
+      "en": "Back to drafts",
+      "ru": "К списку текстов"
+    },
+    {
+      "zh": "导出文稿",
+      "en": "Export draft",
+      "ru": "Экспортировать текст"
+    },
+    {
+      "zh": "正文编辑",
+      "en": "Text editor",
+      "ru": "Редактор текста"
+    },
+    {
+      "zh": "正文",
+      "en": "Text",
+      "ru": "Текст"
+    },
+    {
+      "zh": "保存草稿",
+      "en": "Save draft",
+      "ru": "Сохранить черновик"
+    },
+    {
+      "zh": "保存命名版本",
+      "en": "Save named version",
+      "ru": "Сохранить именованную версию"
+    },
+    {
+      "zh": "来源与建议",
+      "en": "Sources & suggestions",
+      "ru": "Источники и рекомендации"
+    },
+    {
+      "zh": "查看保留的论文原件",
+      "en": "View preserved original",
+      "ru": "Открыть сохранённый оригинал"
+    },
+    {
+      "zh": "查看演示AI建议",
+      "en": "View demo AI suggestions",
+      "ru": "Открыть демоподсказки ИИ"
+    },
+    {
+      "zh": "命名版本",
+      "en": "Named versions",
+      "ru": "Именованные версии"
+    },
+    {
+      "zh": "收藏资料",
+      "en": "Favorite resource",
+      "ru": "В избранное"
+    },
+    {
+      "zh": "公共资料",
+      "en": "Public resources",
+      "ru": "Общие материалы"
+    },
+    {
+      "zh": "知识条目",
+      "en": "Knowledge entry",
+      "ru": "Статья базы знаний"
+    },
+    {
+      "zh": "引用到AI提问",
+      "en": "Cite in AI question",
+      "ru": "Добавить ссылку в вопрос ИИ"
+    },
+    {
+      "zh": "复制引用",
+      "en": "Copy citation",
+      "ru": "Скопировать ссылку"
+    },
+    {
+      "zh": "创建教学团队",
+      "en": "Create teaching team",
+      "ru": "Создать учебную команду"
+    },
+    {
+      "zh": "团队名称",
+      "en": "Team name",
+      "ru": "Название команды"
+    },
+    {
+      "zh": "演示学生",
+      "en": "Demo student",
+      "ru": "Демонстрационный студент"
+    },
+    {
+      "zh": "创建邀请",
+      "en": "Create invitation",
+      "ru": "Создать приглашение"
+    },
+    {
+      "zh": "编辑训练任务",
+      "en": "Edit learning task",
+      "ru": "Редактировать учебное задание"
+    },
+    {
+      "zh": "任务标题",
+      "en": "Task title",
+      "ru": "Название задания"
+    },
+    {
+      "zh": "所属团队",
+      "en": "Assigned team",
+      "ru": "Команда задания"
+    },
+    {
+      "zh": "截止时间（北京时间）",
+      "en": "Deadline (Beijing time)",
+      "ru": "Срок (пекинское время)"
+    },
+    {
+      "zh": "补交规则",
+      "en": "Late submission rule",
+      "ru": "Правило поздней сдачи"
+    },
+    {
+      "zh": "允许补交并标记",
+      "en": "Allow and mark late",
+      "ru": "Разрешить и отметить просрочку"
+    },
+    {
+      "zh": "截止后拒收",
+      "en": "Reject after deadline",
+      "ru": "Не принимать после срока"
+    },
+    {
+      "zh": "变更原因（将通知学生）",
+      "en": "Reason for change (students notified)",
+      "ru": "Причина изменения (студенты получат уведомление)"
+    },
+    {
+      "zh": "保存并预览",
+      "en": "Save & preview",
+      "ru": "Сохранить и проверить"
+    },
+    {
+      "zh": "新建训练任务",
+      "en": "New learning task",
+      "ru": "Новое учебное задание"
+    },
+    {
+      "zh": "计划标题",
+      "en": "Plan title",
+      "ru": "Название плана"
+    },
+    {
+      "zh": "跟进条件",
+      "en": "Follow-up condition",
+      "ru": "Условие контроля"
+    },
+    {
+      "zh": "未提交",
+      "en": "Not submitted",
+      "ru": "Не сдано"
+    },
+    {
+      "zh": "待修改",
+      "en": "Revision pending",
+      "ru": "Ожидает доработки"
+    },
+    {
+      "zh": "临近截止",
+      "en": "Due soon",
+      "ru": "Скоро срок"
+    },
+    {
+      "zh": "保存计划",
+      "en": "Save plan",
+      "ru": "Сохранить план"
+    },
+    {
+      "zh": "主题",
+      "en": "Subject",
+      "ru": "Тема"
+    },
+    {
+      "zh": "提醒正文",
+      "en": "Reminder body",
+      "ru": "Текст напоминания"
+    },
+    {
+      "zh": "演示收件人",
+      "en": "Demo recipients",
+      "ru": "Демонстрационные получатели"
+    },
+    {
+      "zh": "已验证",
+      "en": "Verified",
+      "ru": "Подтверждено"
+    },
+    {
+      "zh": "未验证",
+      "en": "Unverified",
+      "ru": "Не подтверждено"
+    },
+    {
+      "zh": "同意接收",
+      "en": "Opted in",
+      "ru": "Согласие получено"
+    },
+    {
+      "zh": "未同意接收",
+      "en": "Not opted in",
+      "ru": "Согласия нет"
+    },
+    {
+      "zh": "执行方式",
+      "en": "Execution mode",
+      "ru": "Способ выполнения"
+    },
+    {
+      "zh": "手动确认后模拟发送",
+      "en": "Simulate sending after confirmation",
+      "ru": "Смоделировать отправку после подтверждения"
+    },
+    {
+      "zh": "计划模拟发送",
+      "en": "Schedule simulated sending",
+      "ru": "Запланировать демонстрационную отправку"
+    },
+    {
+      "zh": "计划时间（北京时间）",
+      "en": "Scheduled time (Beijing time)",
+      "ru": "Время выполнения (пекинское время)"
+    },
+    {
+      "zh": "预览收件结果",
+      "en": "Preview recipient results",
+      "ru": "Проверить результаты по получателям"
+    },
+    {
+      "zh": "添加教师个人资料",
+      "en": "Add teacher-private resource",
+      "ru": "Добавить личный материал преподавателя"
+    },
+    {
+      "zh": "资料名称",
+      "en": "Resource name",
+      "ru": "Название материала"
+    },
+    {
+      "zh": "来源",
+      "en": "Source",
+      "ru": "Источник"
+    },
+    {
+      "zh": "演示正文",
+      "en": "Demo text",
+      "ru": "Демонстрационный текст"
+    },
+    {
+      "zh": "保存教学资料",
+      "en": "Save teaching resource",
+      "ru": "Сохранить учебный материал"
+    },
+    {
+      "zh": "教师演示运行",
+      "en": "Teacher demo run",
+      "ru": "Демозапуск преподавателя"
+    },
+    {
+      "zh": "运行名称",
+      "en": "Run name",
+      "ru": "Название запуска"
+    },
+    {
+      "zh": "代码（不实际执行）",
+      "en": "Code (not executed)",
+      "ru": "Код (не выполняется)"
+    },
+    {
+      "zh": "演示状态",
+      "en": "Demo state",
+      "ru": "Демонстрационное состояние"
+    },
+    {
+      "zh": "成功",
+      "en": "Success",
+      "ru": "Успешно"
+    },
+    {
+      "zh": "失败",
+      "en": "Failed",
+      "ru": "Ошибка"
+    },
+    {
+      "zh": "生成演示记录",
+      "en": "Create demo record",
+      "ru": "Создать демонстрационную запись"
+    },
+    {
+      "zh": "教师演示解析",
+      "en": "Teacher parsing demo",
+      "ru": "Демонстрация разбора для преподавателя"
+    },
+    {
+      "zh": "文件名称",
+      "en": "File name",
+      "ru": "Имя файла"
+    },
+    {
+      "zh": "结果",
+      "en": "Result",
+      "ru": "Результат"
+    },
+    {
+      "zh": "保存演示记录",
+      "en": "Save demo record",
+      "ru": "Сохранить демонстрационную запись"
+    },
+    {
+      "zh": "创建建模项目",
+      "en": "Create modeling project",
+      "ru": "Создать проект моделирования"
+    },
+    {
+      "zh": "项目名称",
+      "en": "Project name",
+      "ru": "Название проекта"
+    },
+    {
+      "zh": "问题描述（可后补）",
+      "en": "Problem description (optional)",
+      "ru": "Описание задачи (можно добавить позже)"
+    },
+    {
+      "zh": "保存项目",
+      "en": "Save project",
+      "ru": "Сохранить проект"
+    },
+    {
+      "zh": "竞赛名称",
+      "en": "Competition name",
+      "ru": "Название соревнования"
+    },
+    {
+      "zh": "参与方式",
+      "en": "Participation mode",
+      "ru": "Формат участия"
+    },
+    {
+      "zh": "时长（分钟）",
+      "en": "Duration (minutes)",
+      "ru": "Продолжительность (минуты)"
+    },
+    {
+      "zh": "AI规则",
+      "en": "AI policy",
+      "ru": "Правила использования ИИ"
+    },
+    {
+      "zh": "关闭AI",
+      "en": "AI disabled",
+      "ru": "ИИ отключён"
+    },
+    {
+      "zh": "仅基础知识查询",
+      "en": "Basic knowledge only",
+      "ru": "Только базовые знания"
+    },
+    {
+      "zh": "开放辅助",
+      "en": "AI assistance allowed",
+      "ru": "Помощь ИИ разрешена"
+    },
+    {
+      "zh": "题目、要求与规则",
+      "en": "Problem, requirements & rules",
+      "ru": "Задача, требования и правила"
+    },
+    {
+      "zh": "创建竞赛",
+      "en": "Create competition",
+      "ru": "Создать соревнование"
+    },
+    {
+      "zh": "论文名称",
+      "en": "Paper title",
+      "ru": "Название статьи"
+    },
+    {
+      "zh": "原件名称",
+      "en": "Original file name",
+      "ru": "Имя оригинального файла"
+    },
+    {
+      "zh": "演示解析状态",
+      "en": "Demo parsing state",
+      "ru": "Состояние демонстрационного разбора"
+    },
+    {
+      "zh": "解析成功（示例正文）",
+      "en": "Parsing success (sample text)",
+      "ru": "Успешный разбор (пример текста)"
+    },
+    {
+      "zh": "解析失败",
+      "en": "Parsing failed",
+      "ru": "Ошибка разбора"
+    },
+    {
+      "zh": "添加论文",
+      "en": "Add paper",
+      "ru": "Добавить статью"
+    },
+    {
+      "zh": "新建写作文稿",
+      "en": "New writing draft",
+      "ru": "Создать текст"
+    },
+    {
+      "zh": "文稿标题",
+      "en": "Draft title",
+      "ru": "Название текста"
+    },
+    {
+      "zh": "正文语言",
+      "en": "Text language",
+      "ru": "Язык текста"
+    },
+    {
+      "zh": "初始正文（可空）",
+      "en": "Initial text (optional)",
+      "ru": "Начальный текст (необязательно)"
+    },
+    {
+      "zh": "创建文稿",
+      "en": "Create draft",
+      "ru": "Создать текст"
+    },
+    {
+      "zh": "添加个人演示资料",
+      "en": "Add personal demo resource",
+      "ru": "Добавить личный демоматериал"
+    },
+    {
+      "zh": "名称",
+      "en": "Name",
+      "ru": "Название"
+    },
+    {
+      "zh": "类别",
+      "en": "Category",
+      "ru": "Категория"
+    },
+    {
+      "zh": "论文写作",
+      "en": "Paper writing",
+      "ru": "Написание статей"
+    },
+    {
+      "zh": "来源说明",
+      "en": "Source description",
+      "ru": "Описание источника"
+    },
+    {
+      "zh": "添加资料",
+      "en": "Add resource",
+      "ru": "Добавить материал"
+    },
+    {
+      "zh": "演示环境",
+      "en": "Demo environment",
+      "ru": "Демонстрационная среда"
+    },
+    {
+      "zh": "Python · 演示环境",
+      "en": "Python · Demo environment",
+      "ru": "Python · Демонстрационная среда"
+    },
+    {
+      "zh": "代码（不会执行）",
+      "en": "Code (will not execute)",
+      "ru": "Код (не будет выполнен)"
+    },
+    {
+      "zh": "演示结果",
+      "en": "Demo result",
+      "ru": "Демонстрационный результат"
+    },
+    {
+      "zh": "成功结果",
+      "en": "Successful result",
+      "ru": "Успешный результат"
+    },
+    {
+      "zh": "运行错误",
+      "en": "Runtime error",
+      "ru": "Ошибка выполнения"
+    },
+    {
+      "zh": "开始演示任务",
+      "en": "Start demo task",
+      "ru": "Запустить демозадачу"
+    },
+    {
+      "zh": "类型",
+      "en": "Type",
+      "ru": "Тип"
+    },
+    {
+      "zh": "文档",
+      "en": "Document",
+      "ru": "Документ"
+    },
+    {
+      "zh": "图片OCR",
+      "en": "Image OCR",
+      "ru": "OCR изображения"
+    },
+    {
+      "zh": "音频转写",
+      "en": "Audio transcription",
+      "ru": "Расшифровка аудио"
+    },
+    {
+      "zh": "完成",
+      "en": "Complete",
+      "ru": "Готово"
+    },
+    {
+      "zh": "开始演示解析",
+      "en": "Start demo parsing",
+      "ru": "Начать демонстрационный разбор"
+    },
+    {
+      "zh": "保存",
+      "en": "Save",
+      "ru": "Сохранить"
+    },
+    {
+      "zh": "重试",
+      "en": "Retry",
+      "ru": "Повторить"
+    },
+    {
+      "zh": "返回首页",
+      "en": "Back to home",
+      "ru": "На главную"
+    },
+    {
+      "zh": "返回列表",
+      "en": "Back to list",
+      "ru": "К списку"
+    },
+    {
+      "zh": "未设置",
+      "en": "Not set",
+      "ru": "Не задано"
+    },
+    {
+      "zh": "补交",
+      "en": "Late submission",
+      "ru": "Поздняя сдача"
+    },
+    {
+      "zh": "未填写",
+      "en": "Not filled",
+      "ru": "Не заполнено"
+    },
+    {
+      "zh": "已取消",
+      "en": "Cancelled",
+      "ru": "Отменено"
+    },
+    {
+      "zh": "处理中",
+      "en": "Processing",
+      "ru": "Обработка"
+    },
+    {
+      "zh": "排队中",
+      "en": "Queued",
+      "ru": "В очереди"
+    },
+    {
+      "zh": "运行中",
+      "en": "Running",
+      "ru": "Выполняется"
+    },
+    {
+      "zh": "演示成功",
+      "en": "Demo success",
+      "ru": "Успешная демонстрация"
+    },
+    {
+      "zh": "演示失败",
+      "en": "Demo failed",
+      "ru": "Демонстрационная ошибка"
+    },
+    {
+      "zh": "重试演示解析",
+      "en": "Retry demo parsing",
+      "ru": "Повторить демонстрационный разбор"
+    },
+    {
+      "zh": "演示解析完成",
+      "en": "Demo parsing complete",
+      "ru": "Демонстрационный разбор завершён"
+    },
+    {
+      "zh": "下载演示结果",
+      "en": "Download demo result",
+      "ru": "Скачать деморезультат"
+    },
+    {
+      "zh": "查看结果",
+      "en": "View result",
+      "ru": "Открыть результат"
+    },
+    {
+      "zh": "查看来源",
+      "en": "View source",
+      "ru": "Открыть источник"
+    },
+    {
+      "zh": "共享到团队",
+      "en": "Share with team",
+      "ru": "Поделиться с командой"
+    },
+    {
+      "zh": "确认共享",
+      "en": "Confirm sharing",
+      "ru": "Подтвердить доступ"
+    },
+    {
+      "zh": "接受团队邀请",
+      "en": "Accept team invitation",
+      "ru": "Принять приглашение в команду"
+    },
+    {
+      "zh": "团队邀请",
+      "en": "Team invitations",
+      "ru": "Приглашения в команды"
+    },
+    {
+      "zh": "暂无访问权限",
+      "en": "Access unavailable",
+      "ru": "Нет доступа"
+    },
+    {
+      "zh": "记录不可访问",
+      "en": "Record unavailable",
+      "ru": "Запись недоступна"
+    },
+    {
+      "zh": "页面不存在",
+      "en": "Page not found",
+      "ru": "Страница не найдена"
+    },
+    {
+      "zh": "返回正常演示",
+      "en": "Return to normal demo",
+      "ru": "Вернуться к обычной демонстрации"
+    },
+    {
+      "zh": "需要验证教师身份",
+      "en": "Teacher verification required",
+      "ru": "Требуется проверка преподавателя"
+    },
+    {
+      "zh": "已过截止，需跟进",
+      "en": "Overdue; follow up",
+      "ru": "Срок прошёл; нужен контроль"
+    },
+    {
+      "zh": "接近截止",
+      "en": "Approaching deadline",
+      "ru": "Приближается срок"
+    },
+    {
+      "zh": "收到修改后重交",
+      "en": "Revised work resubmitted",
+      "ru": "Доработанная работа сдана повторно"
+    },
+    {
+      "zh": "按等待时间处理",
+      "en": "Process by waiting time",
+      "ru": "Обрабатывать по времени ожидания"
+    },
+    {
+      "zh": "预览反馈",
+      "en": "Preview feedback",
+      "ru": "Предпросмотр отзыва"
+    },
+    {
+      "zh": "确认发布反馈",
+      "en": "Publish feedback",
+      "ru": "Опубликовать отзыв"
+    },
+    {
+      "zh": "确认发布并通知",
+      "en": "Publish & notify",
+      "ru": "Опубликовать и уведомить"
+    },
+    {
+      "zh": "返回修改",
+      "en": "Back to editing",
+      "ru": "Вернуться к редактированию"
+    },
+    {
+      "zh": "返回检查",
+      "en": "Review again",
+      "ru": "Проверить ещё раз"
+    },
+    {
+      "zh": "确认发布后变更",
+      "en": "Confirm published-task changes",
+      "ru": "Подтвердить изменения задания"
+    },
+    {
+      "zh": "确认变更并通知",
+      "en": "Confirm changes & notify",
+      "ru": "Подтвердить изменения и уведомить"
+    },
+    {
+      "zh": "学生视角发布预览",
+      "en": "Student-view preview",
+      "ru": "Предпросмотр для студента"
+    },
+    {
+      "zh": "确认本批导入",
+      "en": "Import this batch",
+      "ru": "Импортировать пакет"
+    },
+    {
+      "zh": "取消预览",
+      "en": "Cancel preview",
+      "ru": "Отменить предпросмотр"
+    },
+    {
+      "zh": "导入预览",
+      "en": "Import preview",
+      "ru": "Предпросмотр импорта"
+    },
+    {
+      "zh": "确认移出团队",
+      "en": "Confirm removal from team",
+      "ru": "Подтвердить удаление из команды"
+    },
+    {
+      "zh": "确认移出",
+      "en": "Remove member",
+      "ru": "Удалить участника"
+    },
+    {
+      "zh": "未知学生",
+      "en": "Unknown student",
+      "ru": "Неизвестный студент"
+    },
+    {
+      "zh": "没有匹配提交",
+      "en": "No matching submissions",
+      "ru": "Нет подходящих работ"
+    },
+    {
+      "zh": "没有附件",
+      "en": "No attachments",
+      "ru": "Нет вложений"
+    },
+    {
+      "zh": "尚未发布教师反馈",
+      "en": "No teacher feedback published",
+      "ru": "Отзыв ещё не опубликован"
+    },
+    {
+      "zh": "仅任务记录",
+      "en": "Task records only",
+      "ru": "Только записи по заданиям"
+    },
+    {
+      "zh": "已计划",
+      "en": "Scheduled",
+      "ru": "Запланировано"
+    },
+    {
+      "zh": "已处理",
+      "en": "Processed",
+      "ru": "Обработано"
+    },
+    {
+      "zh": "执行失败",
+      "en": "Execution failed",
+      "ru": "Ошибка выполнения"
+    },
+    {
+      "zh": "模拟发送成功",
+      "en": "Simulated sending succeeded",
+      "ru": "Демонстрационная отправка выполнена"
+    },
+    {
+      "zh": "已跳过",
+      "en": "Skipped",
+      "ru": "Пропущено"
+    },
+    {
+      "zh": "取消计划",
+      "en": "Cancel schedule",
+      "ru": "Отменить план"
+    },
+    {
+      "zh": "关联评阅",
+      "en": "Linked review",
+      "ru": "Связанная проверка"
+    },
+    {
+      "zh": "提交附件快照",
+      "en": "Submitted attachment snapshot",
+      "ru": "Снимок сданного вложения"
+    },
+    {
+      "zh": "进入对应提交与反馈",
+      "en": "Open linked submission & feedback",
+      "ru": "Открыть связанную работу и отзыв"
+    },
+    {
+      "zh": "返回论文评阅",
+      "en": "Back to paper review",
+      "ru": "К проверке статей"
+    },
+    {
+      "zh": "阅读提交快照",
+      "en": "Read submitted snapshot",
+      "ru": "Прочитать сданный снимок"
+    },
+    {
+      "zh": "确认共享到团队",
+      "en": "Confirm team sharing",
+      "ru": "Подтвердить доступ команды"
+    },
+    {
+      "zh": "目标团队",
+      "en": "Target team",
+      "ru": "Команда-получатель"
+    },
+    {
+      "zh": "来源引用",
+      "en": "Source citation",
+      "ru": "Ссылка на источник"
+    },
+    {
+      "zh": "无匹配来源",
+      "en": "No matching sources",
+      "ru": "Подходящих источников нет"
+    },
+    {
+      "zh": "数学建模协会会标原图",
+      "en": "Original association logo",
+      "ru": "Оригинальная эмблема ассоциации"
+    },
+    {
+      "zh": "访问权限状态",
+      "en": "Access state",
+      "ru": "Состояние доступа"
+    },
+    {
+      "zh": "加载失败状态",
+      "en": "Loading-failure state",
+      "ru": "Ошибка загрузки"
+    },
+    {
+      "zh": "暂时无法加载",
+      "en": "Temporarily unable to load",
+      "ru": "Временно не удаётся загрузить"
+    },
+    {
+      "zh": "重试加载",
+      "en": "Retry loading",
+      "ru": "Повторить загрузку"
+    },
+    {
+      "zh": "正在加载",
+      "en": "Loading",
+      "ru": "Загрузка"
+    },
+    {
+      "zh": "正在加载演示内容…",
+      "en": "Loading demo content…",
+      "ru": "Загрузка демосодержимого…"
+    },
+    {
+      "zh": "完成本次加载演示",
+      "en": "Finish loading demo",
+      "ru": "Завершить демонстрацию загрузки"
+    },
+    {
+      "zh": "空内容状态",
+      "en": "Empty-content state",
+      "ru": "Пустое состояние"
+    },
+    {
+      "zh": "这里暂时没有内容",
+      "en": "No content here yet",
+      "ru": "Здесь пока нет содержимого"
+    },
+    {
+      "zh": "返回正常内容",
+      "en": "Return to content",
+      "ru": "Вернуться к содержимому"
+    },
+    {
+      "zh": "记录访问状态",
+      "en": "Record access state",
+      "ru": "Доступ к записи"
+    },
+    {
+      "zh": "记录不存在或已不可访问",
+      "en": "Record missing or inaccessible",
+      "ru": "Запись отсутствует или недоступна"
+    },
+    {
+      "zh": "登录后继续",
+      "en": "Sign in to continue",
+      "ru": "Войдите, чтобы продолжить"
+    },
+    {
+      "zh": "需要先登录演示账号",
+      "en": "Demo sign-in required",
+      "ru": "Требуется вход в демоаккаунт"
+    },
+    {
+      "zh": "进入演示登录",
+      "en": "Open demo sign-in",
+      "ru": "Открыть демонстрационный вход"
+    },
+    {
+      "zh": "访客 · 尚未登录",
+      "en": "Guest · Signed out",
+      "ru": "Гость · Вход не выполнен"
+    },
+    {
+      "zh": "账号流程",
+      "en": "Account flow",
+      "ru": "Сценарий аккаунта"
+    },
+    {
+      "zh": "找不到这个入口",
+      "en": "Page unavailable",
+      "ru": "Страница недоступна"
+    },
+    {
+      "zh": "个人备注",
+      "en": "Private note",
+      "ru": "Личная заметка"
+    },
+    {
+      "zh": "仅自己可见",
+      "en": "Only visible to you",
+      "ru": "Видно только вам"
+    },
+    {
+      "zh": "保存备注",
+      "en": "Save note",
+      "ru": "Сохранить заметку"
+    },
+    {
+      "zh": "依据本版本教师反馈",
+      "en": "Based on this version's feedback",
+      "ru": "По отзыву к этой версии"
+    },
+    {
+      "zh": "取消运行",
+      "en": "Cancel run",
+      "ru": "Отменить запуск"
+    },
+    {
+      "zh": "查看日志与结果",
+      "en": "View logs & results",
+      "ru": "Открыть журнал и результаты"
+    },
+    {
+      "zh": "返回运行记录",
+      "en": "Back to runs",
+      "ru": "К списку запусков"
+    },
+    {
+      "zh": "运行状态",
+      "en": "Run state",
+      "ru": "Состояние запуска"
+    },
+    {
+      "zh": "排队",
+      "en": "Queued",
+      "ru": "В очереди"
+    },
+    {
+      "zh": "复制代码重新配置",
+      "en": "Copy code & reconfigure",
+      "ru": "Скопировать код и настроить заново"
+    },
+    {
+      "zh": "返回解析任务",
+      "en": "Back to parsing tasks",
+      "ru": "К задачам разбора"
+    },
+    {
+      "zh": "解析结果",
+      "en": "Parsing result",
+      "ru": "Результат разбора"
+    },
+    {
+      "zh": "演示结果就绪",
+      "en": "Demo result ready",
+      "ru": "Демонстрационный результат готов"
+    },
+    {
+      "zh": "解析失败，原件保留",
+      "en": "Parsing failed; original retained",
+      "ru": "Разбор не удался; оригинал сохранён"
+    },
+    {
+      "zh": "没有找到匹配来源",
+      "en": "No matching sources found",
+      "ru": "Подходящих источников не найдено"
+    },
+    {
+      "zh": "阅读原条目",
+      "en": "Read original entry",
+      "ru": "Прочитать исходную запись"
+    },
+    {
+      "zh": "引用到AI问题",
+      "en": "Cite in AI question",
+      "ru": "Добавить ссылку в вопрос ИИ"
+    },
+    {
+      "zh": "没有匹配资料",
+      "en": "No matching resources",
+      "ru": "Нет подходящих материалов"
+    },
+    {
+      "zh": "清除筛选",
+      "en": "Clear filters",
+      "ru": "Сбросить фильтры"
+    },
+    {
+      "zh": "没有匹配通知",
+      "en": "No matching notifications",
+      "ru": "Нет подходящих уведомлений"
+    },
+    {
+      "zh": "去训练中心",
+      "en": "Open training center",
+      "ru": "Открыть центр практики"
+    },
+    {
+      "zh": "暂无匹配提交",
+      "en": "No matching submissions",
+      "ru": "Нет подходящих работ"
+    },
+    {
+      "zh": "未填写修改说明",
+      "en": "No revision summary",
+      "ru": "Описание изменений не заполнено"
+    },
+    {
+      "zh": "已读",
+      "en": "Read",
+      "ru": "Прочитано"
+    },
+    {
+      "zh": "未读",
+      "en": "Unread",
+      "ru": "Не прочитано"
+    },
+    {
+      "zh": "标为已读",
+      "en": "Mark as read",
+      "ru": "Отметить прочитанным"
+    },
+    {
+      "zh": "前往关联内容",
+      "en": "Open linked content",
+      "ru": "Открыть связанное содержимое"
+    },
+    {
+      "zh": "团队通知详情",
+      "en": "Notification details",
+      "ru": "Описание уведомления"
+    },
+    {
+      "zh": "围绕所带团队的任务、提交和反馈安排工作。",
+      "en": "Organize work around your teams' tasks, submissions and feedback.",
+      "ru": "Организуйте работу с заданиями, работами и отзывами своих команд."
+    },
+    {
+      "zh": "只含所带团队的任务相关记录。优先顺序：逾期、临近截止、重交、普通待评阅；同类按等待时间。",
+      "en": "Only your teams' task records. Priority: overdue, due soon, resubmissions, then other reviews; oldest first within each group.",
+      "ru": "Только задания ваших команд. Приоритет: просроченные, близкие к сроку, повторные работы, остальные проверки; внутри группы — по времени ожидания."
+    },
+    {
+      "zh": "只管理本人有权团队；加入团队不会自动公开个人项目或AI对话。",
+      "en": "Manage authorized teams only. Joining never shares personal projects or AI chats automatically.",
+      "ru": "Управляйте только доступными командами. Вступление не открывает личные проекты и диалоги с ИИ."
+    },
+    {
+      "zh": "草稿可编辑；发布后的变化先确认、通知并保留历史。",
+      "en": "Edit drafts freely. Published changes require confirmation, notification and history.",
+      "ru": "Черновики можно редактировать. Изменения после публикации подтверждаются, сохраняются и сопровождаются уведомлением."
+    },
+    {
+      "zh": "按学生、任务和版本评阅；草稿不会提前出现在学生端。",
+      "en": "Review by student, task and version. Review drafts remain private.",
+      "ru": "Проверяйте по студентам, заданиям и версиям. Черновики отзывов студентам недоступны."
+    },
+    {
+      "zh": "只依据团队任务的提交、版本、反馈和快照阶段记录。",
+      "en": "Based only on team task submissions, versions, feedback and submitted stages.",
+      "ru": "Только сданные работы, версии, отзывы и снимки этапов командных заданий."
+    },
+    {
+      "zh": "没有学习时长、登录频率或私人阅读统计；缺少记录不判定学生懈怠。",
+      "en": "No study-time, login or private reading statistics. Missing records do not imply poor effort.",
+      "ru": "Время учёбы, входы и личное чтение не учитываются. Отсутствие записей не означает недостаток старания."
+    },
+    {
+      "zh": "手动确认或计划执行，执行前再次校验权限与接收意愿。",
+      "en": "Confirm now or schedule; permissions and consent are checked again at execution.",
+      "ru": "Подтвердите отправку или задайте время; при выполнении доступ и согласие проверяются снова."
+    },
+    {
+      "zh": "所有发送均为本机模拟，不连接真实邮件服务。关闭页面后没有后台进程；返回原型时才重新检查到期计划。",
+      "en": "Sending is simulated locally. Nothing runs while the page is closed; due plans are checked on return.",
+      "ru": "Отправка моделируется локально. После закрытия страницы фоновой работы нет; планы проверяются при возвращении."
+    },
+    {
+      "zh": "先选择任务和收件对象，预览后再确认。",
+      "en": "Choose a task and recipients, preview, then confirm.",
+      "ru": "Выберите задание и получателей, проверьте результат и подтвердите."
+    },
+    {
+      "zh": "展示来源与任务记录，不推断使用行为导致成绩变化。",
+      "en": "Show sources and task records without inferring the causes of grade changes.",
+      "ru": "Источники и записи по заданиям без выводов о причинах изменения оценок."
+    },
+    {
+      "zh": "暂无成绩，导入后显示；不会生成虚构分数。",
+      "en": "No grades yet. Import entered scores to display them.",
+      "ru": "Оценок пока нет. После импорта будут показаны введённые баллы."
+    },
+    {
+      "zh": "统计按学生、考核、日期和来源区分。不包含学习时长或私人对话。",
+      "en": "Separate records by student, assessment, date and source. No study time or private chats.",
+      "ru": "Записи разделяются по студенту, работе, дате и источнику. Время учёбы и личные диалоги не учитываются."
+    },
+    {
+      "zh": "六列CSV，先预览与校验，冲突阻止整批导入。",
+      "en": "Six-column CSV. Preview first; a conflict blocks the entire batch.",
+      "ru": "CSV из шести столбцов. Сначала проверка; конфликт блокирует весь пакет."
+    },
+    {
+      "zh": "列名与顺序：email,assessment,assessmentDate,score,maxScore,source。日期YYYY-MM-DD；最多1000行、1MB。",
+      "en": "Columns: email,assessment,assessmentDate,score,maxScore,source. Date: YYYY-MM-DD. Limit: 1,000 rows, 1 MB.",
+      "ru": "Столбцы: email,assessment,assessmentDate,score,maxScore,source. Дата: YYYY-MM-DD. Не более 1000 строк и 1 МБ."
+    },
+    {
+      "zh": "仅查看学生主动提交的论文或文稿快照，不读取私人原件。",
+      "en": "Only explicitly submitted paper or draft snapshots are visible, never private originals.",
+      "ru": "Доступны только сданные снимки статей и текстов, без личных оригиналов."
+    },
+    {
+      "zh": "学生把论文或文稿关联到项目并提交后，才能在这里查看。",
+      "en": "Papers appear after a student attaches them to a project and submits it.",
+      "ru": "Статья появится после того, как студент приложит её к проекту и сдаст работу."
+    },
+    {
+      "zh": "区分公共、团队与教师个人资料；公共维护仍属于管理员。",
+      "en": "Separate public, team and teacher-private resources. Administrators maintain public resources.",
+      "ru": "Общие, командные и личные материалы преподавателя разделены. Общие материалы поддерживает администратор."
+    },
+    {
+      "zh": "限本人有权团队，消息可关联任务。",
+      "en": "Chat within authorized teams, with task context.",
+      "ru": "Общайтесь в доступных командах с привязкой к заданиям."
+    },
+    {
+      "zh": "教师自己的演示运行记录，不读取学生私人代码。",
+      "en": "Teacher-owned demo runs; student-private code is never read.",
+      "ru": "Демонстрационные запуски преподавателя. Личный код студентов недоступен."
+    },
+    {
+      "zh": "只模拟运行，不实际执行输入的代码。",
+      "en": "Runs are simulated; entered code is never executed.",
+      "ru": "Запуск моделируется; введённый код не выполняется."
+    },
+    {
+      "zh": "教师自有资料的解析状态演示，不读取真实文件。",
+      "en": "Simulated parsing of teacher resources, without reading real files.",
+      "ru": "Демонстрация разбора материалов преподавателя без чтения реальных файлов."
+    },
+    {
+      "zh": "文档、图片或音频结果均使用明确标记的演示。",
+      "en": "Document, image and audio results are clearly marked demos.",
+      "ru": "Результаты для документов, изображений и аудио явно помечены как демонстрационные."
+    },
+    {
+      "zh": "只检索教师有权访问的演示资料，不扩大权限。",
+      "en": "Search authorized demo resources only; access is never expanded.",
+      "ru": "Поиск только в доступных демоматериалах, без расширения прав."
+    },
+    {
+      "zh": "不生成虚构引用，不宣称向量检索。",
+      "en": "No invented citations or claimed vector search.",
+      "ru": "Без вымышленных ссылок и заявлений о векторном поиске."
+    },
+    {
+      "zh": "教师身份、邮箱验证与显示偏好。",
+      "en": "Teacher identity, email verification and display preferences.",
+      "ru": "Профиль преподавателя, проверка почты и настройки отображения."
+    },
+    {
+      "zh": "只允许@example.invalid演示邮箱；不读取或修改真实教师账号。",
+      "en": "Only @example.invalid addresses. Real teacher accounts are not accessed.",
+      "ru": "Только адреса @example.invalid. Реальные аккаунты преподавателей не используются."
+    },
+    {
+      "zh": "仅管理本人有权团队，不查看学生个人项目、AI对话、修改清单或私人备注。",
+      "en": "Manage authorized teams only. Student projects, AI chats, personal checklists and notes remain private.",
+      "ru": "Управляйте только доступными командами. Личные проекты, диалоги с ИИ, списки исправлений и заметки студентов недоступны."
+    },
+    {
+      "zh": "从上次的位置继续，或从一个新问题开始。",
+      "en": "Pick up where you left off, or begin with a new question.",
+      "ru": "Продолжите с того же места или начните с нового вопроса."
+    },
+    {
+      "zh": "学生自勾完成不代表教师认可。",
+      "en": "Your completion checks do not mean teacher approval.",
+      "ru": "Отметка студента о выполнении не означает одобрения преподавателя."
+    },
+    {
+      "zh": "分模式获得方向提示，保留来源与对话 →",
+      "en": "Explore guided modes with sources and chat history →",
+      "ru": "Выберите режим подсказок с источниками и историей диалога →"
+    },
+    {
+      "zh": "阅读原件，定位批注与关联文稿 →",
+      "en": "Read originals, locate annotations and linked drafts →",
+      "ru": "Читайте оригиналы, находите замечания и связанные тексты →"
+    },
+    {
+      "zh": "查看公共、个人和团队资料 →",
+      "en": "Browse public, personal and team resources →",
+      "ru": "Просматривайте общие, личные и командные материалы →"
+    },
+    {
+      "zh": "区分教师任务与个人练习，按要求开始、提交和复盘。",
+      "en": "Separate teacher tasks from personal practice. Start, submit and reflect on each.",
+      "ru": "Разделяйте задания преподавателя и личную практику. Выполняйте, сдавайте и анализируйте результат."
+    },
+    {
+      "zh": "按任务和版本保留成果、反馈与修改记录。",
+      "en": "Keep results, feedback and revisions by task and version.",
+      "ru": "Сохраняйте результаты, отзывы и доработки по заданиям и версиям."
+    },
+    {
+      "zh": "个人与团队限时训练，明确分工、规则与成果。",
+      "en": "Timed individual and team practice with clear roles, rules and outcomes.",
+      "ru": "Практика на время для одного участника или команды с ролями, правилами и результатами."
+    },
+    {
+      "zh": "队长配置规则与分工；成员更新进度并参与协作。",
+      "en": "The captain sets rules and assignments; members update progress and collaborate.",
+      "ru": "Капитан задаёт правила и распределяет задачи; участники обновляют прогресс и работают вместе."
+    },
+    {
+      "zh": "展示实际记录与反馈，不用时长或提交次数推断能力。",
+      "en": "Show recorded work and feedback without inferring ability from time or submission counts.",
+      "ru": "Показывайте записи и отзывы без оценки способностей по времени или числу работ."
+    },
+    {
+      "zh": "教师只查看所带团队的任务提交、版本、反馈处理与提交快照中的阶段记录；不统计学习时长。",
+      "en": "Teachers see only their teams' task submissions, versions, feedback and submitted stages; study time is not tracked.",
+      "ru": "Преподаватели видят только работы своих команд, версии, отзывы и сданные этапы; время учёбы не учитывается."
+    },
+    {
+      "zh": "目前没有经长期验证的能力画像。个人完成标记和论文自评不会自动生成能力排名。",
+      "en": "No validated ability profile is available. Completion marks and paper self-assessments do not generate rankings.",
+      "ru": "Подтверждённого профиля способностей пока нет. Отметки о выполнении и самооценка статей не формируют рейтинг."
+    },
+    {
+      "zh": "这些仅是演示操作记录，不是生产环境的学生行为统计。",
+      "en": "These are demo actions, not production student-behavior statistics.",
+      "ru": "Это действия в демо, а не статистика поведения студентов в рабочей системе."
+    },
+    {
+      "zh": "八阶段记录项目过程，个人内容默认私有。",
+      "en": "Record eight project stages. Personal content is private by default.",
+      "ru": "Фиксируйте восемь этапов проекта. Личные материалы по умолчанию закрыты."
+    },
+    {
+      "zh": "私人对话默认不向教师共享。真实模型调用不在本原型中执行。",
+      "en": "Private chats are not shared with teachers. This prototype does not call a live AI model.",
+      "ru": "Личные диалоги преподавателю недоступны. Прототип не обращается к реальной модели ИИ."
+    },
+    {
+      "zh": "支持保存问题、模拟等待／停止／失败与重试。演示回复不会被当作真实模型输出。",
+      "en": "Save questions and try waiting, stopping, failure and retry states. Replies are demos, not live AI output.",
+      "ru": "Сохраняйте вопросы, проверяйте ожидание, остановку, ошибку и повтор. Ответы демонстрационные, а не вывод реального ИИ."
+    },
+    {
+      "zh": "阅读原文、记录依据，关联写作文稿与训练提交。",
+      "en": "Read originals, record evidence and link drafts to task submissions.",
+      "ru": "Читайте оригиналы, фиксируйте основания и связывайте тексты со сданными работами."
+    },
+    {
+      "zh": "文稿语言与界面语言分别设置；中文、英文或俄文内容不会被自动覆盖。",
+      "en": "Document and interface languages are independent. Chinese, English or Russian text is never overwritten automatically.",
+      "ru": "Языки текста и интерфейса независимы. Китайский, английский и русский текст автоматически не заменяется."
+    },
+    {
+      "zh": "区分公共、个人和团队资料，保留来源与访问范围。",
+      "en": "Separate public, personal and team resources, retaining source and access scope.",
+      "ru": "Разделяйте общие, личные и командные материалы, сохраняя источник и права доступа."
+    },
+    {
+      "zh": "关键词检索演示资料，来源可追溯，不声称向量RAG。",
+      "en": "Keyword search over traceable demo resources; no vector RAG is claimed.",
+      "ru": "Поиск по ключевым словам в демоматериалах с источниками; векторный RAG не заявляется."
+    },
+    {
+      "zh": "检索范围为当前账号有权访问的演示资料。",
+      "en": "Search is limited to demo resources accessible to this account.",
+      "ru": "Поиск ограничен демоматериалами, доступными этому аккаунту."
+    },
+    {
+      "zh": "查看文档、OCR或转写的状态与原文依据。",
+      "en": "View document, OCR or transcription states with original evidence.",
+      "ru": "Просматривайте состояния разбора документов, OCR и расшифровки с исходными данными."
+    },
+    {
+      "zh": "可选择文档、图片或音频演示场景。",
+      "en": "Choose a document, image or audio demo.",
+      "ru": "Выберите демонстрацию документа, изображения или аудио."
+    },
+    {
+      "zh": "配置输入、查看日志与结果，保留失败和取消路径。",
+      "en": "Configure input, inspect logs and results, and try failure or cancellation.",
+      "ru": "Настраивайте ввод, изучайте журналы и результаты, проверяйте ошибки и отмену."
+    },
+    {
+      "zh": "本原型不执行用户代码，也不连接远程沙箱；成功结果为固定演示内容。",
+      "en": "No user code is executed and no remote runner is connected. Successful output is a fixed demo.",
+      "ru": "Код пользователя не выполняется, удалённая среда не подключена. Успешный вывод — фиксированная демонстрация."
+    },
+    {
+      "zh": "开始一次演示，检查排队、日志、取消与结果的交互。",
+      "en": "Start a demo to review queueing, logs, cancellation and results.",
+      "ru": "Запустите демонстрацию для проверки очереди, журнала, отмены и результатов."
+    },
+    {
+      "zh": "任务、提交与反馈有明确去向，不再显示首页正文。",
+      "en": "Notifications link directly to tasks, submissions and feedback.",
+      "ru": "Уведомления ведут прямо к заданиям, работам и отзывам."
+    },
+    {
+      "zh": "仅有权成员可查看会话，关联任务不丢失上下文。",
+      "en": "Only authorized members can read conversations, with linked task context.",
+      "ru": "Диалоги доступны только участникам с правами, с контекстом связанных заданий."
+    },
+    {
+      "zh": "管理个人资料、团队和偏好，不把本机演示当作真实身份。",
+      "en": "Manage your profile, teams and preferences. Demo identity is not real authentication.",
+      "ru": "Управляйте профилем, командами и настройками. Демоидентификация не является реальной авторизацией."
+    },
+    {
+      "zh": "仅用于原型，不投递邮件。",
+      "en": "Prototype only; no mail is sent.",
+      "ru": "Только для прототипа; письма не отправляются."
+    },
+    {
+      "zh": "邮箱已演示验证 · 个人项目、文稿与AI对话默认不共享。",
+      "en": "Demo email verified · Personal projects, drafts and AI chats are private by default.",
+      "ru": "Демонстрационная почта проверена · Личные проекты, тексты и диалоги с ИИ по умолчанию закрыты."
+    },
+    {
+      "zh": "右上角可切换中英俄界面、亮色、暗色和跟随系统；个人正文保留原语言。",
+      "en": "Use the top-right controls for Chinese, English or Russian and light, dark or system theme. Personal text keeps its language.",
+      "ru": "Справа вверху выберите китайский, английский или русский язык и светлую, тёмную или системную тему. Личные тексты сохраняют свой язык."
+    },
+    {
+      "zh": "愿意接收所带团队任务的提醒（演示设置，不实际发信）",
+      "en": "Receive reminders for my teams' tasks (demo only; no mail sent)",
+      "ru": "Получать напоминания о заданиях моих команд (только демо, без отправки писем)"
+    },
+    {
+      "zh": "教师只看任务相关提交及约定统计",
+      "en": "Teachers see only task submissions and agreed statistics",
+      "ru": "Преподаватель видит только работы по заданиям и согласованную статистику"
+    },
+    {
+      "zh": "仅保存此独立原型的演示资料，用于测试刷新恢复与计时。不读取正式项目数据库或凭证。可导出或重置。",
+      "en": "This independent prototype stores demo data for reload and timer tests. It never reads project databases or credentials. Export or reset it at any time.",
+      "ru": "Прототип сохраняет демоданные для проверки восстановления и таймеров. Рабочие базы и учётные данные не читаются. Данные можно экспортировать или сбросить."
+    },
+    {
+      "zh": "注册、邮箱验证和找回均为演示，不创建真实账号。",
+      "en": "Registration, verification and recovery are simulations; no real account is created.",
+      "ru": "Регистрация, проверка и восстановление моделируются; реальные аккаунты не создаются."
+    },
+    {
+      "zh": "请勿输入真实密码。原型不存储密码，教师密钥只是固定演示值。",
+      "en": "Do not enter real passwords. Passwords are not stored; the teacher key is a fixed demo value.",
+      "ru": "Не вводите реальные пароли. Пароли не сохраняются; ключ преподавателя — фиксированное демозначение."
+    },
+    {
+      "zh": "固定演示值：TEACH-DEMO；不是真实共享密钥。",
+      "en": "Fixed demo value: TEACH-DEMO. Not a real shared key.",
+      "ru": "Фиксированное значение: TEACH-DEMO. Это не реальный общий ключ."
+    },
+    {
+      "zh": "演示码123456，不发真实邮件。",
+      "en": "Demo code: 123456. No email is sent.",
+      "ru": "Демонстрационный код: 123456. Письмо не отправляется."
+    },
+    {
+      "zh": "仅演示账号流程，不发送邮件、不创建真实账号。请使用 student@example.invalid 等演示邮箱，不输入真实密码。",
+      "en": "Account-flow demo only: no email or real accounts. Use a demo address such as student@example.invalid and no real password.",
+      "ru": "Это демонстрация: без писем и реальных аккаунтов. Используйте адрес вроде student@example.invalid и не вводите реальный пароль."
+    },
+    {
+      "zh": "任意6位以上演示文字，不验证真实账号。",
+      "en": "Any demo text of at least six characters; no real account is verified.",
+      "ru": "Любой демонстрационный текст от шести символов; реальный аккаунт не проверяется."
+    },
+    {
+      "zh": "至少6位，不会存储密码。",
+      "en": "At least six characters. Passwords are never stored.",
+      "ru": "Не менее шести символов. Пароль не сохраняется."
+    },
+    {
+      "zh": "仅演示：123456；输入其他内容可查看错误状态。",
+      "en": "Demo code: 123456. Try another value to inspect an error.",
+      "ru": "Демонстрационный код: 123456. Другое значение покажет ошибку."
+    },
+    {
+      "zh": "暂无发布后变更。",
+      "en": "No changes since publication.",
+      "ru": "После публикации изменений не было."
+    },
+    {
+      "zh": "仅查看提交快照和修改说明，不读取学生私人工作区、修改清单或个人备注。",
+      "en": "Only submission snapshots and revision summaries are visible, never private workspaces, checklists or notes.",
+      "ru": "Доступны только снимки работ и описания доработки, без личного пространства, списков исправлений и заметок."
+    },
+    {
+      "zh": "允许补交，逾期提交会标记为补交。",
+      "en": "Late submissions are allowed and marked late.",
+      "ru": "Поздняя сдача разрешена и помечается как просроченная."
+    },
+    {
+      "zh": "本轮退回有独立重交截止，以该时间为准。",
+      "en": "This revision has its own deadline, which takes precedence.",
+      "ru": "Для этой доработки установлен отдельный срок; применяется именно он."
+    },
+    {
+      "zh": "私人工作区，提交时生成快照",
+      "en": "Private workspace; a snapshot is made on submission",
+      "ru": "Личное пространство; при сдаче создаётся снимок"
+    },
+    {
+      "zh": "自勾仅记录个人进展，不代表教师认可。个人备注不向教师展示。",
+      "en": "Checks record personal progress, not teacher approval. Personal notes are private.",
+      "ru": "Отметки фиксируют личный прогресс, а не одобрение преподавателя. Личные заметки недоступны преподавателю."
+    },
+    {
+      "zh": "从上方反馈中手动添加事项。",
+      "en": "Add items manually from the feedback above.",
+      "ru": "Добавляйте пункты вручную из отзыва выше."
+    },
+    {
+      "zh": "个人工作区默认私有；教师只看到主动提交的快照或明确共享的资料。",
+      "en": "Your workspace is private. Teachers see only submitted snapshots or explicitly shared resources.",
+      "ru": "Ваше пространство личное. Преподаватель видит только сданные снимки или явно открытые материалы."
+    },
+    {
+      "zh": "原件保留不变；改写时创建关联文稿。",
+      "en": "The original is preserved; revisions use a linked draft.",
+      "ru": "Оригинал сохраняется; для изменений создаётся связанный текст."
+    },
+    {
+      "zh": "演示解析已就绪 · 此处为示例文本，不是实际文件解析。",
+      "en": "Demo parsing ready · Sample text, not a parsed real file.",
+      "ru": "Деморазбор готов · Это пример текста, а не разбор реального файла."
+    },
+    {
+      "zh": "个人自评不等于教师成绩；没有输入分数时不生成总分或能力画像。",
+      "en": "Self-assessment is not a teacher grade. Without entered scores, no totals or ability profiles are generated.",
+      "ru": "Самооценка не равна оценке преподавателя. Без введённых баллов итог и профиль способностей не создаются."
+    },
+    {
+      "zh": "暂无个人批注。",
+      "en": "No private annotations yet.",
+      "ru": "Личных комментариев пока нет."
+    },
+    {
+      "zh": "保留原论文与历史版本，导出或提交前由你确认。",
+      "en": "Preserve the original and history. You confirm before export or submission.",
+      "ru": "Оригинал и история сохраняются. Экспорт и сдача требуют вашего подтверждения."
+    },
+    {
+      "zh": "建议必须主动采纳。采纳后可撤销，不替你覆盖上传原件。",
+      "en": "Suggestions require explicit acceptance and can be undone. They never overwrite the original.",
+      "ru": "Рекомендации принимаются явно и могут быть отменены. Оригинал не заменяется."
+    },
+    {
+      "zh": "暂未保存命名版本。",
+      "en": "No named versions saved yet.",
+      "ru": "Именованных версий пока нет."
+    },
+    {
+      "zh": "只创建本机邀请，不发送真实邮件。学生切换到账号页接受。",
+      "en": "Local invitation only. Students accept it on their account page; no email is sent.",
+      "ru": "Создаётся локальное приглашение. Студент принимает его в профиле; письмо не отправляется."
+    },
+    {
+      "zh": "先保存草稿，再预览发布。",
+      "en": "Save a draft, then preview and publish.",
+      "ru": "Сначала сохраните черновик, затем проверьте и опубликуйте."
+    },
+    {
+      "zh": "只使用任务相关证据，不采集学习时长或私人活动。",
+      "en": "Use task evidence only, without study-time or private-activity tracking.",
+      "ru": "Только данные по заданиям, без учёта времени учёбы и личной активности."
+    },
+    {
+      "zh": "先保存为教师个人资料，后续明确共享。",
+      "en": "Save privately first; share explicitly later.",
+      "ru": "Сначала сохраните как личный материал; доступ откройте отдельно."
+    },
+    {
+      "zh": "不读取真实文档或音频。",
+      "en": "No real documents or audio are read.",
+      "ru": "Реальные документы и аудио не читаются."
+    },
+    {
+      "zh": "该操作的业务边界已在界面中说明。",
+      "en": "The scope of this action is described on the page.",
+      "ru": "Границы этого действия описаны на странице."
+    },
+    {
+      "zh": "已取消本次发送，输入仍保留在当前页面。",
+      "en": "Sending cancelled; your input remains on this page.",
+      "ru": "Отправка отменена; введённый текст остался на странице."
+    },
+    {
+      "zh": "关闭页面不暂停；到时锁定已保存成果。团队协作仅使用演示成员。",
+      "en": "Closing does not pause the timer. Saved results lock at expiry. Team members are simulated.",
+      "ru": "Закрытие страницы не останавливает таймер. По истечении времени сохранённые результаты блокируются. Участники демонстрационные."
+    },
+    {
+      "zh": "只创建演示原件记录，不读取真实文件。",
+      "en": "Create a demo original record only; no real file is read.",
+      "ru": "Создаётся только демонстрационная запись оригинала; реальный файл не читается."
+    },
+    {
+      "zh": "只输入演示资料，不读取本机文件。公共资料由管理员维护。",
+      "en": "Enter demo resources only; local files are not read. Administrators maintain public resources.",
+      "ru": "Вводите только демоматериалы; локальные файлы не читаются. Общие материалы поддерживает администратор."
+    },
+    {
+      "zh": "不执行输入代码，不发送远程请求。结果与日志用于交互演示。",
+      "en": "No code execution or remote requests. Results and logs demonstrate interaction only.",
+      "ru": "Код не выполняется, запросы не отправляются. Результаты и журналы служат только для демонстрации взаимодействия."
+    },
+    {
+      "zh": "只使用固定演示内容，不读取任何真实原件或音频。",
+      "en": "Fixed demo content only; no real originals or audio are read.",
+      "ru": "Только фиксированные демоданные; реальные оригиналы и аудио не читаются."
+    },
+    {
+      "zh": "记录不存在或不属于本人所带团队。",
+      "en": "The record is missing or outside your teams.",
+      "ru": "Запись отсутствует или не относится к вашим командам."
+    },
+    {
+      "zh": "当前教师登录、验证或角色权限不可用。",
+      "en": "Teacher sign-in, verification or role access is unavailable.",
+      "ru": "Вход, проверка или права преподавателя недоступны."
+    },
+    {
+      "zh": "评审状态不删除原有记录，受限时不显示业务正文。",
+      "en": "Review states retain data and hide restricted content.",
+      "ru": "Проверочные состояния сохраняют данные и скрывают недоступное содержимое."
+    },
+    {
+      "zh": "保存失败演示：输入保留，记录不写入。",
+      "en": "Save-failure demo: input remains; records are not written.",
+      "ru": "Демоошибка сохранения: ввод остаётся, запись не сохраняется."
+    },
+    {
+      "zh": "将记录历史、通知受影响学生；已有提交快照不改写。",
+      "en": "History is kept and affected students are notified. Existing snapshots stay unchanged.",
+      "ru": "История сохраняется, студенты получают уведомление. Существующие снимки не меняются."
+    },
+    {
+      "zh": "移出后撤销该团队访问与教师查看范围，历史内容不删除。",
+      "en": "Removal revokes team access and teacher visibility; history is retained.",
+      "ru": "Удаление отзывает доступ к команде и видимость для преподавателя; история сохраняется."
+    },
+    {
+      "zh": "学生提交后才会出现在这里。",
+      "en": "Submissions appear after students submit.",
+      "ru": "Работы появятся после сдачи студентами."
+    },
+    {
+      "zh": "教师评阅关联具体提交版本，不改写学生原件。",
+      "en": "Reviews link to a submission version and never rewrite originals.",
+      "ru": "Проверка привязана к версии работы и не изменяет оригинал."
+    },
+    {
+      "zh": "只共享本资料副本，不公开其他教师个人资料。",
+      "en": "Share a copy of this resource only, not other private materials.",
+      "ru": "Открывается только копия этого материала, а не другие личные материалы."
+    },
+    {
+      "zh": "当前为保存失败评审状态；操作不写入演示存储，输入留在页面。",
+      "en": "Save-failure review: no data is written; input remains.",
+      "ru": "Проверка ошибки сохранения: данные не записываются, ввод остаётся."
+    },
+    {
+      "zh": "可能尚未加入团队，或资料访问权已撤销。不会展示受限正文。",
+      "en": "You may not have joined the team, or access was revoked. Restricted text is hidden.",
+      "ru": "Возможно, вы не вступили в команду или доступ отозван. Недоступный текст скрыт."
+    },
+    {
+      "zh": "已有记录未删除。请重试，或返回上一个可用页面。",
+      "en": "Existing records are safe. Retry or return to a working page.",
+      "ru": "Существующие записи сохранены. Повторите попытку или вернитесь на доступную страницу."
+    },
+    {
+      "zh": "这是评审用空状态，不会清除实际演示记录。",
+      "en": "This review-only empty state does not delete demo records.",
+      "ru": "Это пустое состояние для проверки; демозаписи не удаляются."
+    },
+    {
+      "zh": "请返回列表重新选择，原型不会静默跳转首页。",
+      "en": "Return to the list and choose again; no silent redirect occurs.",
+      "ru": "Вернитесь к списку и выберите снова; скрытого перенаправления нет."
+    },
+    {
+      "zh": "教师端没有这个入口。",
+      "en": "This page is not available in the teacher area.",
+      "ru": "В кабинете преподавателя такой страницы нет."
+    },
+    {
+      "zh": "目标任务、团队或提交不属于当前学生。",
+      "en": "This task, team or submission does not belong to the current student.",
+      "ru": "Это задание, команда или работа не относятся к текущему студенту."
+    },
+    {
+      "zh": "当前只演示账号流程，不创建真实账号。",
+      "en": "Account-flow demo only; no real accounts are created.",
+      "ru": "Только демонстрация входа; реальные аккаунты не создаются."
+    },
+    {
+      "zh": "登录后保留原来的页面目标。",
+      "en": "Your destination is retained after signing in.",
+      "ru": "После входа целевая страница сохраняется."
+    },
+    {
+      "zh": "账号页面不存在。",
+      "en": "Account page not found.",
+      "ru": "Страница аккаунта не найдена."
+    },
+    {
+      "zh": "请从左侧导航重新进入。",
+      "en": "Choose a page from the sidebar.",
+      "ru": "Выберите страницу в боковом меню."
+    },
+    {
+      "zh": "不会静默跳回首页。",
+      "en": "No silent redirect to home.",
+      "ru": "Без скрытого возврата на главную."
+    },
+    {
+      "zh": "真实运行环境、额度与资源限制由服务端决定，原型不提供实际计算能力。",
+      "en": "The server defines runtime, quotas and limits. This prototype provides no actual computing.",
+      "ru": "Среда, квоты и ограничения определяются сервером. Прототип не предоставляет вычисления."
+    },
+    {
+      "zh": "演示解析失败。原件名称保留，可重试，不伪造结果。",
+      "en": "Demo parsing failed. The name is retained; retry is available. No result is invented.",
+      "ru": "Деморазбор не удался. Имя сохранено, доступен повтор. Результат не выдумывается."
+    },
+    {
+      "zh": "演示解析处理中，请稍候。",
+      "en": "Demo parsing in progress. Please wait.",
+      "ru": "Выполняется демонстрационный разбор. Подождите."
+    },
+    {
+      "zh": "公式仅检验显示，不检验数学正确性。原型没有读取真实文件或音频。",
+      "en": "Formulas demonstrate display, not mathematical correctness. No real file or audio was read.",
+      "ru": "Формулы демонстрируют отображение, а не математическую корректность. Реальные файлы и аудио не читались."
+    },
+    {
+      "zh": "固定演示内容：研究问题、变量、数据来源与约束。",
+      "en": "Fixed demo: research question, variables, data sources and constraints.",
+      "ru": "Фиксированный пример: вопрос исследования, переменные, источники данных и ограничения."
+    },
+    {
+      "zh": "演示解析失败，原件名称保留。",
+      "en": "Demo parsing failed; original name retained.",
+      "ru": "Деморазбор не удался; имя оригинала сохранено."
+    },
+    {
+      "zh": "请换一个关键词。无匹配时不生成虚构引用。",
+      "en": "Try another keyword. Missing matches never produce invented citations.",
+      "ru": "Попробуйте другое слово. При отсутствии совпадений ссылки не выдумываются."
+    },
+    {
+      "zh": "可以更换关键词或范围。未授权内容不会因检索而开放。",
+      "en": "Change the keyword or scope. Search never grants access to restricted content.",
+      "ru": "Измените ключевое слово или область. Поиск не открывает недоступные материалы."
+    },
+    {
+      "zh": "新任务与反馈通知会在这里出现。",
+      "en": "New task and feedback notifications appear here.",
+      "ru": "Здесь появятся уведомления о заданиях и отзывах."
+    },
+    {
+      "zh": "先完成关联项目，再确认并提交成果。",
+      "en": "Complete the linked project, then confirm and submit.",
+      "ru": "Завершите связанный проект, затем подтвердите и сдайте результат."
+    },
+    {
+      "zh": "该版本没有附件。",
+      "en": "This version has no attachments.",
+      "ru": "В этой версии нет вложений."
+    },
+    {
+      "zh": "已提交，等待教师评阅。没有反馈时不生成虚构建议。",
+      "en": "Submitted, awaiting review. No suggestions are invented without feedback.",
+      "ru": "Работа сдана и ожидает проверки. Без отзыва рекомендации не выдумываются."
+    },
+    {
+      "zh": "个人项目、文稿和AI对话不会自动共享。只加入你明确选择的团队成果。",
+      "en": "Personal projects, drafts and AI chats are never shared automatically. Add only explicitly selected team results.",
+      "ru": "Личные проекты, тексты и диалоги с ИИ автоматически не открываются. Добавляйте только явно выбранные результаты."
+    },
+    {
+      "zh": "仅切换演示身份，不连接真实账号。",
+      "en": "Switching demo identity only; no real accounts.",
+      "ru": "Переключается только демонстрационная роль; реальные аккаунты не используются."
+    },
+    {
+      "zh": "代码运行结果为演示，不会真正执行输入的代码。",
+      "en": "Run results are demonstrations; entered code is not executed.",
+      "ru": "Результаты демонстрационные; введённый код не выполняется."
+    },
+    {
+      "zh": "保存分工",
+      "en": "Save assignment",
+      "ru": "Сохранить задачу"
+    },
+    {
+      "zh": "切换演示竞赛成员",
+      "en": "Switch demo competition member",
+      "ru": "Сменить демоучастника соревнования"
+    },
+    {
+      "zh": "创建演示邀请",
+      "en": "Create demo invitation",
+      "ru": "Создать демоприглашение"
+    },
+    {
+      "zh": "剩余时间",
+      "en": "Time remaining",
+      "ru": "Оставшееся время"
+    },
+    {
+      "zh": "原件、解析状态和结果分开保留；以下为明确标记的演示结果。",
+      "en": "Original, parsing state and results are retained separately. Results below are clearly marked demos.",
+      "ru": "Оригинал, состояние разбора и результат сохраняются отдельно. Ниже — явно обозначенные деморезультаты."
+    },
+    {
+      "zh": "只读",
+      "en": "Read-only",
+      "ru": "Только чтение"
+    },
+    {
+      "zh": "可检查变量单位、库存约束和参数来源。请由作者判断并核验。",
+      "en": "Check variable units, inventory constraints and parameter sources. The author must judge and verify.",
+      "ru": "Проверьте единицы переменных, ограничения запасов и источники параметров. Автор должен оценить и проверить их."
+    },
+    {
+      "zh": "可编辑",
+      "en": "Editable",
+      "ru": "Редактируемое"
+    },
+    {
+      "zh": "团队模拟",
+      "en": "Team simulation",
+      "ru": "Командная тренировка"
+    },
+    {
+      "zh": "个人模拟",
+      "en": "Individual simulation",
+      "ru": "Индивидуальная тренировка"
+    },
+    {
+      "zh": "将导出当前已保存文稿的纯文本，不覆盖论文原件。未保存编辑请先保存。",
+      "en": "Export saved plain text without overwriting the original. Save pending edits first.",
+      "ru": "Экспортируется сохранённый текст без изменения оригинала. Сначала сохраните текущие изменения."
+    },
+    {
+      "zh": "已加入",
+      "en": "Joined",
+      "ru": "Вступил"
+    },
+    {
+      "zh": "已完成",
+      "en": "Completed",
+      "ru": "Выполнено"
+    },
+    {
+      "zh": "已结束",
+      "en": "Ended",
+      "ru": "Завершено"
+    },
+    {
+      "zh": "建议补充一句：“结果仅适用于当前数据范围，后续需以独立样本验证。”",
+      "en": "Suggested sentence: “Results apply only to the current data; independent samples are needed for further validation.”",
+      "ru": "Предлагаемая фраза: «Результаты относятся только к текущим данным; нужна дальнейшая проверка на независимых выборках»."
+    },
+    {
+      "zh": "建议补充一句",
+      "en": "Suggested sentence",
+      "ru": "Предлагаемая фраза"
+    },
+    {
+      "zh": "“结果仅适用于当前数据范围，后续需以独立样本验证。”",
+      "en": "“Results apply only to the current data; independent samples are needed for validation.”",
+      "ru": "«Результаты относятся только к текущим данным; нужна проверка на независимых выборках»."
+    },
+    {
+      "zh": "开始后可讨论；结束后记录只读。",
+      "en": "Discussion opens at the start; records become read-only at the end.",
+      "ru": "Обсуждение доступно после старта; после завершения записи доступны только для чтения."
+    },
+    {
+      "zh": "待加入",
+      "en": "Awaiting join",
+      "ru": "Ожидает вступления"
+    },
+    {
+      "zh": "待开始",
+      "en": "Not started",
+      "ru": "Не начато"
+    },
+    {
+      "zh": "待接受邀请",
+      "en": "Invitation pending",
+      "ru": "Приглашение ожидает принятия"
+    },
+    {
+      "zh": "成员",
+      "en": "Member",
+      "ru": "Участник"
+    },
+    {
+      "zh": "明确共享",
+      "en": "Explicitly share",
+      "ru": "Явно открыть доступ"
+    },
+    {
+      "zh": "暂无事项",
+      "en": "No assignments yet",
+      "ru": "Задач пока нет"
+    },
+    {
+      "zh": "未开始",
+      "en": "Not started",
+      "ru": "Не начато"
+    },
+    {
+      "zh": "本轮已锁定。关闭页面不会暂停计时；结束后成果与协作记录不再改写。",
+      "en": "This round is locked. Closing does not pause timing; results and collaboration records cannot change after the end.",
+      "ru": "Раунд заблокирован. Закрытие не останавливает таймер; после завершения результаты и записи сотрудничества не меняются."
+    },
+    {
+      "zh": "本轮成果",
+      "en": "Round results",
+      "ru": "Результаты раунда"
+    },
+    {
+      "zh": "查看只读成果",
+      "en": "View read-only results",
+      "ru": "Открыть результаты для чтения"
+    },
+    {
+      "zh": "查看锁定项目",
+      "en": "View locked project",
+      "ru": "Открыть заблокированный проект"
+    },
+    {
+      "zh": "确认模拟发送",
+      "en": "Confirm simulated sending",
+      "ru": "Подтвердить демонстрационную отправку"
+    },
+    {
+      "zh": "确认保存计划",
+      "en": "Confirm schedule",
+      "ru": "Подтвердить план"
+    },
+    {
+      "zh": "竞赛成果",
+      "en": "Competition results",
+      "ru": "Результаты соревнования"
+    },
+    {
+      "zh": "竞赛状态",
+      "en": "Competition state",
+      "ru": "Состояние соревнования"
+    },
+    {
+      "zh": "符合模拟发送条件",
+      "en": "Eligible for simulated sending",
+      "ru": "Подходит для демонстрационной отправки"
+    },
+    {
+      "zh": "考核",
+      "en": "Assessment",
+      "ru": "Контрольная работа"
+    },
+    {
+      "zh": "规则",
+      "en": "Rules",
+      "ru": "Правила"
+    },
+    {
+      "zh": "评审身份模拟",
+      "en": "Demo identity for review",
+      "ru": "Демонстрационная роль для проверки"
+    },
+    {
+      "zh": "还没有共享成果。",
+      "en": "No shared results yet.",
+      "ru": "Общих результатов пока нет."
+    },
+    {
+      "zh": "还没有团队讨论。",
+      "en": "No team discussion yet.",
+      "ru": "Обсуждения команды пока нет."
+    },
+    {
+      "zh": "进入竞赛项目",
+      "en": "Open competition project",
+      "ru": "Открыть проект соревнования"
+    },
+    {
+      "zh": "进行中",
+      "en": "In progress",
+      "ru": "В процессе"
+    },
+    {
+      "zh": "队长",
+      "en": "Captain",
+      "ru": "Капитан"
+    },
+    {
+      "zh": "负责：",
+      "en": "Assigned to:",
+      "ru": "Ответственный:"
+    },
+    {
+      "zh": "未分配",
+      "en": "Unassigned",
+      "ru": "Не назначен"
+    },
+    {
+      "zh": "本机模拟，不投递真实邮件",
+      "en": "Local simulation; no real email sent",
+      "ru": "Локальная демонстрация; реальные письма не отправляются"
+    },
+    {
+      "zh": "未同意接收提醒",
+      "en": "No consent to receive reminders",
+      "ru": "Нет согласия на напоминания"
+    },
+    {
+      "zh": "邮箱尚未验证",
+      "en": "Email not verified",
+      "ru": "Почта не подтверждена"
+    },
+    {
+      "zh": "团队或任务权限已变化",
+      "en": "Team or task permissions changed",
+      "ru": "Права на команду или задание изменились"
+    },
+    {
+      "zh": "教师权限或验证已失效",
+      "en": "Teacher access or verification expired",
+      "ru": "Права или проверка преподавателя недействительны"
+    },
+    {
+      "zh": "CSV导入完成，重复记录已跳过",
+      "en": "CSV imported; exact duplicates skipped",
+      "ru": "CSV импортирован; точные дубликаты пропущены"
+    },
+    {
+      "zh": "反馈已发布到对应学生与版本",
+      "en": "Feedback published to the student and version",
+      "ru": "Отзыв опубликован для соответствующего студента и версии"
+    },
+    {
+      "zh": "已创建演示邀请；切换成员身份可接受",
+      "en": "Demo invitation created; switch member to accept",
+      "ru": "Демоприглашение создано; смените участника, чтобы принять"
+    },
+    {
+      "zh": "已加入个人修改清单",
+      "en": "Added to your private checklist",
+      "ru": "Добавлено в ваш личный список исправлений"
+    },
+    {
+      "zh": "提醒模拟处理完成，不投递真实邮件",
+      "en": "Reminder simulation complete; no real email sent",
+      "ru": "Моделирование напоминания завершено; реальное письмо не отправлено"
+    },
+    {
+      "zh": "本轮竞赛已结束并锁定",
+      "en": "Competition round ended and locked",
+      "ru": "Раунд завершён и заблокирован"
+    },
+    {
+      "zh": "模拟竞赛已开始计时",
+      "en": "Competition timer started",
+      "ru": "Таймер соревнования запущен"
+    },
+    {
+      "zh": "模拟竞赛已配置",
+      "en": "Mock competition configured",
+      "ru": "Тренировочное соревнование настроено"
+    },
+    {
+      "zh": "演示成员已加入",
+      "en": "Demo member joined",
+      "ru": "Демоучастник вступил"
+    },
+    {
+      "zh": "演示解析任务已创建",
+      "en": "Demo parsing task created",
+      "ru": "Демозадача разбора создана"
+    },
+    {
+      "zh": "演示解析重试完成",
+      "en": "Demo parsing retry complete",
+      "ru": "Повтор деморазбора завершён"
+    },
+    {
+      "zh": "演示讨论已保存",
+      "en": "Demo discussion saved",
+      "ru": "Демонстрационное обсуждение сохранено"
+    },
+    {
+      "zh": "演示运行已排队",
+      "en": "Demo run queued",
+      "ru": "Демозапуск добавлен в очередь"
+    },
+    {
+      "zh": "选定成果已明确共享到竞赛",
+      "en": "Selected results shared with the competition",
+      "ru": "Выбранные результаты открыты участникам соревнования"
+    },
+    {
+      "zh": "主动采纳到编辑区",
+      "en": "Accept into editor",
+      "ru": "Принять в редактор"
+    },
+    {
+      "zh": "以下为固定演示内容，不是对论文的真实模型分析。",
+      "en": "Fixed demo content, not a live model analysis of this paper.",
+      "ru": "Фиксированные демоданные, а не реальный анализ статьи моделью."
+    },
+    {
+      "zh": "保留并继续",
+      "en": "Keep & continue",
+      "ru": "Оставить и продолжить"
+    },
+    {
+      "zh": "停止本次演示",
+      "en": "Stop demo",
+      "ru": "Остановить демонстрацию"
+    },
+    {
+      "zh": "关联到个人工作区不等于向教师共享；提交时才保存附件快照。",
+      "en": "Attaching to your workspace does not share with teachers. Attachment snapshots are saved on submission.",
+      "ru": "Привязка к личному пространству не открывает доступ преподавателю. Снимок вложений сохраняется при сдаче."
+    },
+    {
+      "zh": "只关联当前已保存内容的副本，不改原件，也不直接向教师提交。需要共享给教师时，请在项目中确认提交。",
+      "en": "Attach a copy of saved content only, preserving the original. To share with a teacher, confirm a project submission.",
+      "ru": "Прикладывается только копия сохранённого текста; оригинал не меняется. Для передачи преподавателю подтвердите сдачу проекта."
+    },
+    {
+      "zh": "只创建待加入的演示成员，不发送真实邀请。",
+      "en": "Create a pending demo member only; no real invitation is sent.",
+      "ru": "Создаётся ожидающий демоучастник; реальное приглашение не отправляется."
+    },
+    {
+      "zh": "只有明确选中的资料副本向该团队共享，其他个人内容仍为私有。",
+      "en": "Only selected resource copies are shared; all other personal content remains private.",
+      "ru": "Команде открываются только выбранные копии; остальные личные материалы закрыты."
+    },
+    {
+      "zh": "团队共享成果",
+      "en": "Shared team results",
+      "ru": "Общие результаты команды"
+    },
+    {
+      "zh": "固定演示建议，不是真实翻译或模型回复。",
+      "en": "Fixed demo suggestions, not real translation or live model output.",
+      "ru": "Фиксированные демоподсказки, а не реальный перевод или ответ модели."
+    },
+    {
+      "zh": "复制为个人练习继续",
+      "en": "Copy to personal practice",
+      "ru": "Продолжить в личной копии"
+    },
+    {
+      "zh": "复制演示引用",
+      "en": "Copy demo citation",
+      "ru": "Скопировать демонстрационную ссылку"
+    },
+    {
+      "zh": "将锁定本轮已保存项目与协作记录。之后只能复制为个人练习继续。",
+      "en": "Lock saved project and collaboration records. Continue later in a personal copy only.",
+      "ru": "Сохранённый проект и совместная работа будут заблокированы. Продолжить можно в личной копии."
+    },
+    {
+      "zh": "工作事项",
+      "en": "Assignment",
+      "ru": "Задача"
+    },
+    {
+      "zh": "已明确共享",
+      "en": "Explicitly shared",
+      "ru": "Доступ открыт явно"
+    },
+    {
+      "zh": "已通知相关学生",
+      "en": "Affected students notified",
+      "ru": "Студенты уведомлены"
+    },
+    {
+      "zh": "建议尚未保存，可以撤销。",
+      "en": "Suggestion is not saved yet and can be undone.",
+      "ru": "Подсказка ещё не сохранена; действие можно отменить."
+    },
+    {
+      "zh": "当前演示成员尚未加入，仅可查看邀请说明。加入后才能访问团队协作内容。",
+      "en": "This demo member has not joined. Only the invitation is visible until acceptance.",
+      "ru": "Демоучастник ещё не вступил. До принятия доступно только приглашение."
+    },
+    {
+      "zh": "待学生接受",
+      "en": "Awaiting student acceptance",
+      "ru": "Ожидает принятия студентом"
+    },
+    {
+      "zh": "恢复到编辑区",
+      "en": "Restore to editor",
+      "ru": "Восстановить в редакторе"
+    },
+    {
+      "zh": "执行时再次检查，不符合者跳过。所有发送为本机模拟。",
+      "en": "Recheck on execution and skip ineligible recipients. All sending is simulated locally.",
+      "ru": "При выполнении доступ проверяется снова; неподходящие адресаты пропускаются. Отправка моделируется локально."
+    },
+    {
+      "zh": "批注",
+      "en": "Annotation",
+      "ru": "Комментарий"
+    },
+    {
+      "zh": "按开始时间持续计时；关闭或离线不暂停。原型只演示本机协作，不代表真正多人同步。",
+      "en": "Elapsed time is based on the start time, including offline time. Collaboration is local simulation, not real multiuser sync.",
+      "ru": "Отсчёт идёт от начала, включая время вне сети. Совместная работа моделируется локально, без реальной синхронизации."
+    },
+    {
+      "zh": "接受演示邀请",
+      "en": "Accept demo invitation",
+      "ru": "Принять демоприглашение"
+    },
+    {
+      "zh": "提前结束本轮",
+      "en": "End round early",
+      "ru": "Завершить раунд досрочно"
+    },
+    {
+      "zh": "撤销本次采纳",
+      "en": "Undo acceptance",
+      "ru": "Отменить принятие"
+    },
+    {
+      "zh": "明确共享到团队",
+      "en": "Explicitly share with team",
+      "ru": "Явно открыть доступ команде"
+    },
+    {
+      "zh": "明确共享资料",
+      "en": "Share selected resources",
+      "ru": "Открыть доступ к выбранным материалам"
+    },
+    {
+      "zh": "暂不采纳",
+      "en": "Not now",
+      "ru": "Пока не принимать"
+    },
+    {
+      "zh": "本原型不接模型。可查看明确标记的演示建议。",
+      "en": "No live model is connected. You can inspect clearly marked demo suggestions.",
+      "ru": "Реальная модель не подключена. Доступны явно обозначенные демоподсказки."
+    },
+    {
+      "zh": "本轮已过截止且不允许提交。旧成果与反馈仍保留；如需重交，请联系教师重新开放。",
+      "en": "The deadline passed and submissions are closed. Existing results and feedback remain. Ask the teacher to reopen for revision.",
+      "ru": "Срок прошёл, приём закрыт. Работы и отзывы сохранены. Для повторной сдачи обратитесь к преподавателю."
+    },
+    {
+      "zh": "本项目属于本轮竞赛工作区；成员按竞赛权限查看明确共享成果。未保存笔记不计入锁定快照。",
+      "en": "This is the competition workspace. Members see explicitly shared results. Unsaved notes are not included in the locked snapshot.",
+      "ru": "Это пространство соревнования. Участникам доступны явно открытые результаты. Несохранённые заметки не входят в заблокированный снимок."
+    },
+    {
+      "zh": "查看 / 恢复",
+      "en": "View / Restore",
+      "ru": "Открыть / Восстановить"
+    },
+    {
+      "zh": "查看关联提交",
+      "en": "View linked submission",
+      "ru": "Открыть связанную работу"
+    },
+    {
+      "zh": "查看演示建议",
+      "en": "View demo suggestions",
+      "ru": "Открыть демоподсказки"
+    },
+    {
+      "zh": "查看竞赛邀请",
+      "en": "View competition invitation",
+      "ru": "Открыть приглашение"
+    },
+    {
+      "zh": "模型服务暂不可用。问题和引用仍保留，可重试或先保存问题。",
+      "en": "Model service unavailable. Question and citations are retained; retry or save the question.",
+      "ru": "Сервис модели недоступен. Вопрос и ссылки сохранены; повторите попытку или сохраните вопрос."
+    },
+    {
+      "zh": "模拟等待，不调用真实模型。",
+      "en": "Simulated wait; no live model call.",
+      "ru": "Демонстрационное ожидание; без вызова реальной модели."
+    },
+    {
+      "zh": "此文稿独立创建，未关联论文原件。",
+      "en": "This is a standalone draft with no linked paper original.",
+      "ru": "Это отдельный текст без связанного оригинала статьи."
+    },
+    {
+      "zh": "添加分工",
+      "en": "Add assignment",
+      "ru": "Добавить задачу"
+    },
+    {
+      "zh": "演示成员名称",
+      "en": "Demo member name",
+      "ru": "Имя демоучастника"
+    },
+    {
+      "zh": "演示检查：请核对引用、符号、单位及图表说明。格式展示不代表数学正确性验证。",
+      "en": "Demo check: review citations, symbols, units and captions. Format display does not verify mathematics.",
+      "ru": "Демопроверка: проверьте ссылки, обозначения, единицы и подписи. Отображение формата не проверяет математику."
+    },
+    {
+      "zh": "演示解析失败，原件记录仍保留，可重试。",
+      "en": "Demo parsing failed. The original record is retained; retry is available.",
+      "ru": "Деморазбор не удался. Запись оригинала сохранена; доступен повтор."
+    },
+    {
+      "zh": "目标项目",
+      "en": "Target project",
+      "ru": "Целевой проект"
+    },
+    {
+      "zh": "确认导出演示文本",
+      "en": "Confirm demo text export",
+      "ru": "Подтвердить экспорт демотекста"
+    },
+    {
+      "zh": "确认并开始",
+      "en": "Confirm & start",
+      "ru": "Подтвердить и начать"
+    },
+    {
+      "zh": "确认结束并锁定",
+      "en": "Finish & lock",
+      "ru": "Завершить и заблокировать"
+    },
+    {
+      "zh": "确认规则并开始",
+      "en": "Confirm rules & start",
+      "ru": "Подтвердить правила и начать"
+    },
+    {
+      "zh": "移除",
+      "en": "Remove",
+      "ru": "Удалить"
+    },
+    {
+      "zh": "竞赛已锁定",
+      "en": "Competition locked",
+      "ru": "Соревнование заблокировано"
+    },
+    {
+      "zh": "竞赛讨论",
+      "en": "Competition discussion",
+      "ru": "Обсуждение соревнования"
+    },
+    {
+      "zh": "竞赛邀请",
+      "en": "Competition invitation",
+      "ru": "Приглашение на соревнование"
+    },
+    {
+      "zh": "继续检查",
+      "en": "Keep reviewing",
+      "ru": "Продолжить проверку"
+    },
+    {
+      "zh": "草稿未发布前学生不可见；已评阅不表示通过。",
+      "en": "Students cannot see unpublished drafts. Reviewed does not mean passed.",
+      "ru": "Неопубликованные черновики студентам недоступны. Проверка не означает зачёта."
+    },
+    {
+      "zh": "规则与成员",
+      "en": "Rules & members",
+      "ru": "Правила и участники"
+    },
+    {
+      "zh": "规则：",
+      "en": "Rules:",
+      "ru": "Правила:"
+    },
+    {
+      "zh": "讨论内容",
+      "en": "Discussion message",
+      "ru": "Сообщение обсуждения"
+    },
+    {
+      "zh": "调整分工",
+      "en": "Edit assignment",
+      "ru": "Изменить задачу"
+    },
+    {
+      "zh": "负责人",
+      "en": "Assigned to",
+      "ru": "Ответственный"
+    },
+    {
+      "zh": "返回模拟竞赛",
+      "en": "Back to competitions",
+      "ru": "К соревнованиям"
+    },
+    {
+      "zh": "返回继续编辑",
+      "en": "Back to editing",
+      "ru": "Вернуться к редактированию"
+    },
+    {
+      "zh": "进入竞赛",
+      "en": "Open competition",
+      "ru": "Открыть соревнование"
+    },
+    {
+      "zh": "选择个人资料",
+      "en": "Choose personal resource",
+      "ru": "Выбрать личный материал"
+    },
+    {
+      "zh": "选择有权资料",
+      "en": "Choose accessible resource",
+      "ru": "Выбрать доступный материал"
+    },
+    {
+      "zh": "预览并发布",
+      "en": "Preview & publish",
+      "ru": "Проверить и опубликовать"
+    },
+    {
+      "zh": "不依据在线时长或私人活动生成待办。",
+      "en": "No to-dos are based on time online or private activity.",
+      "ru": "Задачи не формируются по времени в сети или личной активности."
+    },
+    {
+      "zh": "个人七维评价记录",
+      "en": "Seven-dimension self-assessment",
+      "ru": "Самооценка по семи критериям"
+    },
+    {
+      "zh": "个人自评，不是教师成绩。各项留空时不生成完整评价。",
+      "en": "Self-assessment, not a teacher grade. Blank fields do not produce a complete evaluation.",
+      "ru": "Самооценка, а не оценка преподавателя. При пустых полях полная оценка не создаётся."
+    },
+    {
+      "zh": "从一个问题开始",
+      "en": "Start with a question",
+      "ru": "Начните с вопроса"
+    },
+    {
+      "zh": "例如：补充模型约束后。将包含当前编辑区文字。",
+      "en": "For example: after adding constraints. Includes the current editor text.",
+      "ru": "Например: после добавления ограничений. Включает текущий текст редактора."
+    },
+    {
+      "zh": "保存个人记录",
+      "en": "Save personal record",
+      "ru": "Сохранить личную запись"
+    },
+    {
+      "zh": "保存版本",
+      "en": "Save version",
+      "ru": "Сохранить версию"
+    },
+    {
+      "zh": "保留管理员入口，账号由平台单独开通。本轮不重做管理后台，本原型不登录真实管理员。",
+      "en": "Administrator entry is retained; accounts are provisioned separately. This prototype does not redesign the admin panel or sign in to real accounts.",
+      "ru": "Вход администратора сохранён; аккаунты создаются отдельно. Прототип не меняет панель администратора и не входит в реальные аккаунты."
+    },
+    {
+      "zh": "先写下问题与目标，阶段内容可以逐步补充。",
+      "en": "Start with the question and goal; fill in stages gradually.",
+      "ru": "Начните с вопроса и цели; этапы можно заполнять постепенно."
+    },
+    {
+      "zh": "先创建团队。",
+      "en": "Create a team first.",
+      "ru": "Сначала создайте команду."
+    },
+    {
+      "zh": "先创建团队，再邀请学生加入。",
+      "en": "Create a team, then invite students.",
+      "ru": "Создайте команду, затем пригласите студентов."
+    },
+    {
+      "zh": "先创建草稿并预览学生看到的内容。",
+      "en": "Create a draft and preview the student view.",
+      "ru": "Создайте черновик и проверьте его вид для студента."
+    },
+    {
+      "zh": "先描述已知条件、尝试和卡住的步骤。",
+      "en": "Describe what you know, what you tried and where you are stuck.",
+      "ru": "Опишите известные условия, попытки решения и затруднения."
+    },
+    {
+      "zh": "创建第一个项目",
+      "en": "Create your first project",
+      "ru": "Создать первый проект"
+    },
+    {
+      "zh": "创建项目",
+      "en": "Create project",
+      "ru": "Создать проект"
+    },
+    {
+      "zh": "创新性",
+      "en": "Originality",
+      "ru": "Оригинальность"
+    },
+    {
+      "zh": "模型假设",
+      "en": "Model assumptions",
+      "ru": "Предположения модели"
+    },
+    {
+      "zh": "模型构建",
+      "en": "Model construction",
+      "ru": "Построение модели"
+    },
+    {
+      "zh": "结果验证",
+      "en": "Result validation",
+      "ru": "Проверка результатов"
+    },
+    {
+      "zh": "加入团队后才能查看消息。不会把无权限解释为资料丢失。",
+      "en": "Join the team to read messages. No access does not mean missing data.",
+      "ru": "Вступите в команду, чтобы читать сообщения. Отсутствие доступа не означает потерю данных."
+    },
+    {
+      "zh": "原型使用演示原件，不读取你的私人文件。",
+      "en": "The prototype uses demo originals and does not read private files.",
+      "ru": "Прототип использует демооригиналы и не читает личные файлы."
+    },
+    {
+      "zh": "只重置此独立原型的演示记录，不影响正式项目、线上账号或阶段2文件。",
+      "en": "Reset this prototype's demo data only. The formal project, online accounts and stage 2 files are unaffected.",
+      "ru": "Сбрасываются только демоданные прототипа. Рабочий проект, онлайн-аккаунты и файлы этапа 2 не затрагиваются."
+    },
+    {
+      "zh": "可以开始自主项目或浏览知识中心。",
+      "en": "Start an independent project or browse the knowledge center.",
+      "ru": "Начните самостоятельный проект или откройте центр знаний."
+    },
+    {
+      "zh": "可以独立创建，或从论文原件创建关联文稿。",
+      "en": "Create a standalone draft or link one to an original paper.",
+      "ru": "Создайте отдельный текст или свяжите его с оригиналом статьи."
+    },
+    {
+      "zh": "将保存当前已保存的八阶段内容与附件；未点“保存”的编辑不包含在快照中。教师不会因此看到整个私人工作区。",
+      "en": "The snapshot includes saved stage content and attachments. Unsaved edits are excluded. Your full private workspace is never shared.",
+      "ru": "Снимок включает сохранённые этапы и вложения. Несохранённые изменения не включаются. Личное пространство целиком не открывается."
+    },
+    {
+      "zh": "开始训练",
+      "en": "Start practice",
+      "ru": "Начать практику"
+    },
+    {
+      "zh": "我已检查当前保存内容、附件和提交要求，确认生成不可覆盖的本次快照。",
+      "en": "I checked the saved content, attachments and requirements and confirm this immutable snapshot.",
+      "ru": "Я проверил сохранённые материалы, вложения и требования и подтверждаю создание неизменяемого снимка."
+    },
+    {
+      "zh": "教师任务由教师发布，学生可以自行创建个人练习。",
+      "en": "Teachers publish teaching tasks; students may create personal practice.",
+      "ru": "Учебные задания публикует преподаватель; студент может создавать личную практику."
+    },
+    {
+      "zh": "新建或关联",
+      "en": "Create or link",
+      "ru": "Создать или связать"
+    },
+    {
+      "zh": "新建时使用的项目名称",
+      "en": "Name for a new project",
+      "ru": "Название нового проекта"
+    },
+    {
+      "zh": "暂无可访问团队",
+      "en": "No accessible teams",
+      "ru": "Нет доступных команд"
+    },
+    {
+      "zh": "暂无对话",
+      "en": "No conversations",
+      "ru": "Диалогов пока нет"
+    },
+    {
+      "zh": "暂无教学资料",
+      "en": "No teaching resources",
+      "ru": "Учебных материалов пока нет"
+    },
+    {
+      "zh": "暂无教师反馈，提交成果后可在这里继续。",
+      "en": "No teacher feedback yet. Submit your work to continue here.",
+      "ru": "Отзывов пока нет. Сдайте работу, чтобы продолжить здесь."
+    },
+    {
+      "zh": "暂无记录。",
+      "en": "No records yet.",
+      "ru": "Записей пока нет."
+    },
+    {
+      "zh": "本次修改说明",
+      "en": "Revision summary",
+      "ru": "Описание доработки"
+    },
+    {
+      "zh": "查看账号与团队",
+      "en": "View account & teams",
+      "ru": "Открыть аккаунт и команды"
+    },
+    {
+      "zh": "检查快照",
+      "en": "Check snapshot",
+      "ru": "Проверить снимок"
+    },
+    {
+      "zh": "没有匹配的训练",
+      "en": "No matching practice tasks",
+      "ru": "Подходящих заданий нет"
+    },
+    {
+      "zh": "没有待处理提交",
+      "en": "No submissions to process",
+      "ru": "Нет работ для обработки"
+    },
+    {
+      "zh": "添加个人教学资料后，可明确共享给团队。",
+      "en": "Add private teaching resources, then explicitly share them with a team.",
+      "ru": "Добавьте личные учебные материалы, затем явно откройте их команде."
+    },
+    {
+      "zh": "演示数据已准备；没有读取真实账号或业务数据。",
+      "en": "Demo data is ready; no real account or business data was read.",
+      "ru": "Демоданные готовы; реальные аккаунты и рабочие данные не читались."
+    },
+    {
+      "zh": "版本名称",
+      "en": "Version name",
+      "ru": "Название версии"
+    },
+    {
+      "zh": "生成版本回执",
+      "en": "Create version receipt",
+      "ru": "Создать квитанцию версии"
+    },
+    {
+      "zh": "确认要求",
+      "en": "Confirm requirements",
+      "ru": "Подтвердить требования"
+    },
+    {
+      "zh": "确认重置本原型",
+      "en": "Confirm prototype reset",
+      "ru": "Подтвердить сброс прототипа"
+    },
+    {
+      "zh": "练习名称",
+      "en": "Practice name",
+      "ru": "Название практики"
+    },
+    {
+      "zh": "练习目标与交付要求",
+      "en": "Practice goal & deliverables",
+      "ru": "Цель практики и результаты"
+    },
+    {
+      "zh": "自主建模",
+      "en": "Independent modeling",
+      "ru": "Самостоятельное моделирование"
+    },
+    {
+      "zh": "自我检查依据",
+      "en": "Self-check criteria",
+      "ru": "Критерии самопроверки"
+    },
+    {
+      "zh": "记录问题、数据、模型和验证过程。",
+      "en": "Record the question, data, model and validation.",
+      "ru": "Запишите задачу, данные, модель и ход проверки."
+    },
+    {
+      "zh": "返回通知列表",
+      "en": "Back to notifications",
+      "ru": "К списку уведомлений"
+    },
+    {
+      "zh": "还没有可访问团队",
+      "en": "No accessible teams yet",
+      "ru": "Доступных команд пока нет"
+    },
+    {
+      "zh": "还没有团队",
+      "en": "No teams yet",
+      "ru": "Команд пока нет"
+    },
+    {
+      "zh": "还没有教学任务",
+      "en": "No teaching tasks yet",
+      "ru": "Учебных заданий пока нет"
+    },
+    {
+      "zh": "还没有文稿",
+      "en": "No drafts yet",
+      "ru": "Текстов пока нет"
+    },
+    {
+      "zh": "还没有训练任务",
+      "en": "No practice tasks yet",
+      "ru": "Заданий для практики пока нет"
+    },
+    {
+      "zh": "还没有论文",
+      "en": "No papers yet",
+      "ru": "Статей пока нет"
+    },
+    {
+      "zh": "还没有项目",
+      "en": "No projects yet",
+      "ru": "Проектов пока нет"
+    },
+    {
+      "zh": "这是个人练习，不会以教师任务身份发布，也不会自动共享。",
+      "en": "This is personal practice, not a teacher-published task. It is not shared automatically.",
+      "ru": "Это личная практика, а не задание преподавателя. Доступ автоматически не открывается."
+    },
+    {
+      "zh": "进入项目",
+      "en": "Open project",
+      "ru": "Открыть проект"
+    },
+    {
+      "zh": "重置演示数据",
+      "en": "Reset demo data",
+      "ru": "Сбросить демоданные"
+    },
+    {
+      "zh": "邮箱已验证",
+      "en": "Email verified",
+      "ru": "Почта подтверждена"
+    },
+    {
+      "zh": "关联教学任务",
+      "en": "Linked teaching task",
+      "ru": "Связанное учебное задание"
+    },
+    {
+      "zh": "提交时才生成教师可见快照。",
+      "en": "A teacher-visible snapshot is created only on submission.",
+      "ru": "Снимок для преподавателя создаётся только при сдаче."
+    },
+    {
+      "zh": "我的问题",
+      "en": "My question",
+      "ru": "Мой вопрос"
+    },
+    {
+      "zh": "AI演示回复",
+      "en": "AI demo response",
+      "ru": "Демонстрационный ответ ИИ"
+    },
+    {
+      "zh": "AI建议演示",
+      "en": "Demo AI suggestions",
+      "ru": "Демонстрационные подсказки ИИ"
+    },
+    {
+      "zh": "CSV引号位置无效",
+      "en": "Invalid CSV quote position",
+      "ru": "Недопустимое положение кавычек в CSV"
+    },
+    {
+      "zh": "CSV引号未闭合",
+      "en": "Unclosed CSV quote",
+      "ru": "Незакрытая кавычка в CSV"
+    },
+    {
+      "zh": "CSV超过1MB",
+      "en": "CSV exceeds 1 MB",
+      "ru": "CSV превышает 1 МБ"
+    },
+    {
+      "zh": "临近截止阈值为1—168小时",
+      "en": "Set the due-soon threshold to 1–168 hours",
+      "ru": "Задайте порог от 1 до 168 часов"
+    },
+    {
+      "zh": "任务不存在",
+      "en": "Task not found",
+      "ru": "Задание не найдено"
+    },
+    {
+      "zh": "任务已变化，请重新编辑",
+      "en": "Task changed; reopen the editor",
+      "ru": "Задание изменилось; откройте редактор заново"
+    },
+    {
+      "zh": "任务已变化，请重新预览",
+      "en": "Task changed; preview again",
+      "ru": "Задание изменилось; повторите предпросмотр"
+    },
+    {
+      "zh": "任务权限已变化",
+      "en": "Task permissions changed",
+      "ru": "Права на задание изменились"
+    },
+    {
+      "zh": "任务标题、要求、评价与截止时间必填",
+      "en": "Title, requirements, criteria and deadline are required",
+      "ru": "Обязательны название, требования, критерии и срок"
+    },
+    {
+      "zh": "任务版本已变化",
+      "en": "Task version changed",
+      "ru": "Версия задания изменилась"
+    },
+    {
+      "zh": "保存失败，输入保留在当前页面，请重试或导出。",
+      "en": "Save failed; input is retained. Retry or export it.",
+      "ru": "Сохранение не удалось; ввод сохранён на странице. Повторите попытку или экспортируйте."
+    },
+    {
+      "zh": "先创建团队",
+      "en": "Create a team first",
+      "ru": "Сначала создайте команду"
+    },
+    {
+      "zh": "先发布一个任务",
+      "en": "Publish a task first",
+      "ru": "Сначала опубликуйте задание"
+    },
+    {
+      "zh": "先描述已知条件与问题",
+      "en": "Describe known conditions and your question first",
+      "ru": "Сначала опишите условия и вопрос"
+    },
+    {
+      "zh": "先预览CSV",
+      "en": "Preview the CSV first",
+      "ru": "Сначала проверьте CSV"
+    },
+    {
+      "zh": "先预览提醒",
+      "en": "Preview the reminder first",
+      "ru": "Сначала проверьте напоминание"
+    },
+    {
+      "zh": "共享权限已变化",
+      "en": "Sharing permissions changed",
+      "ru": "Права общего доступа изменились"
+    },
+    {
+      "zh": "共享资料不可用",
+      "en": "Shared resource unavailable",
+      "ru": "Общий материал недоступен"
+    },
+    {
+      "zh": "写作建议演示",
+      "en": "Demo writing suggestions",
+      "ru": "Демонстрационные рекомендации по тексту"
+    },
+    {
+      "zh": "列名及顺序不正确，请使用模板",
+      "en": "Incorrect column names or order; use the template",
+      "ru": "Неверные имена или порядок столбцов; используйте шаблон"
+    },
+    {
+      "zh": "反馈发布预览",
+      "en": "Feedback publication preview",
+      "ru": "Предпросмотр публикации отзыва"
+    },
+    {
+      "zh": "发布后不更换团队；请为其他团队新建任务",
+      "en": "The team cannot change after publication; create another task",
+      "ru": "После публикации команду менять нельзя; создайте другое задание"
+    },
+    {
+      "zh": "只有队长可以执行此操作",
+      "en": "Only the captain can do this",
+      "ru": "Это действие доступно только капитану"
+    },
+    {
+      "zh": "各项需为0—100，或留空",
+      "en": "Each score must be 0–100 or blank",
+      "ru": "Каждая оценка — от 0 до 100 или пустое поле"
+    },
+    {
+      "zh": "同一批中存在重复考核行，请先整理",
+      "en": "Duplicate assessment rows in this batch; resolve them first",
+      "ru": "В пакете есть повторные строки; сначала устраните дубликаты"
+    },
+    {
+      "zh": "团队不存在",
+      "en": "Team not found",
+      "ru": "Команда не найдена"
+    },
+    {
+      "zh": "团队成员",
+      "en": "Team members",
+      "ru": "Участники команды"
+    },
+    {
+      "zh": "团队或学生不存在",
+      "en": "Team or student not found",
+      "ru": "Команда или студент не найдены"
+    },
+    {
+      "zh": "团队权限已变化",
+      "en": "Team permissions changed",
+      "ru": "Права команды изменились"
+    },
+    {
+      "zh": "学生已经在团队中",
+      "en": "Student is already a member",
+      "ru": "Студент уже в команде"
+    },
+    {
+      "zh": "密码至少6位，且两次输入一致",
+      "en": "Use at least six characters and matching passwords",
+      "ru": "Не менее шести символов; пароли должны совпадать"
+    },
+    {
+      "zh": "尚未加入，不能访问团队成果",
+      "en": "Join before accessing team results",
+      "ru": "Вступите в команду, чтобы открыть результаты"
+    },
+    {
+      "zh": "已停止演示生成，已保存的问题仍保留。",
+      "en": "Demo generation stopped. Saved questions are retained.",
+      "ru": "Демонстрационная генерация остановлена. Сохранённые вопросы остались."
+    },
+    {
+      "zh": "已停止演示生成，问题仍保留。",
+      "en": "Demo generation stopped. Your question is retained.",
+      "ru": "Демонстрационная генерация остановлена. Вопрос сохранился."
+    },
+    {
+      "zh": "已存在冲突成绩，本批不覆盖，请核对来源",
+      "en": "Conflicting grade exists. Batch blocked; check the source.",
+      "ru": "Есть конфликт оценки. Пакет отклонён; проверьте источник."
+    },
+    {
+      "zh": "已恢复到编辑区，尚未覆盖保存的草稿。",
+      "en": "Restored to the editor; the saved draft is unchanged.",
+      "ru": "Восстановлено в редакторе; сохранённый черновик не изменён."
+    },
+    {
+      "zh": "已有待接受邀请",
+      "en": "An invitation is already pending",
+      "ru": "Приглашение уже ожидает принятия"
+    },
+    {
+      "zh": "已采纳到编辑区",
+      "en": "Accepted into the editor",
+      "ru": "Добавлено в редактор"
+    },
+    {
+      "zh": "引用已复制",
+      "en": "Citation copied",
+      "ru": "Ссылка скопирована"
+    },
+    {
+      "zh": "当前不可发布",
+      "en": "Cannot publish now",
+      "ru": "Сейчас нельзя опубликовать"
+    },
+    {
+      "zh": "当前不可开始",
+      "en": "Cannot start now",
+      "ru": "Сейчас нельзя начать"
+    },
+    {
+      "zh": "当前不可提交",
+      "en": "Cannot submit now",
+      "ru": "Сейчас нельзя сдать"
+    },
+    {
+      "zh": "当前没有修改此分工的权限",
+      "en": "You cannot edit this assignment",
+      "ru": "Нет прав на изменение этой задачи"
+    },
+    {
+      "zh": "得分、满分、考核或来源无效",
+      "en": "Invalid score, maximum, assessment or source",
+      "ru": "Неверные баллы, максимум, работа или источник"
+    },
+    {
+      "zh": "得分、满分不符合要求",
+      "en": "Invalid score or maximum",
+      "ru": "Баллы или максимум не соответствуют требованиям"
+    },
+    {
+      "zh": "成员分工",
+      "en": "Member assignments",
+      "ru": "Распределение задач"
+    },
+    {
+      "zh": "成员未加入",
+      "en": "Member has not joined",
+      "ru": "Участник не вступил"
+    },
+    {
+      "zh": "成果不存在",
+      "en": "Result not found",
+      "ru": "Результат не найден"
+    },
+    {
+      "zh": "成果已锁定或项目不可用",
+      "en": "Results locked or project unavailable",
+      "ru": "Результаты заблокированы или проект недоступен"
+    },
+    {
+      "zh": "截止时间或提交权限已变化，请返回任务核对。",
+      "en": "Deadline or submission access changed. Check the task again.",
+      "ru": "Срок или право сдачи изменились. Проверьте задание снова."
+    },
+    {
+      "zh": "提交或评阅表单不可用",
+      "en": "Submission or review form unavailable",
+      "ru": "Работа или форма проверки недоступны"
+    },
+    {
+      "zh": "提交权限已变化",
+      "en": "Submission permissions changed",
+      "ru": "Права на сдачу изменились"
+    },
+    {
+      "zh": "收件范围与执行预览",
+      "en": "Recipients & execution preview",
+      "ru": "Получатели и предпросмотр выполнения"
+    },
+    {
+      "zh": "教师原评语必填",
+      "en": "The original teacher comment is required",
+      "ru": "Исходный отзыв преподавателя обязателен"
+    },
+    {
+      "zh": "教师演示密钥应为TEACH-DEMO",
+      "en": "The demo teacher key is TEACH-DEMO",
+      "ru": "Демонстрационный ключ преподавателя: TEACH-DEMO"
+    },
+    {
+      "zh": "教师登录、验证或角色权限已失效",
+      "en": "Teacher sign-in, verification or access has expired",
+      "ru": "Вход, проверка или права преподавателя недействительны"
+    },
+    {
+      "zh": "文稿不存在",
+      "en": "Draft not found",
+      "ru": "Текст не найден"
+    },
+    {
+      "zh": "无权使用该团队",
+      "en": "No permission to use this team",
+      "ru": "Нет прав на эту команду"
+    },
+    {
+      "zh": "无权共享",
+      "en": "No sharing permission",
+      "ru": "Нет прав общего доступа"
+    },
+    {
+      "zh": "无权移出成员",
+      "en": "No permission to remove members",
+      "ru": "Нет прав на удаление участников"
+    },
+    {
+      "zh": "无权管理团队",
+      "en": "No permission to manage this team",
+      "ru": "Нет прав на управление командой"
+    },
+    {
+      "zh": "无权编辑任务",
+      "en": "No permission to edit this task",
+      "ru": "Нет прав на изменение задания"
+    },
+    {
+      "zh": "无权编辑此任务",
+      "en": "No permission to edit this task",
+      "ru": "Нет прав на изменение этого задания"
+    },
+    {
+      "zh": "无权调整或竞赛已锁定",
+      "en": "No permission, or competition locked",
+      "ru": "Нет прав или соревнование заблокировано"
+    },
+    {
+      "zh": "无权邀请或竞赛已锁定",
+      "en": "Cannot invite, or competition locked",
+      "ru": "Нет прав приглашать или соревнование заблокировано"
+    },
+    {
+      "zh": "日期必须为有效YYYY-MM-DD",
+      "en": "Use a valid YYYY-MM-DD date",
+      "ru": "Укажите действительную дату YYYY-MM-DD"
+    },
+    {
+      "zh": "未加入、尚未开始或竞赛已锁定",
+      "en": "Not joined, not started or competition locked",
+      "ru": "Вы не вступили, соревнование не началось или заблокировано"
+    },
+    {
+      "zh": "本轮已锁定，不能改写",
+      "en": "This round is locked and cannot be changed",
+      "ru": "Этот раунд заблокирован и не изменяется"
+    },
+    {
+      "zh": "来源不可访问",
+      "en": "Source inaccessible",
+      "ru": "Источник недоступен"
+    },
+    {
+      "zh": "模拟计时已到，本轮已保存成果锁定。",
+      "en": "Time is up. Saved results for this round are locked.",
+      "ru": "Время истекло. Сохранённые результаты раунда заблокированы."
+    },
+    {
+      "zh": "正在生成演示回复",
+      "en": "Generating demo response",
+      "ru": "Создание демонстрационного ответа"
+    },
+    {
+      "zh": "此邀请不可用",
+      "en": "Invitation unavailable",
+      "ru": "Приглашение недоступно"
+    },
+    {
+      "zh": "每批最多1000条成绩",
+      "en": "At most 1,000 grade rows per batch",
+      "ru": "Не более 1000 оценок в пакете"
+    },
+    {
+      "zh": "没有个人资料可共享",
+      "en": "No personal resources to share",
+      "ru": "Нет личных материалов для общего доступа"
+    },
+    {
+      "zh": "没有可关联的项目，请先创建项目",
+      "en": "No project available; create one first",
+      "ru": "Нет проекта для привязки; сначала создайте проект"
+    },
+    {
+      "zh": "没有团队访问权",
+      "en": "No team access",
+      "ru": "Нет доступа к команде"
+    },
+    {
+      "zh": "没有成绩数据",
+      "en": "No grade data",
+      "ru": "Нет данных об оценках"
+    },
+    {
+      "zh": "浏览器存储不可用",
+      "en": "Browser storage unavailable",
+      "ru": "Хранилище браузера недоступно"
+    },
+    {
+      "zh": "浏览器未允许复制，请手动选中引用。",
+      "en": "Clipboard access denied; select and copy the citation manually.",
+      "ru": "Доступ к буферу обмена запрещён; выделите и скопируйте ссылку вручную."
+    },
+    {
+      "zh": "演示密码至少6位，不会存储",
+      "en": "Demo password needs six characters; it is not stored",
+      "ru": "Демопароль — не менее шести символов; он не сохраняется"
+    },
+    {
+      "zh": "演示密码至少6位，不保存密码",
+      "en": "Demo password needs six characters; it is not stored",
+      "ru": "Демопароль — не менее шести символов; он не сохраняется"
+    },
+    {
+      "zh": "演示时长设为1—43200分钟",
+      "en": "Duration must be 1–43,200 minutes",
+      "ru": "Продолжительность — от 1 до 43 200 минут"
+    },
+    {
+      "zh": "演示生成失败",
+      "en": "Demo generation failed",
+      "ru": "Ошибка демонстрационной генерации"
+    },
+    {
+      "zh": "演示重设完成，没有存储或修改真实密码",
+      "en": "Demo reset complete; no real password stored or changed",
+      "ru": "Демосброс завершён; реальный пароль не сохранён и не изменён"
+    },
+    {
+      "zh": "演示重设完成；没有保存或修改真实密码。",
+      "en": "Demo reset complete; no real password stored or changed.",
+      "ru": "Демосброс завершён; реальный пароль не сохранён и не изменён."
+    },
+    {
+      "zh": "演示验证码无效",
+      "en": "Invalid demo verification code",
+      "ru": "Неверный демонстрационный код"
+    },
+    {
+      "zh": "演示验证码无效，请输入123456",
+      "en": "Invalid demo code; enter 123456",
+      "ru": "Неверный демокод; введите 123456"
+    },
+    {
+      "zh": "演示验证码：123456。没有发送真实邮件。",
+      "en": "Demo code: 123456. No real email was sent.",
+      "ru": "Демокод: 123456. Реальное письмо не отправлялось."
+    },
+    {
+      "zh": "目标项目不可编辑",
+      "en": "Target project cannot be edited",
+      "ru": "Целевой проект нельзя редактировать"
+    },
+    {
+      "zh": "确认共享范围",
+      "en": "Confirm sharing scope",
+      "ru": "Подтвердить область доступа"
+    },
+    {
+      "zh": "确认关联成果快照",
+      "en": "Confirm result snapshot attachment",
+      "ru": "Подтвердить привязку снимка результата"
+    },
+    {
+      "zh": "确认导出文稿",
+      "en": "Confirm draft export",
+      "ru": "Подтвердить экспорт текста"
+    },
+    {
+      "zh": "确认开始计时",
+      "en": "Confirm timer start",
+      "ru": "Подтвердить запуск таймера"
+    },
+    {
+      "zh": "确认提前结束",
+      "en": "Confirm early finish",
+      "ru": "Подтвердить досрочное завершение"
+    },
+    {
+      "zh": "竞赛成果已锁定",
+      "en": "Competition results locked",
+      "ru": "Результаты соревнования заблокированы"
+    },
+    {
+      "zh": "竞赛记录不存在",
+      "en": "Competition record not found",
+      "ru": "Запись соревнования не найдена"
+    },
+    {
+      "zh": "结束后才能复制本轮成果",
+      "en": "Finish the round before copying its results",
+      "ru": "Сначала завершите раунд, затем копируйте результаты"
+    },
+    {
+      "zh": "计划已不可取消",
+      "en": "Schedule can no longer be cancelled",
+      "ru": "План больше нельзя отменить"
+    },
+    {
+      "zh": "计划时间需在未来",
+      "en": "Scheduled time must be in the future",
+      "ru": "Время выполнения должно быть в будущем"
+    },
+    {
+      "zh": "论文不存在",
+      "en": "Paper not found",
+      "ru": "Статья не найдена"
+    },
+    {
+      "zh": "评阅已变化，请重新预览",
+      "en": "Review changed; preview again",
+      "ru": "Проверка изменилась; повторите предпросмотр"
+    },
+    {
+      "zh": "该反馈已加入清单，不会重复添加",
+      "en": "Feedback already in checklist; not added twice",
+      "ru": "Отзыв уже в списке; повторно не добавляется"
+    },
+    {
+      "zh": "该项目尚未关联训练任务",
+      "en": "This project is not linked to a task",
+      "ru": "Проект ещё не связан с заданием"
+    },
+    {
+      "zh": "请使用@example.invalid演示邮箱",
+      "en": "Use an @example.invalid demo email",
+      "ru": "Используйте демонстрационную почту @example.invalid"
+    },
+    {
+      "zh": "请使用@example.invalid演示邮箱，勿输入真实账号",
+      "en": "Use @example.invalid; do not enter a real account",
+      "ru": "Используйте @example.invalid; не вводите реальный аккаунт"
+    },
+    {
+      "zh": "请使用演示邮箱",
+      "en": "Use a demo email address",
+      "ru": "Используйте демонстрационную почту"
+    },
+    {
+      "zh": "请先填写问题",
+      "en": "Enter a question first",
+      "ru": "Сначала введите вопрос"
+    },
+    {
+      "zh": "请先确认提交要求",
+      "en": "Confirm the submission requirements first",
+      "ru": "Сначала подтвердите требования сдачи"
+    },
+    {
+      "zh": "请在教师端操作",
+      "en": "Switch to the teacher area first",
+      "ru": "Сначала перейдите в кабинет преподавателя"
+    },
+    {
+      "zh": "请填写主题、正文、任务并选择收件人",
+      "en": "Enter a subject, message and task, and select recipients",
+      "ru": "Заполните тему, текст и задание, выберите получателей"
+    },
+    {
+      "zh": "请说明发布后的变更原因",
+      "en": "Explain the reason for this published-task change",
+      "ru": "Укажите причину изменения опубликованного задания"
+    },
+    {
+      "zh": "请选择有权任务",
+      "en": "Choose an authorized task",
+      "ru": "Выберите доступное задание"
+    },
+    {
+      "zh": "资料不存在",
+      "en": "Resource not found",
+      "ru": "Материал не найден"
+    },
+    {
+      "zh": "资料已关联，不重复添加",
+      "en": "Resource already attached; not added twice",
+      "ru": "Материал уже приложен; повторно не добавляется"
+    },
+    {
+      "zh": "资料或共享范围不可用",
+      "en": "Resource or sharing scope unavailable",
+      "ru": "Материал или область доступа недоступны"
+    },
+    {
+      "zh": "退回修改需设置未来的独立重交截止",
+      "en": "Set a separate future revision deadline",
+      "ru": "Задайте отдельный будущий срок повторной сдачи"
+    },
+    {
+      "zh": "邀请不可用",
+      "en": "Invitation unavailable",
+      "ru": "Приглашение недоступно"
+    },
+    {
+      "zh": "邀请演示成员",
+      "en": "Invite demo member",
+      "ru": "Пригласить демонстрационного участника"
+    },
+    {
+      "zh": "附件不可访问",
+      "en": "Attachment inaccessible",
+      "ru": "Вложение недоступно"
+    },
+    {
+      "zh": "项目不可提交",
+      "en": "Project cannot be submitted",
+      "ru": "Проект нельзя сдать"
+    },
+    {
+      "zh": "项目不可编辑",
+      "en": "Project cannot be edited",
+      "ru": "Проект нельзя редактировать"
+    },
+    {
+      "zh": "项目不存在或已锁定",
+      "en": "Project missing or locked",
+      "ru": "Проект отсутствует или заблокирован"
+    },
+    {
+      "zh": "项目已关联其他任务或不可用，请重新选择",
+      "en": "Project is linked elsewhere or unavailable; choose again",
+      "ru": "Проект связан с другим заданием или недоступен; выберите снова"
+    },
+    {
+      "zh": "验证码或两次演示密码不符合要求",
+      "en": "Invalid code or non-matching demo passwords",
+      "ru": "Неверный код или несовпадающие демопароли"
+    },
+    {
+      "zh": "个人备注已保存，不向教师展示",
+      "en": "Private note saved; not shared with teachers",
+      "ru": "Личная заметка сохранена; преподавателю недоступна"
+    },
+    {
+      "zh": "个人完成标记已保存，不代表教师认可",
+      "en": "Completion mark saved; not teacher approval",
+      "ru": "Отметка сохранена; это не одобрение преподавателя"
+    },
+    {
+      "zh": "个人批注已保存",
+      "en": "Private annotation saved",
+      "ru": "Личный комментарий сохранён"
+    },
+    {
+      "zh": "个人练习已创建",
+      "en": "Personal practice created",
+      "ru": "Личная практика создана"
+    },
+    {
+      "zh": "个人评价记录已保存，不作为教师成绩",
+      "en": "Self-assessment saved; not a teacher grade",
+      "ru": "Самооценка сохранена; это не оценка преподавателя"
+    },
+    {
+      "zh": "个人资料已添加",
+      "en": "Personal resource added",
+      "ru": "Личный материал добавлен"
+    },
+    {
+      "zh": "任务变更已确认，历史与旧提交保留",
+      "en": "Task changes confirmed; history and submissions retained",
+      "ru": "Изменения подтверждены; история и работы сохранены"
+    },
+    {
+      "zh": "任务已关联私人项目",
+      "en": "Task linked to a private project",
+      "ru": "Задание связано с личным проектом"
+    },
+    {
+      "zh": "任务草稿已保存",
+      "en": "Task draft saved",
+      "ru": "Черновик задания сохранён"
+    },
+    {
+      "zh": "任务跟进计划已保存",
+      "en": "Follow-up plan saved",
+      "ru": "План контроля сохранён"
+    },
+    {
+      "zh": "保存失败，当前输入仍保留。",
+      "en": "Save failed; current input is retained.",
+      "ru": "Сохранение не удалось; текущий ввод остался."
+    },
+    {
+      "zh": "保存失败，输入保留。",
+      "en": "Save failed; input retained.",
+      "ru": "Сохранение не удалось; ввод остался."
+    },
+    {
+      "zh": "保存批注",
+      "en": "Save annotation",
+      "ru": "Сохранить комментарий"
+    },
+    {
+      "zh": "先加入该竞赛才能查看",
+      "en": "Join the competition to view it",
+      "ru": "Вступите в соревнование для просмотра"
+    },
+    {
+      "zh": "关联资料",
+      "en": "Attach resource",
+      "ru": "Приложить материал"
+    },
+    {
+      "zh": "分工已保存",
+      "en": "Assignment saved",
+      "ru": "Задача сохранена"
+    },
+    {
+      "zh": "分工进度已更新",
+      "en": "Assignment progress updated",
+      "ru": "Прогресс задачи обновлён"
+    },
+    {
+      "zh": "命名版本已保存，原件未改变",
+      "en": "Named version saved; original unchanged",
+      "ru": "Именованная версия сохранена; оригинал не изменён"
+    },
+    {
+      "zh": "回收站",
+      "en": "Trash",
+      "ru": "Корзина"
+    },
+    {
+      "zh": "团队成员权限已撤销",
+      "en": "Team member access revoked",
+      "ru": "Доступ участника команды отозван"
+    },
+    {
+      "zh": "固定演示结果，未执行输入代码。",
+      "en": "Fixed demo result; input code was not executed.",
+      "ru": "Фиксированный деморезультат; введённый код не выполнялся."
+    },
+    {
+      "zh": "已创建关联文稿；原论文未覆盖",
+      "en": "Linked draft created; original paper preserved",
+      "ru": "Связанный текст создан; оригинал статьи сохранён"
+    },
+    {
+      "zh": "已创建私人演示对话",
+      "en": "Private demo conversation created",
+      "ru": "Личный демодиалог создан"
+    },
+    {
+      "zh": "已加入演示团队",
+      "en": "Joined demo team",
+      "ru": "Вступление в демокоманду выполнено"
+    },
+    {
+      "zh": "已取消收藏",
+      "en": "Removed from favorites",
+      "ru": "Удалено из избранного"
+    },
+    {
+      "zh": "已向团队共享选定资料副本",
+      "en": "Selected resource copy shared with team",
+      "ru": "Копия выбранного материала открыта команде"
+    },
+    {
+      "zh": "已复制为个人练习，竞赛原记录未改变",
+      "en": "Copied to personal practice; competition record unchanged",
+      "ru": "Скопировано в личную практику; запись соревнования не изменена"
+    },
+    {
+      "zh": "已标为全部已读",
+      "en": "All marked as read",
+      "ru": "Всё отмечено прочитанным"
+    },
+    {
+      "zh": "已退出演示账号",
+      "en": "Signed out of demo",
+      "ru": "Выход из демоаккаунта выполнен"
+    },
+    {
+      "zh": "成果快照已关联；原件未改变，尚未向教师提交",
+      "en": "Result snapshot attached; original unchanged; not submitted to teacher",
+      "ru": "Снимок приложен; оригинал не изменён; преподавателю ещё не сдано"
+    },
+    {
+      "zh": "成果快照已生成，等待教师评阅。",
+      "en": "Result snapshot created; awaiting teacher review.",
+      "ru": "Снимок создан; ожидается проверка преподавателя."
+    },
+    {
+      "zh": "按自己的目标检查成果。",
+      "en": "Check results against your own goals.",
+      "ru": "Проверьте результаты по собственным целям."
+    },
+    {
+      "zh": "提交说明",
+      "en": "Submission notes",
+      "ru": "Описание сдачи"
+    },
+    {
+      "zh": "教学任务已发布并生成演示通知",
+      "en": "Task published with demo notifications",
+      "ru": "Задание опубликовано с демонстрационными уведомлениями"
+    },
+    {
+      "zh": "教学团队已创建",
+      "en": "Teaching team created",
+      "ru": "Учебная команда создана"
+    },
+    {
+      "zh": "教学资料",
+      "en": "Teaching resource",
+      "ru": "Учебный материал"
+    },
+    {
+      "zh": "教师个人资料已保存",
+      "en": "Teacher-private resource saved",
+      "ru": "Личный материал преподавателя сохранён"
+    },
+    {
+      "zh": "教师演示消息已保存",
+      "en": "Teacher demo message saved",
+      "ru": "Демосообщение преподавателя сохранено"
+    },
+    {
+      "zh": "教师演示登录成功",
+      "en": "Teacher demo sign-in successful",
+      "ru": "Демонстрационный вход преподавателя выполнен"
+    },
+    {
+      "zh": "教师演示解析记录已保存",
+      "en": "Teacher parsing demo saved",
+      "ru": "Деморазбор преподавателя сохранён"
+    },
+    {
+      "zh": "教师演示资料已保存",
+      "en": "Teacher demo profile saved",
+      "ru": "Демопрофиль преподавателя сохранён"
+    },
+    {
+      "zh": "教师演示运行记录已保存",
+      "en": "Teacher demo run saved",
+      "ru": "Демозапуск преподавателя сохранён"
+    },
+    {
+      "zh": "教师演示邮箱已验证",
+      "en": "Teacher demo email verified",
+      "ru": "Демонстрационная почта преподавателя подтверждена"
+    },
+    {
+      "zh": "教师评阅草稿已保存，学生端尚不可见",
+      "en": "Private review draft saved; not visible to students",
+      "ru": "Черновик отзыва сохранён; студентам недоступен"
+    },
+    {
+      "zh": "文稿快照",
+      "en": "Draft snapshot",
+      "ru": "Снимок текста"
+    },
+    {
+      "zh": "文稿草稿已保存",
+      "en": "Draft saved",
+      "ru": "Черновик сохранён"
+    },
+    {
+      "zh": "新文稿已创建",
+      "en": "New draft created",
+      "ru": "Новый текст создан"
+    },
+    {
+      "zh": "有未保存修改，切换页面不会丢失当前会话输入。",
+      "en": "Unsaved edits are kept within this session when switching pages.",
+      "ru": "Несохранённый ввод остаётся в текущем сеансе при переходе между страницами."
+    },
+    {
+      "zh": "未接受邀请的成员不能访问本轮成果。",
+      "en": "Members who have not accepted cannot view round results.",
+      "ru": "Участники, не принявшие приглашение, не видят результаты раунда."
+    },
+    {
+      "zh": "演示个人资料已保存",
+      "en": "Demo profile saved",
+      "ru": "Демонстрационный профиль сохранён"
+    },
+    {
+      "zh": "演示原件记录已添加",
+      "en": "Demo original record added",
+      "ru": "Запись демооригинала добавлена"
+    },
+    {
+      "zh": "演示回复已保存",
+      "en": "Demo response saved",
+      "ru": "Демонстрационный ответ сохранён"
+    },
+    {
+      "zh": "演示团队消息已保存",
+      "en": "Demo team message saved",
+      "ru": "Демосообщение команды сохранено"
+    },
+    {
+      "zh": "演示提醒意愿已保存，未发信",
+      "en": "Demo reminder preference saved; no mail sent",
+      "ru": "Согласие на демонапоминания сохранено; письмо не отправлено"
+    },
+    {
+      "zh": "演示登录成功",
+      "en": "Demo sign-in successful",
+      "ru": "Демонстрационный вход выполнен"
+    },
+    {
+      "zh": "演示解析已重试",
+      "en": "Demo parsing retried",
+      "ru": "Деморазбор повторён"
+    },
+    {
+      "zh": "演示解析已重试，原件名称未改变",
+      "en": "Demo parsing retried; original name unchanged",
+      "ru": "Деморазбор повторён; имя оригинала не изменено"
+    },
+    {
+      "zh": "演示运行失败，代码保留。",
+      "en": "Demo run failed; code retained.",
+      "ru": "Демозапуск не удался; код сохранён."
+    },
+    {
+      "zh": "演示运行已取消",
+      "en": "Demo run cancelled",
+      "ru": "Демозапуск отменён"
+    },
+    {
+      "zh": "演示邀请已创建，不发送真实邮件",
+      "en": "Demo invitation created; no real mail sent",
+      "ru": "Демоприглашение создано; реальное письмо не отправлено"
+    },
+    {
+      "zh": "演示邮箱已验证",
+      "en": "Demo email verified",
+      "ru": "Демонстрационная почта подтверждена"
+    },
+    {
+      "zh": "竞赛成员权限",
+      "en": "Competition member access",
+      "ru": "Доступ участников соревнования"
+    },
+    {
+      "zh": "编辑项目",
+      "en": "Edit project",
+      "ru": "Редактировать проект"
+    },
+    {
+      "zh": "计划已取消",
+      "en": "Schedule cancelled",
+      "ru": "План отменён"
+    },
+    {
+      "zh": "计划提醒已保存，仅在原型打开时演示执行",
+      "en": "Reminder scheduled; simulated only while the prototype is open",
+      "ru": "Напоминание запланировано; моделируется только при открытом прототипе"
+    },
+    {
+      "zh": "论文快照",
+      "en": "Paper snapshot",
+      "ru": "Снимок статьи"
+    },
+    {
+      "zh": "该版本仅保存附件名称，暂无可预览的正文。",
+      "en": "This version stores only an attachment name; no text is available.",
+      "ru": "В этой версии сохранено только имя вложения; текста для просмотра нет."
+    },
+    {
+      "zh": "资料副本已共享到团队",
+      "en": "Resource copy shared with team",
+      "ru": "Копия материала открыта команде"
+    },
+    {
+      "zh": "资料已关联",
+      "en": "Resource attached",
+      "ru": "Материал приложен"
+    },
+    {
+      "zh": "通知已读状态已保存",
+      "en": "Notification read state saved",
+      "ru": "Состояние прочтения уведомления сохранено"
+    },
+    {
+      "zh": "问题已保存，准备演示回复",
+      "en": "Question saved; preparing demo response",
+      "ru": "Вопрос сохранён; готовится демоответ"
+    },
+    {
+      "zh": "问题已保存，未调用模型",
+      "en": "Question saved; no model called",
+      "ru": "Вопрос сохранён; модель не вызывалась"
+    },
+    {
+      "zh": "阶段完成标记已更新",
+      "en": "Stage completion mark updated",
+      "ru": "Отметка выполнения этапа обновлена"
+    },
+    {
+      "zh": "阶段笔记已保存",
+      "en": "Stage notes saved",
+      "ru": "Заметки этапа сохранены"
+    },
+    {
+      "zh": "项目已保存",
+      "en": "Project saved",
+      "ru": "Проект сохранён"
+    },
+    {
+      "zh": "本版本评分与反馈历史",
+      "en": "Grade & feedback history for this version",
+      "ru": "Оценка и история отзывов к этой версии"
+    },
+    {
+      "zh": "教师评分",
+      "en": "Teacher grade",
+      "ru": "Оценка преподавателя"
+    },
+    {
+      "zh": "这里保留已发布的原评语；学生自勾不改变教师评分。",
+      "en": "Published original comments are retained; student checks do not change teacher grades.",
+      "ru": "Опубликованные исходные отзывы сохраняются; отметки студента не меняют оценку преподавателя."
+    }
+  ]
+}

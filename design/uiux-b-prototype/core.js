@@ -1,0 +1,71 @@
+'use strict';
+const M3=window.M3={};
+M3.key='mathmodel-uiux-stage45-v1';
+M3.visibleNotifications=()=>M3.data.notifications.filter(n=>!n.studentId||n.studentId==='student1');
+M3.studentResources=()=>M3.data.resources.filter(r=>r.scope!=='team'||M3.data.teams.some(t=>t.id===r.teamId&&(t.studentIds?t.studentIds.includes('student1'):t.joined)));
+M3.stages=['问题理解','数据探索','模型设计','算法实现','实验验证','论文撰写','论文评价','迭代优化'];
+M3.esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+M3.id=p=>p+'-'+crypto.randomUUID().slice(0,8);
+M3.clone=x=>JSON.parse(JSON.stringify(x));
+M3.now=()=>new Date().toISOString();
+M3.date=x=>x?new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date(x)):'未设置';
+M3.localDate=x=>new Date(new Date(x).getTime()+8*3600000).toISOString().slice(0,16);
+M3.parseDate=x=>x?new Date(x+':00+08:00').toISOString():null;
+M3.defaultStages=()=>M3.stages.map((title,i)=>({title,content:'',done:false}));
+M3.seed=()=>{
+ const now=Date.now(),before=new Date(now-86400000).toISOString(),future=new Date(now+5*86400000).toISOString();
+ const project={id:'p-bike',title:'校园共享单车站点布局与调度',description:'研究站点需求与调度容量，比较模型约束的合理性。',taskId:'t-bike',stages:M3.defaultStages(),resources:['r-data'],createdAt:before,updatedAt:before};
+ project.stages[0]={title:M3.stages[0],content:'目标：在有限库存与调度容量下，改善校园站点的车辆供需匹配。',done:true};
+ project.stages[1]={title:M3.stages[1],content:'示例数据：站点需求、可用库存、运输距离。数据为原型演示内容。',done:true};
+ project.stages[2]={title:M3.stages[2],content:'设 x_ij 为调度量。当前约束包含需求下界；需要补充各站点库存上限。',done:false};
+ const snapshot=M3.clone(project);
+ return {schema:1,session:{logged:true,name:'林同学 · 示例',email:'student@example.invalid',verified:true},preferences:{language:'zh',theme:'light',reminders:true},projects:[project,{id:'p-private',title:'城市降雨量预测 · 自主项目',description:'私人学习项目，未提交、不向教师开放。',taskId:null,stages:M3.defaultStages(),resources:[],createdAt:before,updatedAt:before}],tasks:[{id:'t-bike',title:'校园交通调度建模训练',kind:'teaching',teamId:'team1',teacher:'示例教师',requirements:'提交建模过程、参数来源、模型约束与验证说明，可附论文及代码。',rubric:'问题理解、模型依据、算法实现与结果验证。评分以教师反馈为准。',dueAt:future,allowLate:true,createdAt:before},{id:'t-rain',title:'降雨数据分析与预测',kind:'teaching',teamId:'team1',teacher:'示例教师',requirements:'描述数据来源，建立预测基线，报告误差及方法局限。',rubric:'数据处理、方法选择、验证与表达。',dueAt:future,allowLate:false,createdAt:before}],submissions:[{id:'s-v1',taskId:'t-bike',projectId:'p-bike',version:1,submittedAt:before,status:'returned',notes:'第一版模型及参数说明。',snapshot,attachments:[{id:'r-data',name:'站点需求数据.csv',type:'CSV'}],revisionDueAt:future,feedback:'请补充各站点库存上限，并说明参数的数据来源。',feedbackItems:[{id:'f-stock',category:'required',text:'补充调出量的库存上限约束。',anchor:2},{id:'f-source',category:'suggestion',text:'为参数标明来源与采集时间。',anchor:1}],teacher:'示例教师',reviewedAt:before}],checklists:[],resources:[{id:'r-lp',name:'线性规划与约束条件',scope:'public',type:'知识条目',category:'建模方法',source:'公共知识演示条目',text:'线性规划通过线性目标与约束描述决策问题。建立模型时，需要明确变量、单位、边界和数据依据。此内容用于交互演示。',favorite:false},{id:'r-data',name:'站点需求数据.csv',scope:'personal',type:'CSV',category:'数据资料',source:'个人演示附件',text:'station,demand,stock\nA,12,18\nB,20,9',favorite:false},{id:'r-team',name:'本轮训练要求与参考资料',scope:'team',teamId:'team1',type:'教学资料',category:'教学训练',source:'示例教师共享',text:'先识别目标与约束，再比较模型选择。提交时解释数据来源和结果局限。',favorite:false}],papers:[{id:'paper1',title:'校园共享单车研究稿',originalName:'共享单车研究稿.pdf',originalText:'【演示原文】\n4.2 模型约束\n本模型仅对调入需求设置约束，未限制各站点的调出总量。\n\n库存约束建议：Σ_j x_ij ≤ s_i。\n\n本文正文仅供交互演示，不是所选真实文件的解析结果。',parseStatus:'ready',scores:[null,null,null,null,null,null,null],annotations:[],shared:false,createdAt:before}],drafts:[{id:'draft1',title:'共享单车论文修改稿',paperId:'paper1',text:'摘要\n本研究讨论校园共享单车站点的供需匹配与调度约束。\n\n下一步：补充库存上限与参数来源。',textLanguage:'中文',versions:[],updatedAt:before}],chats:[{id:'ai1',title:'库存约束的建模思路',mode:'分步指导',messages:[{role:'user',text:'怎样判断需要加入库存上限？',at:before},{role:'assistant',text:'【演示回复】先检查每个站点的可用车辆数与允许调出量是否一致，再写出边界条件。请自行核验模型。',at:before}]}],teams:[{id:'team1',name:'建模训练一组 · 示例团队',joined:true,members:['示例教师','林同学','陈同学']}],messages:[{id:'m1',teamId:'team1',author:'示例教师',text:'请在重交说明中解释本次模型约束的变化。',at:before}],notifications:[{id:'n1',title:'教师已反馈你的第一版提交',body:'请查看库存约束与参数来源建议，并按重交截止完成修改。',route:'submissions/s-v1',read:false,at:before},{id:'n2',title:'新的教学任务：降雨数据分析',body:'任务要求和截止时间见详情。',route:'training/t-rain',read:false,at:before}],competitions:[],runs:[],documents:[],activity:[{at:before,label:'演示数据已准备；没有读取真实账号或业务数据。'}]};
+};
+M3.load=()=>{try{const s=JSON.parse(localStorage.getItem(M3.key));if(s?.schema===1)return s}catch{}return M3.seed()};
+M3.data=M3.load();
+M3.ui={route:'home',id:'',tab:'all',stage:0,scenario:'normal',actor:'captain',search:'',scope:'all',fileName:'',buffers:{},carry:[],inviteActor:'member1'};
+M3.save=()=>{try{localStorage.setItem(M3.key,JSON.stringify(M3.data));return true}catch{return false}};
+M3.commit=(mutate,message='演示记录已保存')=>{
+ const previous=M3.clone(M3.data);
+ if(M3.ui.scenario==='save-error'){M3.toast('保存失败，输入保留在当前页面，请重试或导出。');return false}
+ try{mutate(M3.data);M3.data.activity.unshift({at:M3.now(),label:message});M3.data.activity=M3.data.activity.slice(0,60);if(!M3.save())throw new Error('浏览器存储不可用');M3.toast(message);return true}catch(e){M3.data=previous;M3.toast(e.message||'未能保存，原记录未改变。');return false}
+};
+M3.toastTimer=null;M3.toast=msg=>{const el=document.getElementById('toast');el.textContent=msg;el.hidden=false;clearTimeout(M3.toastTimer);M3.toastTimer=setTimeout(()=>el.hidden=true,4500)};
+M3.btn=(label,act='info',data={},kind='')=>`<button type="button" class="btn ${kind}" data-act="${act}" ${Object.entries(data).map(([k,v])=>`data-${k}="${M3.esc(v)}"`).join(' ')}>${M3.esc(label)}</button>`;
+M3.link=(label,route,kind='')=>`<a class="btn ${kind}" href="#${M3.esc(route)}">${M3.esc(label)}</a>`;
+M3.badge=(label,tone='')=>`<span class="badge ${tone}">${M3.esc(label)}</span>`;
+M3.title=(name,actions='')=>`<div class="section-title"><h2>${M3.esc(name)}</h2>${actions}</div>`;
+M3.hero=(name,sub,actions='')=>`<section class="campus-band ${['home','mentor-home'].includes(M3.ui.route)?'campus-home':'compact'}"><div class="intro"><div class="eyebrow">SMBU · MATHEMATICAL MODELING</div><h1>${M3.esc(name)}</h1><p>${M3.esc(sub)}</p>${actions?`<div class="actions">${actions}</div>`:''}</div></section>`;
+M3.empty=(name,sub,action='')=>`<section class="panel status-empty"><h2>${M3.esc(name)}</h2><p>${M3.esc(sub)}</p><div class="actions">${action}</div></section>`;
+M3.notice=(text,tone='')=>`<div class="notice ${tone}">${M3.esc(text)}</div>`;
+M3.field=(label,name,value='',type='text',required=true,help='')=>`<label class="field">${M3.esc(label)}${required?' *':''}<input name="${name}" type="${type}" value="${M3.esc(value)}" ${required?'required':''}>${help?`<small>${M3.esc(help)}</small>`:''}</label>`;
+M3.area=(label,name,value='',required=false,klass='medium')=>`<label class="field">${M3.esc(label)}${required?' *':''}<textarea name="${name}" class="${klass}" ${required?'required':''}>${M3.esc(value)}</textarea></label>`;
+M3.select=(label,name,options,value='')=>`<label class="field">${M3.esc(label)}<select name="${name}">${options.map(([v,l])=>`<option value="${M3.esc(v)}" ${String(v)===String(value)?'selected':''}>${M3.esc(l)}</option>`).join('')}</select></label>`;
+M3.form=(id,body,submit='保存',context='')=>`<form data-form="${id}" data-context="${M3.esc(context)}">${body}<div class="form-error" hidden role="alert"></div><div class="actions"><button class="btn primary" type="submit">${M3.esc(submit)}</button>${M3.btn('取消','close')}</div></form>`;
+M3.modal=(title,body,wide=false)=>{document.getElementById('modal-body').innerHTML=`<h2>${M3.esc(title)}</h2>${body}`;const d=document.getElementById('modal');d.classList.toggle('wide',wide);if(!d.open)d.showModal()};
+M3.close=()=>document.getElementById('modal').close();
+M3.items=arr=>M3.ui.scenario==='empty'?[]:arr;
+M3.project=id=>M3.data.projects.find(p=>p.id===id);
+M3.task=id=>M3.data.tasks.find(t=>t.id===id);
+M3.submission=id=>M3.data.submissions.find(s=>s.id===id);
+M3.latest=taskId=>M3.data.submissions.filter(s=>s.taskId===taskId).sort((a,b)=>b.version-a.version)[0];
+M3.resource=id=>M3.studentResources().find(r=>r.id===id);
+M3.taskName=id=>M3.task(id)?.title||'已不可用任务';
+M3.groupName=id=>M3.data.teams.find(t=>t.id===id)?.name||'个人练习';
+M3.projectProgress=p=>Math.round(p.stages.filter(s=>s.done).length/8*100);
+M3.subStatus=s=>({submitted:'已提交 · 待评阅',reviewed:'已评阅',returned:'退回修改'}[s.status]||'待确认');
+M3.taskDeadline=t=>{const sub=M3.latest(t.id);return sub?.status==='returned'&&sub.revisionDueAt?sub.revisionDueAt:t.dueAt};
+M3.canSubmit=t=>{const sub=M3.latest(t.id);const deadline=M3.taskDeadline(t);if(sub?.status==='returned')return !deadline||Date.now()<=new Date(deadline).getTime();return !deadline||Date.now()<=new Date(deadline).getTime()||t.allowLate};
+M3.locked=p=>M3.data.competitions.some(c=>c.projectId===p.id&&c.status==='completed');
+M3.shareResources=p=>p.resources.map(id=>M3.resource(id)).filter(Boolean).map(r=>({id:r.id,name:r.name,type:r.type,text:r.text}));
+M3.finishCompetition=(c,reason='手动结束')=>{if(c.status!=='active')return;c.status='completed';c.finishedAt=M3.now();c.finishReason=reason;c.snapshot=M3.clone(M3.project(c.projectId));c.collaborationSnapshot={members:M3.clone(c.members),assignments:M3.clone(c.assignments),messages:M3.clone(c.messages),shared:M3.clone(c.shared)};};
+M3.settle=()=>{let change=false;for(const c of M3.data.competitions)if(c.status==='active'&&Date.now()>=new Date(c.startedAt).getTime()+c.minutes*60000){M3.finishCompetition(c,'计时结束');change=true}if(change)M3.save();return change};
+M3.remaining=c=>{if(c.status!=='active')return c.status==='completed'?'已结束':'未开始';const secs=Math.max(0,Math.floor((new Date(c.startedAt).getTime()+c.minutes*60000-Date.now())/1000));return [Math.floor(secs/3600),Math.floor(secs/60)%60,secs%60].map(n=>String(n).padStart(2,'0')).join(':')};
+M3.exportText=(name,text)=>{const blob=new Blob([text],{type:'text/plain;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
+M3.go=route=>{if(document.getElementById('modal').open)M3.close();location.hash=route};
+M3.routes=[['home','学习工作台','我的学习'],['training','训练中心','我的学习'],['submissions','我的提交与反馈','我的学习'],['competition','模拟竞赛','我的学习'],['progress','成长档案','我的学习'],['workspace','建模工作台','建模与写作'],['tutor','AI 建模导师','建模与写作'],['papers','论文实验室','建模与写作'],['writing','写作工作室','建模与写作'],['knowledge','知识中心','资料与工具'],['retrieval','引用检索','资料与工具'],['documents','解析与公式','资料与工具'],['execution','代码运行','资料与工具'],['notifications','团队通知','团队协作'],['chat','团队聊天','团队协作'],['account','我的账号','账号与设置']];
+M3.save();
+
+M3.aiRestriction=mode=>{M3.settle();const cs=M3.data.competitions.filter(c=>c.status==='active');if(cs.some(c=>c.aiPolicy==='关闭AI'))return '当前模拟竞赛已关闭AI演示生成；仍可保存问题和检索资料，结束后恢复。';if(cs.some(c=>c.aiPolicy==='仅基础知识查询')&&mode!=='基础解释')return '当前竞赛仅允许基础解释，不生成赛题方案或写作建议。';return ''};
+
+M3.icon=route=>{const paths={home:'M3 10 12 3l9 7M5 9v12h5v-7h4v7h5V9',workspace:'M3 6h7l2 3h9v12H3z',tutor:'M12 3l3 6 6 3-6 3-3 6-3-6-6-3 6-3z',papers:'M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h6',writing:'m4 16-1 5 5-1L20 8l-4-4zM14 6l4 4',training:'M21 12a9 9 0 1 1-9-9M17 12a5 5 0 1 1-5-5m0 5 9-9',submissions:'M12 16V3m-5 5 5-5 5 5M4 14v7h16v-7',competition:'M7 3h10v6a5 5 0 0 1-10 0zM7 5H3v2a4 4 0 0 0 4 4m10-6h4v2a4 4 0 0 1-4 4m-5 3v5m-5 2h10',progress:'M4 20V10m8 10V4m8 16v-7M2 22h20',knowledge:'M3 4h6l3 3 3-3h6v16h-6l-3 1-3-1H3zM12 7v14',retrieval:'M15 15l6 6M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0',documents:'M5 3h10l4 4v14H5zM9 11h6m-6 4h6',execution:'M7 3v18l15-9z',notifications:'M3 4h18v13H8l-5 4zM7 8h10m-10 4h6',chat:'M3 4h18v13H8l-5 4zM7 9h2m2 0h2m2 0h2',account:'M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0M4 22v-4a8 8 0 0 1 16 0v4'};return `<svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${paths[route]||paths.documents}"/></svg>`};

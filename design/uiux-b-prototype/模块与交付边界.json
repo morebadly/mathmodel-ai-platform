@@ -1,0 +1,269 @@
+{
+  "student_modules": 16,
+  "teacher_modules": 15,
+  "modules": [
+    {
+      "role": "student",
+      "route": "home",
+      "label": "学习工作台",
+      "demonstration": "任务、反馈、近期项目",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "student",
+      "route": "training",
+      "label": "训练中心",
+      "demonstration": "教师任务、个人练习、关联项目",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "student",
+      "route": "submissions",
+      "label": "我的提交与反馈",
+      "demonstration": "快照、反馈、私有清单、重交",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "student",
+      "route": "competition",
+      "label": "模拟竞赛",
+      "demonstration": "个人/团队、分工、共享、计时锁定",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "student",
+      "route": "progress",
+      "label": "成长档案",
+      "demonstration": "阶段记录与反馈依据",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "student",
+      "route": "workspace",
+      "label": "建模工作台",
+      "demonstration": "八阶段笔记、完成标记、附件",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "student",
+      "route": "tutor",
+      "label": "AI 建模导师",
+      "demonstration": "四模式与演示生成状态",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "student",
+      "route": "papers",
+      "label": "论文实验室",
+      "demonstration": "演示原件、人工记录与文稿关联",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "student",
+      "route": "writing",
+      "label": "写作工作室",
+      "demonstration": "保存、命名版本、确认导出",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "student",
+      "route": "knowledge",
+      "label": "知识中心",
+      "demonstration": "公共/个人/团队资料",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "student",
+      "route": "retrieval",
+      "label": "引用检索",
+      "demonstration": "授权资料关键词检索",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "student",
+      "route": "documents",
+      "label": "解析与公式",
+      "demonstration": "演示解析与失败重试",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "student",
+      "route": "execution",
+      "label": "代码运行",
+      "demonstration": "演示排队、日志、取消与结果",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "student",
+      "route": "notifications",
+      "label": "团队通知",
+      "demonstration": "任务、反馈、邀请与已读状态",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "student",
+      "route": "chat",
+      "label": "团队聊天",
+      "demonstration": "团队消息与演示附件名称",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "student",
+      "route": "account",
+      "label": "我的账号",
+      "demonstration": "演示资料、团队、接收意愿",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "mentor",
+      "route": "mentor-home",
+      "label": "教学总览",
+      "demonstration": "可解释待办排序及临近阈值",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "mentor",
+      "route": "teacher",
+      "label": "我的团队",
+      "demonstration": "创建、邀请接受、移出与权限撤销",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "mentor",
+      "route": "training",
+      "label": "训练任务",
+      "demonstration": "草稿、预览发布、确认修订与通知",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "mentor",
+      "route": "submissions",
+      "label": "提交与反馈",
+      "demonstration": "评阅草稿、发布、退回、评分与历史",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "mentor",
+      "route": "monitor",
+      "label": "学习监督",
+      "demonstration": "任务相关证据与跟进计划",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "mentor",
+      "route": "reminders",
+      "label": "邮箱提醒",
+      "demonstration": "手动/计划模拟、执行时重新校验",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "mentor",
+      "route": "analytics",
+      "label": "任务与成绩对照",
+      "demonstration": "考核、来源与关联提交",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "mentor",
+      "route": "grades",
+      "label": "成绩导入",
+      "demonstration": "六列CSV、预览、去重、冲突阻止",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "mentor",
+      "route": "papers",
+      "label": "论文评阅",
+      "demonstration": "主动提交的论文/文稿快照",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "mentor",
+      "route": "knowledge",
+      "label": "知识中心",
+      "demonstration": "教师个人资料及明确团队共享",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "mentor",
+      "route": "chat",
+      "label": "团队聊天",
+      "demonstration": "授权教学团队消息",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "mentor",
+      "route": "execution",
+      "label": "代码运行",
+      "demonstration": "教师自己的演示记录",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "mentor",
+      "route": "documents",
+      "label": "解析与公式",
+      "demonstration": "教师自己的演示解析",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "mentor",
+      "route": "retrieval",
+      "label": "引用检索",
+      "demonstration": "授权教学资料关键词检索",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    },
+    {
+      "role": "mentor",
+      "route": "account",
+      "label": "我的账号",
+      "demonstration": "教师演示资料与账号流程",
+      "artifact_type": "可点击独立交互原型",
+      "production_status": "正式功能仍需开发侧已登录环境与接口核验"
+    }
+  ],
+  "additional_views": [
+    "学生及教师登录、注册、验证、找回、重设",
+    "各模块详情、操作弹窗及加载/空白/错误/无权限/保存失败评审状态"
+  ],
+  "auth_boundary": "演示邮箱@example.invalid、验证码123456、教师演示值TEACH-DEMO；不保存密码",
+  "data_boundary": "本机同一份演示数据；角色切换表现权限设计，不等于服务器安全鉴权",
+  "no_live_features": [
+    "真实AI调用",
+    "真实上传/解析/OCR/转写",
+    "实际代码执行",
+    "真实账号或邮件",
+    "跨设备多人同步",
+    "关闭页面后执行提醒"
+  ],
+  "retained": "学生正文、教师评语、团队名、文件名与来源保留录入语言；界面语言独立"
+}

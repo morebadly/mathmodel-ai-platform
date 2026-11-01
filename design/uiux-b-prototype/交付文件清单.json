@@ -1,0 +1,167 @@
+{
+  "source": "Published Sites version 3; source commit 262d82a09a1d43049307886561cc3f6e4253f632",
+  "handoffDate": "2026-11-01",
+  "notes": "Interaction source and assets retained; repository handoff documents and control verification added. Hashes exclude this self-referential manifest.",
+  "files": [
+    {
+      "file": ".gitattributes",
+      "bytes": 31,
+      "sha256": "7846b37551c23529eb00c68fbb5a435390e922d9db2625cb88681c31746b289e"
+    },
+    {
+      "file": "app.js",
+      "bytes": 42695,
+      "sha256": "e7cde647ad035b4e4ab9c1b9594b2fed08124f3cffa9db223d57462aa1aa6ae1"
+    },
+    {
+      "file": "assets/association-logo.png",
+      "bytes": 2484644,
+      "sha256": "7f47346b2787e8412afbd3b3df27b9d469c52499cff7bfc4e90cd83a154ea57d"
+    },
+    {
+      "file": "assets/campus-watercolor-v1.png",
+      "bytes": 2174020,
+      "sha256": "d05ad31b45f549e38688efac3b64aa96b7f596da0bbec8467275ee223e44c75d"
+    },
+    {
+      "file": "assets/campus.svg",
+      "bytes": 2164,
+      "sha256": "f7ef0c7986bb714c1d1f61f09e1d8bc9d010037e4634c45660dfe9e1a722f899"
+    },
+    {
+      "file": "ASSETS.md",
+      "bytes": 1370,
+      "sha256": "2fc7f15c5017b6a4e42421c6f9d693981885c8a0d9447c3f2bce4797e2f925b8"
+    },
+    {
+      "file": "base.css",
+      "bytes": 16670,
+      "sha256": "2e01a3942c323ea1854ce1ee336f50efd38525c865519bc658ee38ffcb6f8c5b"
+    },
+    {
+      "file": "campus-revision.css",
+      "bytes": 1150,
+      "sha256": "666b77d4ad96c56f58aea5ccd3f3276212ac3a91dc020b4ebc6f16e707ea04c5"
+    },
+    {
+      "file": "core.js",
+      "bytes": 14505,
+      "sha256": "4359933a87022a718c494c8278800036a4f57c0726de5fb4b30ad09a8fbb30c2"
+    },
+    {
+      "file": "guide.html",
+      "bytes": 266,
+      "sha256": "945a5ba32b34dc48d00e469ef70b30d60a2a1b6eb8997b921fd890528a53e852"
+    },
+    {
+      "file": "i18n-extra.js",
+      "bytes": 55058,
+      "sha256": "38195fbe38d2fc68290c96c1543510c65ccb1979a542bbecba318b8498dfeb49"
+    },
+    {
+      "file": "i18n-messages.js",
+      "bytes": 36184,
+      "sha256": "19341dfe6d710a15f8e7fbccfffee66441d1a3237f0e81f904cd296e77ae54bd"
+    },
+    {
+      "file": "i18n.js",
+      "bytes": 40950,
+      "sha256": "5b85187a127d360a5e106c01d7f238755a0e47b58d31e04d24790804aa799f48"
+    },
+    {
+      "file": "index.html",
+      "bytes": 3063,
+      "sha256": "63c055b185ad86fbc629fa4dfb53bff803712afa61c8cdc1caea96de5fc7a611"
+    },
+    {
+      "file": "INTEGRATION.md",
+      "bytes": 5422,
+      "sha256": "1419616f7600b5729b965db9f990ab1d980ae17e6139e78ad0ed4e65622daf52"
+    },
+    {
+      "file": "locale-runtime.js",
+      "bytes": 8954,
+      "sha256": "349f308f3772b2849980367db9dfb03c30b130a3459c54f487ba4ea094726d98"
+    },
+    {
+      "file": "preference-controls.css",
+      "bytes": 1464,
+      "sha256": "9c68a54ea75e30511e909f35ea0d53e8e6de5775ae32e90cf075353f1ca15516"
+    },
+    {
+      "file": "preference-controls.js",
+      "bytes": 5221,
+      "sha256": "9136d0fbb1b960924d7db3d7518867c9b37bb118ea663af15a1db94ccd70fe83"
+    },
+    {
+      "file": "README.md",
+      "bytes": 3899,
+      "sha256": "4026dab3c236574e094b3e56d749bd464cca0ba7026975326cea37ac04adfbd4"
+    },
+    {
+      "file": "screens.js",
+      "bytes": 39388,
+      "sha256": "024fa092db82c20a2ee0a0a158f380c48b60129d5ca0c3e783d77531abc43bb3"
+    },
+    {
+      "file": "sites-compat.js",
+      "bytes": 306,
+      "sha256": "1e92c57890176ab3b7564b613886ad9757d98dd9845809f24a9b6c82e08ac688"
+    },
+    {
+      "file": "student.css",
+      "bytes": 9236,
+      "sha256": "2f2d563f43b935f5e905a7d3ec2fee6460c2f264ac3109d252985ad926466b87"
+    },
+    {
+      "file": "teacher-actions.js",
+      "bytes": 23718,
+      "sha256": "65a805b34a50390c9348384165dff5263f17627e9cec7c6c7c238754e7acf0c2"
+    },
+    {
+      "file": "teacher.js",
+      "bytes": 29587,
+      "sha256": "cdb55bf77efb05cdb85d9295741b3a85623b96a2644e6340e6c5e5db78711200"
+    },
+    {
+      "file": "validation/check-controls.cjs",
+      "bytes": 5106,
+      "sha256": "1f925673b60683a8d60a7871ffeefc97a4ca6ce6cc8e0152bfa5722c69c6a195"
+    },
+    {
+      "file": "validation/control-interaction-results.json",
+      "bytes": 1750,
+      "sha256": "86e2bf165f9fa37b4dfe65786f9a414431e6b1f8cfc3093d5c44b6a7c7b1c075"
+    },
+    {
+      "file": "validation/handoff-file-checks.json",
+      "bytes": 5607,
+      "sha256": "7226e4342cbf721c585b1f0ffd6b6d45db5d78b20c715116f2ba586d3d4c8bb1"
+    },
+    {
+      "file": "VALIDATION.md",
+      "bytes": 2210,
+      "sha256": "70e96e3b2cc72d8cddf10516f259f50a751e32d555f0d1c0910ec722ae7f9b83"
+    },
+    {
+      "file": "三语术语与文案对照.html",
+      "bytes": 169684,
+      "sha256": "3feb1db3e5924ee98dc76693eaf85adccb6c80bac20fc9f336a8bf105c84a42f"
+    },
+    {
+      "file": "三语界面文案表.json",
+      "bytes": 194198,
+      "sha256": "b865fd9c1ffeda76cceee3902326fa9267909e5083c98b328acc777819771900"
+    },
+    {
+      "file": "操作指南与验收说明.html",
+      "bytes": 7379,
+      "sha256": "813a14ef949b5a184febfc4ace3c7adb6dea7328099f180a51ca25d3337b1833"
+    },
+    {
+      "file": "模块与交付边界.json",
+      "bytes": 10125,
+      "sha256": "da685bc152a7875ab8af78116ec9cace9598d60ba625bd879bde12c0b7d48ba1"
+    }
+  ]
+}
