@@ -49,6 +49,7 @@
  }
  function mount(metadata){
   if(metadata)view=metadata;
+  window.MMAcademicPages?.mount(view);
   const host=document.querySelector('.top-actions')||document.querySelector('.portal-page');
   if(host&&!host.querySelector('.academic-controls')){const box=controls();if(host.matches('.portal-page'))host.querySelector('.portal-brand').after(box);else host.prepend(box);}
   document.querySelectorAll('.brand-symbol').forEach(el=>{if(!el.querySelector('img'))el.innerHTML='<img class="academic-logo" src="design/uiux-b-prototype/assets/association-logo.png" alt="数学建模协会会标">';});

@@ -107,6 +107,7 @@ window.MMEmail={create(ctx){
     API.refresh().then(()=>{if(ctx.route()==='login'||ctx.route()==='admin-config'){if(ctx.route()==='login')rememberAuthEmail();ctx.render();}});
   }
   function paperSection(){
+    if(!ctx.routeId())return '';
     const p=S().papers.find(p=>p.id===ctx.routeId())||S().papers[0];
     if(!p)return `<section class="panel email-submission"><h2>AI 论文评阅</h2><p class="field-note">上传论文并准备可读原文后，可检查模型假设、算法、实验验证、引用与写作。模型结论需要教师复核。</p></section>`;
     const reviews=p.aiReviews||[],r=reviews[0];

@@ -11,7 +11,7 @@ class AcademicStaticTests(SimpleTestCase):
         self.assertNotIn('design/uiux-b-prototype/app.js', html)
 
     def test_academic_assets_are_available(self):
-        for path in ['academic-ui.js', 'academic-ui.css', 'academic-messages.js',
+        for path in ['academic-pages.js', 'academic-pages.css', 'academic-ui.js', 'academic-ui.css', 'academic-messages.js',
                      'design/uiux-b-prototype/assets/association-logo.png',
                      'design/uiux-b-prototype/assets/campus-watercolor-v1.png']:
             with self.subTest(path=path):
