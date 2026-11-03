@@ -19,19 +19,24 @@ TERMINAL=['completed','failed','cancelled','timed_out','access_revoked','uncerta
 def profiles():
     remote=bool(settings.E2B_API_KEY) if settings.SANDBOX_PROVIDER=='e2b' else bool(settings.RUNNER_URL and settings.RUNNER_API_KEY)
     result=[]
-    for runtime in ['python','r','matlab','gurobi','cplex']:
+    for runtime in ['python','r','latex','matlab','gurobi','cplex']:
         commercial=runtime in ['matlab','gurobi','cplex'];authorized=settings.RUNTIME_AUTHORIZATION.get(runtime,False)
         configured=bool(settings.RUNNER_URL and settings.RUNNER_API_KEY) if commercial else remote
+        if runtime=='latex':configured=bool(settings.E2B_API_KEY and settings.E2B_LATEX_TEMPLATE) if settings.SANDBOX_PROVIDER=='e2b' else configured
         status='awaiting_authorization' if commercial and not authorized else 'ready_for_remote_test' if configured else 'awaiting_credentials'
         provider_name='gateway' if commercial else settings.SANDBOX_PROVIDER
         accepted=configured and status=='ready_for_remote_test' and ExecutionJob.objects.filter(runtime=runtime,provider=provider_name,status='completed',cleanup_pending=False).exclude(remote_id='').exists()
         note='MATLAB或商业求解器必须获得适用的服务端/云/并发授权。' if commercial else '已有成功的远端任务记录；仅代表已运行的样例，不保证所有依赖包均可用。' if accepted else '代码仅在远程隔离环境执行；凭证配置后仍需真实验收。'
+        if runtime=='latex':note='XeLaTeX隔离编译；支持中文、公式和所选附件。'+('编译模板已配置，需以真实PDF任务验证。' if configured else '请配置E2B_LATEX_TEMPLATE或支持latex的远程网关。')
         result.append({'id':runtime,'status':status,'provider':provider_name,'executionVerified':bool(accepted),'maxSeconds':settings.SANDBOX_MAX_SECONDS,'maxInputBytes':settings.SANDBOX_INPUT_BYTES,'maxOutputBytes':settings.SANDBOX_OUTPUT_BYTES,'cpus':settings.SANDBOX_CPUS,'memoryMb':settings.SANDBOX_MEMORY_MB,'note':note})
     return result
 
 def inputs_allowed(job):
     user=User.objects.filter(pk=job.owner_id).first()
     if not user or not verified(user):return False
+    if job.runtime=='latex':
+        document=Record.objects.filter(pk=job.limits.get('writingId'),collection='writingDrafts',owner=user).exclude(scope='deleted').first()
+        if not document:return False
     for rid in job.input_ids:
         row=Record.objects.select_related('team').filter(pk=rid,collection='resources').first()
         if not row or not can_read(user,row):return False
@@ -50,14 +55,30 @@ def runtimes(request):
 @api_view(['GET','POST'])
 def jobs(request):
     require_verified(request.user)
-    if request.method=='GET':return Response({'jobs':[job_json(j) for j in ExecutionJob.objects.filter(owner=request.user).order_by('-created_at')[:100]]})
+    if request.method=='GET':
+        rows=ExecutionJob.objects.filter(owner=request.user)
+        if request.query_params.get('writingId'):
+            from .domain import valid_id
+            writing_id=request.query_params['writingId'];field=request.query_params.get('field','source')
+            if not valid_id(writing_id) or field not in ['source','target']:raise ValidationError('文稿查询条件无效。')
+            document=get_record(request.user,writing_id,'writingDrafts')
+            if document.owner_id!=request.user.id:raise PermissionDenied('只能查看自己的编译记录。')
+            rows=rows.filter(runtime='latex',limits__writingId=writing_id,limits__field=field)
+        return Response({'jobs':[job_json(j) for j in rows.order_by('-created_at')[:100]]})
     runtime=request.data.get('runtime');code=request.data.get('code','');ids=request.data.get('inputIds',[]);seconds=request.data.get('seconds',60)
     profile=next((p for p in profiles() if p['id']==runtime),None)
-    if not profile or not isinstance(code,str) or not code.strip() or len(code)>100000:raise ValidationError('请选择运行环境并提供不超过10万字符的代码。')
+    if not profile or not isinstance(code,str) or not code.strip() or len(code)>(200000 if runtime=='latex' else 100000):raise ValidationError('请选择运行环境并提供不超过10万字符的代码。')
     if not isinstance(ids,list) or len(ids)>5 or any(not isinstance(r,str) for r in ids) or len(set(ids))!=len(ids):raise ValidationError('最多选择5个不同的输入文件。')
     if not isinstance(seconds,int) or isinstance(seconds,bool) or not 1<=seconds<=settings.SANDBOX_MAX_SECONDS:raise ValidationError('运行时限超出平台配置。')
     try:client_id=uuid.UUID(str(request.data.get('clientId')))
     except ValueError:raise ValidationError('请提供任务去重标识。')
+    writing=None;field=request.data.get('field','source')
+    if runtime=='latex':
+        from .domain import valid_id
+        if not valid_id(request.data.get('writingId')):raise ValidationError('文稿标识无效。')
+        writing=get_record(request.user,request.data.get('writingId'),'writingDrafts')
+        if writing.owner_id!=request.user.id:raise PermissionDenied('只能编译自己的文稿。')
+        if field not in ['source','target']:raise ValidationError('请选择原稿或英文稿。')
     total=0
     for rid in ids:
         row=get_record(request.user,rid,'resources');asset=Asset.objects.filter(record=row).first()
@@ -69,14 +90,19 @@ def jobs(request):
         # Serialize a new file reference with trashing that file. Validation
         # above provides early feedback; this check closes the concurrent gap.
         for rid in sorted(ids):get_record(request.user,rid,'resources',lock=True)
+        if writing:get_record(request.user,writing.id,'writingDrafts',lock=True)
         old=ExecutionJob.objects.filter(owner=request.user,client_id=client_id).first()
         if old:
-            if old.runtime!=runtime or old.code!=code or old.input_ids!=ids or old.limits.get('seconds')!=seconds:raise ValidationError('同一去重标识不能对应不同任务。')
+            if old.runtime!=runtime or old.code!=code or old.input_ids!=ids or old.limits.get('seconds')!=seconds or (runtime=='latex' and (old.limits.get('writingId')!=writing.id or old.limits.get('field')!=field)):raise ValidationError('同一去重标识不能对应不同任务。')
             return Response({'job':job_json(old,True),'duplicate':True})
-        if ExecutionJob.objects.filter(owner=request.user,created_at__gte=timezone.now()-__import__('datetime').timedelta(days=1)).count()>=settings.SANDBOX_DAILY_JOBS:raise Throttled(detail='已达到当前账号的每日任务限额。')
+        daily=ExecutionJob.objects.filter(owner=request.user,created_at__gte=timezone.now()-__import__('datetime').timedelta(days=1))
+        daily=daily.filter(runtime='latex') if runtime=='latex' else daily.exclude(runtime='latex')
+        if daily.count()>=(settings.LATEX_DAILY_JOBS if runtime=='latex' else settings.SANDBOX_DAILY_JOBS):raise Throttled(detail='已达到当前账号的每日任务限额。')
         if ExecutionJob.objects.filter(owner=request.user,status__in=ACTIVE+['queued']).count()>=5:raise Throttled(detail='待处理任务过多，请先完成或取消。')
         state='queued' if profile['status']=='ready_for_remote_test' else profile['status']
         job=ExecutionJob.objects.create(owner=request.user,client_id=client_id,provider=profile['provider'],runtime=runtime,code=code,input_ids=ids,status=state,limits={'seconds':seconds,'cpus':settings.SANDBOX_CPUS,'memoryMb':settings.SANDBOX_MEMORY_MB,'inputBytes':settings.SANDBOX_INPUT_BYTES,'outputBytes':settings.SANDBOX_OUTPUT_BYTES})
+        if writing:
+            job.limits.update(writingId=writing.id,field=field,sourceHash=hashlib.sha256(code.encode()).hexdigest());job.save(update_fields=['limits'])
         Audit.objects.create(actor=request.user,action='execution-create',target=str(job.id))
     return Response({'job':job_json(job,True),'duplicate':False},status=202)
 
@@ -126,7 +152,7 @@ class OutputLimit(Exception):pass
 class E2BProvider:
     def create(self,job):
         from e2b_code_interpreter import Sandbox
-        sandbox=Sandbox.create(api_key=settings.E2B_API_KEY,template=settings.E2B_TEMPLATE or None,timeout=job.limits['seconds']+60,allow_internet_access=False,metadata={'mathmodel_job':str(job.id)},request_timeout=20)
+        sandbox=Sandbox.create(api_key=settings.E2B_API_KEY,template=(settings.E2B_LATEX_TEMPLATE if job.runtime=='latex' else settings.E2B_TEMPLATE) or None,timeout=job.limits['seconds']+60,allow_internet_access=False,metadata={'mathmodel_job':str(job.id)},request_timeout=20)
         return sandbox.sandbox_id
     def connect(self,remote_id):
         from e2b_code_interpreter import Sandbox
@@ -139,17 +165,18 @@ class E2BProvider:
         if info.cpu_count>job.limits['cpus'] or info.memory_mb>job.limits['memoryMb']:raise ValueError('Remote resources exceed approved limits')
         root='/home/user/mathmodel-'+str(job.id);sandbox.files.make_dir(root+'/input');sandbox.files.make_dir(root+'/output')
         for name,data in inputs:sandbox.files.write(root+'/input/'+name,data,request_timeout=20)
-        extension='py' if job.runtime=='python' else 'r';sandbox.files.write(root+'/main.'+extension,job.code)
-        command=('python' if job.runtime=='python' else 'Rscript')+' main.'+extension
+        extension={'python':'py','r':'r','latex':'tex'}[job.runtime];sandbox.files.write(root+'/main.'+extension,job.code)
+        command={'python':'python main.py','r':'Rscript main.r','latex':'latexmk -norc -xelatex -latexoption=-no-shell-escape -latexoption=-interaction=nonstopmode -latexoption=-halt-on-error -latexoption=-file-line-error -outdir=output main.tex'}[job.runtime]
         from e2b.exceptions import TimeoutException
         from e2b import CommandExitException
-        try:result=sandbox.commands.run(command,cwd=root,timeout=job.limits['seconds'],request_timeout=job.limits['seconds']+10,on_stdout=on_log,on_stderr=on_log,envs={'MPLBACKEND':'Agg'})
+        try:result=sandbox.commands.run(command,cwd=root,timeout=job.limits['seconds'],request_timeout=job.limits['seconds']+10,on_stdout=on_log,on_stderr=on_log,envs={'MPLBACKEND':'Agg',**({'openin_any':'p','openout_any':'p','shell_escape':'f'} if job.runtime=='latex' else {})})
         except TimeoutException:return {'status':'timed_out','error':'远端代码达到执行时限，已安排释放环境。','artifacts':[]}
         except CommandExitException as exc:return {'status':'failed','error':'远端程序执行失败（退出码'+str(exc.exit_code)+'），请查看运行日志检查代码或依赖包。','artifacts':[]}
         artifacts=[];total=0
         if result.exit_code!=0:return {'status':'failed','error':'远端程序返回非零退出码。','artifacts':[]}
         for entry in sandbox.files.list(root+'/output',depth=1,request_timeout=10):
             file_path=PurePosixPath(entry.path)
+            if job.runtime=='latex' and file_path.name!='main.pdf':continue
             if str(getattr(entry,'type','')).lower() not in ['file','filetype.file'] or file_path.parent!=PurePosixPath(root+'/output'):continue
             if entry.size>settings.SANDBOX_OUTPUT_BYTES or len(artifacts)>=20:raise OutputLimit()
             chunks=[];size=0
@@ -159,6 +186,7 @@ class E2BProvider:
                     if total>settings.SANDBOX_OUTPUT_BYTES:raise OutputLimit()
                     chunks.append(chunk)
             artifacts.append((file_path.name,b''.join(chunks)))
+        if job.runtime=='latex' and not any(name=='main.pdf' and raw.startswith(b'%PDF-') for name,raw in artifacts):return {'status':'failed','error':'编译器没有生成有效PDF，请检查日志。','artifacts':[]}
         return {'status':'completed','error':'','artifacts':artifacts}
 
 class GatewayProvider:

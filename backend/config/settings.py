@@ -132,6 +132,8 @@ MEDIA_TASK_TIMEOUT=int(os.getenv('MEDIA_TASK_TIMEOUT','180'))
 SANDBOX_PROVIDER=os.getenv('SANDBOX_PROVIDER','e2b')
 E2B_API_KEY=os.getenv('E2B_API_KEY','')
 E2B_TEMPLATE=os.getenv('E2B_TEMPLATE','')
+E2B_LATEX_TEMPLATE=os.getenv('E2B_LATEX_TEMPLATE','')
+LATEX_DAILY_JOBS=int(os.getenv('LATEX_DAILY_JOBS','100'))
 RUNNER_URL=os.getenv('RUNNER_URL','').rstrip('/')
 RUNNER_API_KEY=os.getenv('RUNNER_API_KEY','')
 RUNTIME_AUTHORIZATION={name:os.getenv(name.upper()+'_AUTHORIZED','0')=='1' for name in ['matlab','gurobi','cplex']}

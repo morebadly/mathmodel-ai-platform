@@ -11,7 +11,7 @@ class AcademicStaticTests(SimpleTestCase):
         self.assertNotIn('design/uiux-b-prototype/app.js', html)
 
     def test_academic_assets_are_available(self):
-        for path in ['academic-pages.js', 'academic-pages.css', 'academic-ui.js', 'academic-ui.css', 'academic-messages.js',
+        for path in ['writing-compiler.js','writing-compiler.css','vendor/markdown-it/dist/markdown-it.min.js','vendor/dompurify/dist/purify.min.js','vendor/texmath/texmath.js','vendor/pdfjs/legacy/build/pdf.min.mjs','vendor/pdfjs/legacy/build/pdf.worker.min.mjs','vendor/pdfjs/cmaps/Adobe-GB1-UCS2.bcmap','academic-pages.js', 'academic-pages.css', 'academic-ui.js', 'academic-ui.css', 'academic-messages.js',
                      'design/uiux-b-prototype/assets/association-logo.png',
                      'design/uiux-b-prototype/assets/campus-watercolor-v1.png']:
             with self.subTest(path=path):
@@ -22,6 +22,6 @@ class AcademicStaticTests(SimpleTestCase):
     def test_prototype_runtime_and_private_paths_are_not_served(self):
         for path in ['design/uiux-b-prototype/index.html', 'design/uiux-b-prototype/core.js',
                      '.env.local', '.data/private-access/access-credentials.json',
-                     'design/uiux-b-prototype/assets/../../../backend/config/settings.py']:
+                     'design/uiux-b-prototype/assets/../../../backend/config/settings.py','vendor/pdfjs/../../backend/config/settings.py','vendor/pdfjs/../../.env.local']:
             with self.subTest(path=path):
                 self.assertEqual(self.client.get('/' + path).status_code, 404)

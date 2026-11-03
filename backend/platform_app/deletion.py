@@ -14,7 +14,7 @@ from .models import Asset, Audit, ChatMessage, ExecutionJob, Record
 
 COLLECTIONS = {'writingDrafts', 'papers', 'resources', 'projects', 'competitions', 'conversations'}
 SINGLE_REFERENCES = {'fileId', 'projectId', 'competitionId', 'taskId'}
-LIST_REFERENCES = {'resourceIds', 'attachmentIds', 'fileIds', 'paperIds'}
+LIST_REFERENCES = {'resourceIds', 'attachmentIds', 'fileIds', 'paperIds', 'compileInputIds'}
 FILE_FIELDS = {'projects': 'resourceIds', 'tasks': 'attachmentIds', 'teams': 'fileIds'}
 
 
@@ -37,6 +37,7 @@ def dependency_signature(row):
     fields = {
         'projects': ['resourceIds', 'taskId', 'teamId'],
         'papers': ['fileId', 'projectId', 'teamId'],
+        'writingDrafts': ['compileInputIds', 'teamId'],
         'resources': ['libraryAssetIds'],
         'competitions': ['projectId', '_deletedCompanionProjectId', 'teamId', 'attachmentIds'],
     }.get(row.collection, ['teamId'])
@@ -53,6 +54,8 @@ def lock_restore_dependencies(row):
         resource_ids.update(value for value in row.payload.get('resourceIds', []) if valid_id(value))
     if row.collection == 'competitions':
         resource_ids.update(value for value in row.payload.get('attachmentIds', []) if valid_id(value))
+    if row.collection == 'writingDrafts':
+        resource_ids.update(value for value in row.payload.get('compileInputIds', []) if valid_id(value))
     if row.collection == 'papers' and valid_id(row.payload.get('fileId')):
         resource_ids.add(row.payload['fileId'])
     if resource_ids:

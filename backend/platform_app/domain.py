@@ -168,7 +168,7 @@ def lock_workspace_resources(changes):
             if not isinstance(item,dict):raise ValidationError('记录格式无效。')
             if collection=='resources' and valid_id(item.get('id')):ids.add(item['id'])
             elif valid_id(item.get('id')):parents[collection].add(item['id'])
-            for field in ['resourceIds','attachmentIds','fileIds']:
+            for field in ['resourceIds','attachmentIds','fileIds','compileInputIds']:
                 values=item.get(field,[])
                 if isinstance(values,list):ids.update(value for value in values if valid_id(value))
             if collection=='papers' and valid_id(item.get('fileId')):ids.add(item['fileId'])
@@ -207,6 +207,12 @@ def validate_record(user,collection,data,old=None):
     if data.get('teamId'):
         team=reference(user,data['teamId'],'teams')
         if team.owner_id!=user.id and user.role!='admin':raise PermissionDenied('只能向自己的团队分配内容。')
+    if collection=='writingDrafts':
+        if data.get('format','text') not in ['text','markdown','latex']:raise ValidationError('文稿格式无效。')
+        for field in ['source','target','notes']:require_text(data,field)
+        inputs=data.get('compileInputIds',[])
+        if not isinstance(inputs,list) or len(inputs)>5 or any(not valid_id(rid) for rid in inputs) or len(set(inputs))!=len(inputs):raise ValidationError('编译附件最多5个且不能重复。')
+        for rid in inputs:reference(user,rid,'resources')
     if collection=='projects':
         stages=data.get('stages')
         if not isinstance(stages,list) or len(stages)!=8:raise ValidationError('项目需要八个阶段。')

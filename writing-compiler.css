@@ -1,0 +1,32 @@
+:root[data-mm-ui] .writing-format-choices {border:0;padding:0;display:grid;gap:12px;margin:20px 0}
+:root[data-mm-ui] .writing-format-choices label {display:grid;grid-template-columns:22px 1fr;gap:7px 10px;padding:17px;border:1px solid var(--line);border-radius:8px;cursor:pointer;background:var(--white)}
+:root[data-mm-ui] .writing-format-choices label:has(input:checked) {background:var(--mint);border-color:var(--teal)}
+:root[data-mm-ui] .writing-format-choices small {grid-column:2;color:var(--muted);font-size:12px;line-height:1.7}
+:root[data-mm-ui] .writing-format-choices input {width:18px;height:18px;accent-color:var(--teal)}
+:root[data-mm-ui] [data-academic-page="writing"] .writing-layout:has(.writing-preview) {grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}
+:root[data-mm-ui] [data-academic-page="writing"] .writing-preview {grid-column:2;grid-row:1;margin-top:0}
+:root[data-mm-ui] [data-academic-page="writing"] .writing-layout:has(.writing-preview) .writing-editor {grid-column:1;grid-row:1}
+:root[data-mm-ui] [data-academic-page="writing"] .writing-layout:has(.writing-preview) .writing-feedback {grid-column:1/-1;grid-row:2}
+:root[data-mm-ui] .writing-preview .section-head {align-items:start;gap:10px;flex-wrap:wrap}
+:root[data-mm-ui] .compiler-controls {flex-wrap:wrap;gap:9px}
+:root[data-mm-ui] .compiler-auto {display:flex;align-items:center;gap:6px;font-size:12px}
+:root[data-mm-ui] .compiler-status {margin:15px 0;padding:10px 12px;background:var(--academic-soft);border:1px solid var(--line);border-radius:7px;font-size:12px;line-height:1.7;overflow-wrap:anywhere}
+:root[data-mm-ui] .compiler-output {min-height:360px;overflow:auto;border:1px solid var(--line);border-radius:7px;background:var(--white)}
+:root[data-mm-ui] .writing-preview-html {padding:22px;font:15px/1.9 var(--academic-heading);overflow-wrap:anywhere}
+:root[data-mm-ui] .writing-preview-html>pre {white-space:pre-wrap;overflow-wrap:anywhere;margin:0}
+:root[data-mm-ui] .writing-preview-html pre:has(code) {white-space:pre;overflow:auto;padding:15px;background:var(--academic-soft);font:12px/1.7 monospace}
+:root[data-mm-ui] .writing-preview-html table {border-collapse:collapse;width:100%;font-size:13px}
+:root[data-mm-ui] .writing-preview-html :is(td,th) {border:1px solid var(--line);padding:8px}
+:root[data-mm-ui] .writing-preview-html img {max-width:100%}
+:root[data-mm-ui] .writing-preview-html blockquote {margin:15px 0;border-left:3px solid var(--teal);padding-left:15px;color:var(--muted)}
+:root[data-mm-ui] .writing-preview-html .katex-display {overflow-x:auto;overflow-y:hidden;padding:8px 0}
+:root[data-mm-ui] .compiler-pagination {display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;margin:12px}
+:root[data-mm-ui] .compiler-pdf {background:#d9dce1;padding:1px 10px 10px;color:#172737}
+:root[data-mm-ui] .compiler-pdf canvas {display:block;background:white;max-width:100%;margin:auto}
+:root[data-mm-ui] .compiler-log {margin-top:16px;min-width:0;font-size:13px}
+:root[data-mm-ui] .compiler-log pre {max-height:260px;white-space:pre-wrap;overflow:auto;font:11px/1.7 monospace;background:var(--academic-soft);padding:12px}
+:root[data-mm-ui] .compiler-attachments {font-size:12px;margin:15px 0}
+:root[data-mm-ui] .compiler-attachments select {width:100%;margin:8px 0;background:var(--white);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:8px}
+:root[data-mm-ui] .compiler-input-paths {overflow-wrap:anywhere}
+:root[data-mm-ui] .writing-format-note {font-size:12px;line-height:1.7;padding:10px 12px;background:var(--academic-soft);margin:12px 0;border-radius:6px}
+@media(max-width:1100px){:root[data-mm-ui] [data-academic-page="writing"] .writing-layout:has(.writing-preview){grid-template-columns:minmax(0,1fr)}:root[data-mm-ui] [data-academic-page="writing"] .writing-layout:has(.writing-preview) .writing-editor{grid-column:1;grid-row:1}:root[data-mm-ui] [data-academic-page="writing"] .writing-preview{grid-column:1;grid-row:2}:root[data-mm-ui] [data-academic-page="writing"] .writing-layout:has(.writing-preview) .writing-feedback{grid-column:1;grid-row:3}}

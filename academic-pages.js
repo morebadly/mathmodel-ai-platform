@@ -69,7 +69,7 @@
   const grid=form.querySelector('.bilingual-grid');if(!grid)return;
   const source=form.querySelector('#writing-source')?.closest('.form-field'),target=form.querySelector('#writing-target')?.closest('.form-field'),notes=form.querySelector('#writing-notes')?.closest('.form-field');
   const panels=[source,target,notes].filter(Boolean),bar=el('div','academic-filters');bar.setAttribute('aria-label','文稿编辑区');
-  const store=key('writing','editor-tab'),saved=ui.get(store)||0;
+  const store=key('writing','editor-tab:'+(main.querySelector('.writing-preview')?.dataset.writingId||'')),saved=ui.get(store)||0;
   function choose(index){ui.set(store,index);panels.forEach((p,i)=>p.hidden=i!==index);[...bar.children].forEach((b,i)=>{b.classList.toggle('active',i===index);b.setAttribute('aria-pressed',String(i===index));});}
   ['中文原稿','英文文稿','术语与修改记录'].slice(0,panels.length).forEach((name,index)=>{const button=el('button','',name);button.type='button';button.addEventListener('click',()=>choose(index));bar.append(button);});
   grid.before(bar);for(const panel of panels)grid.append(panel);choose(saved);
@@ -188,7 +188,7 @@
   if(route==='training')filtering(main,'training',[...main.querySelectorAll('[data-filter-kind]')],[['all','全部'],['teaching','教师任务'],['personal','个人练习']]);
   if(route==='knowledge')knowledge(main);
   if(route==='submissions')submissions(main);
-  if(route==='writing')writing(main);
+  if(route==='writing'){writing(main);window.MMWritingCompiler?.mount(main);}
   if(route==='account'||route==='student-profile')account(main);
   if(route==='execution')execution(main);
   if(route==='documents')documents(main);
