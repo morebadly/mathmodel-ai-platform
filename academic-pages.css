@@ -172,6 +172,31 @@
 :root[data-mm-ui] .academic-dialog #drop-zone {background:var(--academic-soft);border:1px dashed var(--line);border-radius:7px;padding:22px}
 :root[data-mm-ui][data-mm-theme="dark"] .academic-page-banner::after {opacity:.32;filter:saturate(.78) brightness(.94)}
 :root[data-mm-ui] [hidden] {display:none!important}
+/* Fullscreen retains original forms, messages and attachments; no duplicated editors. */
+:root[data-mm-ui] .academic-expand-bar {display:flex;align-items:center;gap:12px;min-width:0}
+:root[data-mm-ui] .academic-expand-title,:root[data-mm-ui] .academic-expand-hint {display:none}
+:root[data-mm-ui].mm-expanded-view,:root[data-mm-ui].mm-expanded-view body {overflow:hidden}
+:root[data-mm-ui] main.academic-expanded-main {position:fixed;inset:0;z-index:110;width:100%;max-width:none;height:100vh;height:100dvh;margin:0;padding:0 22px 22px;background:var(--bg);overflow:auto;overscroll-behavior:contain;isolation:isolate}
+:root[data-mm-ui] .academic-expanded-main>.academic-expand-bar {position:sticky;top:0;z-index:12;display:flex;justify-content:flex-end;min-height:64px;padding:10px 0;margin-bottom:16px;background:var(--bg);border-bottom:1px solid var(--line)}
+:root[data-mm-ui] .academic-expanded-main>.academic-expand-bar .academic-expand-title {display:block;margin-right:auto;font-size:18px;overflow-wrap:anywhere}
+:root[data-mm-ui] .academic-expanded-main>.academic-expand-bar .academic-expand-hint {display:block;color:var(--muted);font-size:12px}
+:root[data-mm-ui] .academic-expanded-main>.academic-expand-bar button {flex:none}
+:root[data-mm-ui] .academic-expanded-main>:is(.page-head,.page-footer) {display:none}
+:root[data-mm-ui] .academic-expanded-main .chat-layout {min-height:calc(100dvh - 103px)}
+:root[data-mm-ui] [data-academic-page="tutor"].academic-expanded-main .chat-panel {height:calc(100dvh - 103px);display:flex;flex-direction:column}
+:root[data-mm-ui] [data-academic-page="tutor"].academic-expanded-main .chat-body {flex:1;min-height:80px;max-height:none}
+:root[data-mm-ui] [data-academic-page="tutor"].academic-expanded-main :is(.composer,.chat-toolbar,.chat-mode-description) {flex:none}
+:root[data-mm-ui] [data-academic-page="papers"].academic-expanded-main .document-preview {height:calc(100dvh - 230px);max-height:none;min-height:280px}
+:root[data-mm-ui] [data-academic-page="writing"].academic-expanded-main .bilingual-grid textarea {min-height:calc(100dvh - 340px)}
+@media(max-width:760px){
+ :root[data-mm-ui] main.academic-expanded-main {padding:0 12px 12px}
+ :root[data-mm-ui] .academic-expanded-main>.academic-expand-bar {min-height:58px;margin-bottom:12px}
+ :root[data-mm-ui] .academic-expanded-main>.academic-expand-bar .academic-expand-title {font-size:16px}
+ :root[data-mm-ui] .academic-expanded-main>.academic-expand-bar .academic-expand-hint {display:none}
+ :root[data-mm-ui] .academic-expanded-main .chat-layout>:is(.chat-history,.chat-rooms) {display:none}
+ :root[data-mm-ui] [data-academic-page="tutor"].academic-expanded-main .chat-panel {height:calc(100dvh - 82px);min-height:460px}
+ :root[data-mm-ui] [data-academic-page="tutor"].academic-expanded-main .chat-body {min-height:80px}
+}
 /* Keep menu hit targets stable immediately after opening on touch screens. */
 @media(max-width:760px){:root[data-mm-ui] .sidebar{transition:none}}
 @media(max-width:1350px){:root[data-mm-ui] main[data-academic-page] .card-grid,:root[data-mm-ui] .academic-resource-grid{grid-template-columns:repeat(2,minmax(0,1fr))}:root[data-mm-ui] [data-academic-page="workspace"] .editor-layout{grid-template-columns:150px minmax(0,1fr)}}

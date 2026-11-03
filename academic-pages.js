@@ -110,10 +110,80 @@
   if(modal.querySelector('#import-form,#task-form,#competition-form'))body.classList.add('academic-upload-form');
   if(!modal.querySelector('form'))body.classList.add('academic-reading-dialog');
  }
+ // Fullscreen is presentation-only: keep the original forms and reading nodes in place.
+ // The document element survives app renders, so native fullscreen does not interrupt saves.
+ let expanded=null,nativeOwned=false,nativeBusy=false,inertNodes=[];
+ const expandRoot=document.documentElement;
+ function restoreInert(){for(const [node,value] of inertNodes)node.inert=value;inertNodes=[];}
+ function isolate(main){
+  restoreInert();
+  for(let node=main;node&&node!==document.body;node=node.parentElement){
+   for(const sibling of node.parentElement?.children||[]){
+    if(sibling===node||sibling.matches('dialog,script,style,link,.toast,[role="alert"]'))continue;
+    inertNodes.push([sibling,sibling.inert]);sibling.inert=true;
+   }
+  }
+ }
+ function expandCaption(bar,on){
+  const button=bar.querySelector('button'),caption=el('span','',on?'退出全屏':'全屏');caption.setAttribute('data-ui-label','');
+  button.querySelector('span').replaceWith(caption);button.setAttribute('aria-pressed',String(on));
+  bar.classList.toggle('is-expanded',on);
+ }
+ function closeNative(){
+  if(nativeBusy)return;
+  if(nativeOwned&&document.fullscreenElement===expandRoot){
+   nativeOwned=false;nativeBusy=true;
+   document.exitFullscreen().catch(()=>{}).finally(()=>{nativeBusy=false;});
+  }else nativeOwned=false;
+ }
+ function leaveExpanded(focus=true){
+  const previous=expanded;expanded=null;restoreInert();expandRoot.classList.remove('mm-expanded-view');
+  if(previous){
+   previous.main.classList.remove('academic-expanded-main');expandCaption(previous.bar,false);
+   if(previous.home.isConnected)previous.home.append(previous.bar);
+   if(focus&&previous.main.isConnected){window.scrollTo(previous.x,previous.y);previous.bar.querySelector('button').focus({preventScroll:true});}
+  }
+  closeNative();
+ }
+ function applyExpanded(main,bar){
+  main.prepend(bar);main.classList.add('academic-expanded-main');expandRoot.classList.add('mm-expanded-view');isolate(main);expandCaption(bar,true);
+ }
+ function fullscreen(main,view){
+  const route=view.route;
+  const allowed=route==='tutor'||route==='chat'||(route==='papers'&&!!main.querySelector('.lab-layout'))||(route==='writing'&&!!main.querySelector('#writing-form'));
+  const identity=key(route,`${view.space||''}:${view.recordId||''}`);
+  if(expanded&&(!allowed||expanded.identity!==identity))leaveExpanded(false);
+  if(!allowed)return;
+  const intro=main.querySelector('.academic-page-intro');if(!intro)return;
+  let home=intro.querySelector(':scope>.actions');if(!home){home=el('div','actions');intro.append(home);}
+  const bar=el('div','academic-expand-bar'),label=el('strong','academic-expand-title',main.querySelector('h1')?.textContent||'');
+  label.setAttribute('data-ui-label','');
+  const hint=el('small','academic-expand-hint','Esc 退出全屏');hint.setAttribute('data-ui-label','');
+  const button=el('button','btn small');button.type='button';button.setAttribute('aria-controls',main.id);button.setAttribute('aria-pressed','false');
+  button.innerHTML='<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg><span data-ui-label>全屏</span>';
+  bar.append(label,hint,button);home.append(bar);
+  button.addEventListener('click',()=>{
+   if(expanded){leaveExpanded();return;}
+   expanded={identity,main,bar,home,x:window.scrollX,y:window.scrollY};
+   applyExpanded(main,bar);button.focus({preventScroll:true});
+   // Unsupported/denied native fullscreen still provides the full webpage workspace.
+   if(!document.fullscreenElement&&!nativeBusy&&expandRoot.requestFullscreen){
+    nativeOwned=true;nativeBusy=true;
+    expandRoot.requestFullscreen().then(()=>{
+     nativeBusy=false;if(!expanded)closeNative();else nativeOwned=document.fullscreenElement===expandRoot;
+    }).catch(()=>{nativeBusy=false;nativeOwned=false;});
+   }
+  });
+  if(expanded){const top=expanded.main.scrollTop;expanded={...expanded,main,bar,home};applyExpanded(main,bar);main.scrollTop=top;}
+ }
+ document.addEventListener('keydown',event=>{
+  if(event.key==='Escape'&&!event.isComposing&&expanded&&!document.querySelector('dialog[open]')){event.preventDefault();leaveExpanded();}
+ });
+ document.addEventListener('fullscreenchange',()=>{if(nativeOwned&&document.fullscreenElement!==expandRoot)leaveExpanded();});
  function mount(view={}){
   const main=document.querySelector('main.main')||document.querySelector('#main');if(!main||main.dataset.academicPage)return;
   const route=view.route||'login';main.dataset.academicPage=route;main.dataset.academicDetail=String(!!view.recordId);
-  if(route==='login'){login(main);return;}
+  if(route==='login'){if(expanded)leaveExpanded(false);login(main);return;}
   header(main);
   if(route==='training')filtering(main,'training',[...main.querySelectorAll('[data-filter-kind]')],[['all','全部'],['teaching','教师任务'],['personal','个人练习']]);
   if(route==='knowledge')knowledge(main);
@@ -127,6 +197,7 @@
   if(route==='monitor'){
    const legacy=direct(main,'.table-wrap')[0];disclosure(legacy,'更多学习会话统计','monitor','usage');
   }
+  fullscreen(main,view);
  }
  window.MMAcademicPages={mount,dialog};
 })();

@@ -7,3 +7,5 @@ Object.assign(window.MMAcademicMessages,{"应用排序":["Apply sorting","При
 Object.assign(window.MMAcademicMessages,{"比赛诚信":["Competition integrity","Честность на соревнованиях"],"使用指南":["User guide","Руководство пользователя"],"返回登录入口":["Back to sign in","Вернуться ко входу"],"进入学习监督":["Open learning supervision","Открыть контроль обучения"],"准备一条提醒":["Prepare a reminder","Подготовить напоминание"]});
 
 Object.assign(window.MMAcademicMessages,{"制定监督计划":["Create a supervision plan","Создать план контроля"],"查看反馈":["View feedback","Посмотреть отзыв"]});
+
+Object.assign(window.MMAcademicMessages,{"全屏":["Fullscreen","На весь экран"],"退出全屏":["Exit fullscreen","Выйти из полноэкранного режима"],"Esc 退出全屏":["Esc to exit fullscreen","Esc — выход из полноэкранного режима"]});
