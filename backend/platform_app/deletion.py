@@ -35,7 +35,7 @@ def revision(request):
 
 def dependency_signature(row):
     fields = {
-        'projects': ['resourceIds', 'taskId', 'teamId'],
+        'projects': ['resourceIds', 'compileInputIds', 'taskId', 'teamId'],
         'papers': ['fileId', 'projectId', 'teamId'],
         'writingDrafts': ['compileInputIds', 'teamId'],
         'resources': ['libraryAssetIds'],
@@ -54,7 +54,7 @@ def lock_restore_dependencies(row):
         resource_ids.update(value for value in row.payload.get('resourceIds', []) if valid_id(value))
     if row.collection == 'competitions':
         resource_ids.update(value for value in row.payload.get('attachmentIds', []) if valid_id(value))
-    if row.collection == 'writingDrafts':
+    if row.collection in ['writingDrafts', 'projects']:
         resource_ids.update(value for value in row.payload.get('compileInputIds', []) if valid_id(value))
     if row.collection == 'papers' and valid_id(row.payload.get('fileId')):
         resource_ids.add(row.payload['fileId'])

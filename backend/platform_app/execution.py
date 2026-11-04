@@ -35,7 +35,7 @@ def inputs_allowed(job):
     user=User.objects.filter(pk=job.owner_id).first()
     if not user or not verified(user):return False
     if job.runtime=='latex':
-        document=Record.objects.filter(pk=job.limits.get('writingId'),collection='writingDrafts',owner=user).exclude(scope='deleted').first()
+        document=Record.objects.filter(pk=job.limits.get('writingId'),collection=job.limits.get('documentCollection','writingDrafts'),owner=user).exclude(scope='deleted').first()
         if not document:return False
     for rid in job.input_ids:
         row=Record.objects.select_related('team').filter(pk=rid,collection='resources').first()
@@ -45,7 +45,11 @@ def inputs_allowed(job):
 def job_json(job,detail=False):
     if not inputs_allowed(job):return {'id':str(job.id),'status':'access_revoked','runtime':job.runtime,'error':'账号或输入文件权限已撤销。','artifacts':[]}
     result={'id':str(job.id),'runtime':job.runtime,'provider':job.provider,'status':job.status,'error':job.error,'cleanupPending':job.cleanup_pending,'limits':job.limits,'attempts':job.attempts,'createdAt':job.created_at.isoformat(),'artifacts':[{'id':str(a.id),'name':a.name,'size':a.size,'mime':a.mime,'url':'/api/execution/artifacts/'+str(a.id)} for a in job.artifacts.all()]}
-    if detail:result.update(code=job.code,logs=job.logs,inputIds=job.input_ids)
+    if detail:
+        result.update(code=job.code,logs=job.logs,inputIds=job.input_ids)
+        if job.runtime=='latex':
+            from .latex_support import diagnostics,prepare
+            result.update(diagnostics=diagnostics(job.logs,job.code) if job.status=='failed' else [],preparationNotes=prepare(job.code)[2],cacheHit=job.limits.get('cacheHit',False))
     return result
 
 @api_view(['GET'])
@@ -59,9 +63,9 @@ def jobs(request):
         rows=ExecutionJob.objects.filter(owner=request.user)
         if request.query_params.get('writingId'):
             from .domain import valid_id
-            writing_id=request.query_params['writingId'];field=request.query_params.get('field','source')
-            if not valid_id(writing_id) or field not in ['source','target']:raise ValidationError('文稿查询条件无效。')
-            document=get_record(request.user,writing_id,'writingDrafts')
+            writing_id=request.query_params['writingId'];collection=request.query_params.get('documentCollection','writingDrafts');field=request.query_params.get('field','source')
+            if not valid_id(writing_id) or collection not in ['writingDrafts','projects'] or field not in (['source','target'] if collection=='writingDrafts' else ['stage5']):raise ValidationError('文稿查询条件无效。')
+            document=get_record(request.user,writing_id,collection)
             if document.owner_id!=request.user.id:raise PermissionDenied('只能查看自己的编译记录。')
             rows=rows.filter(runtime='latex',limits__writingId=writing_id,limits__field=field)
         return Response({'jobs':[job_json(j) for j in rows.order_by('-created_at')[:100]]})
@@ -72,13 +76,14 @@ def jobs(request):
     if not isinstance(seconds,int) or isinstance(seconds,bool) or not 1<=seconds<=settings.SANDBOX_MAX_SECONDS:raise ValidationError('运行时限超出平台配置。')
     try:client_id=uuid.UUID(str(request.data.get('clientId')))
     except ValueError:raise ValidationError('请提供任务去重标识。')
-    writing=None;field=request.data.get('field','source')
+    writing=None;field=request.data.get('field','source');collection=request.data.get('documentCollection','writingDrafts')
     if runtime=='latex':
         from .domain import valid_id
         if not valid_id(request.data.get('writingId')):raise ValidationError('文稿标识无效。')
-        writing=get_record(request.user,request.data.get('writingId'),'writingDrafts')
+        if collection not in ['writingDrafts','projects']:raise ValidationError('文稿类型无效。')
+        writing=get_record(request.user,request.data.get('writingId'),collection)
         if writing.owner_id!=request.user.id:raise PermissionDenied('只能编译自己的文稿。')
-        if field not in ['source','target']:raise ValidationError('请选择原稿或英文稿。')
+        if field not in (['source','target'] if collection=='writingDrafts' else ['stage5']):raise ValidationError('请选择有效的文稿编辑区。')
     total=0
     for rid in ids:
         row=get_record(request.user,rid,'resources');asset=Asset.objects.filter(record=row).first()
@@ -90,19 +95,34 @@ def jobs(request):
         # Serialize a new file reference with trashing that file. Validation
         # above provides early feedback; this check closes the concurrent gap.
         for rid in sorted(ids):get_record(request.user,rid,'resources',lock=True)
-        if writing:get_record(request.user,writing.id,'writingDrafts',lock=True)
+        if writing:get_record(request.user,writing.id,collection,lock=True)
         old=ExecutionJob.objects.filter(owner=request.user,client_id=client_id).first()
         if old:
-            if old.runtime!=runtime or old.code!=code or old.input_ids!=ids or old.limits.get('seconds')!=seconds or (runtime=='latex' and (old.limits.get('writingId')!=writing.id or old.limits.get('field')!=field)):raise ValidationError('同一去重标识不能对应不同任务。')
+            if old.runtime!=runtime or old.code!=code or old.input_ids!=ids or old.limits.get('seconds')!=seconds or (runtime=='latex' and (old.limits.get('writingId')!=writing.id or old.limits.get('field')!=field or old.limits.get('documentCollection','writingDrafts')!=collection)):raise ValidationError('同一去重标识不能对应不同任务。')
             return Response({'job':job_json(old,True),'duplicate':True})
+        fingerprint='';cached=None;cached_bytes=None
+        if writing and profile['status']=='ready_for_remote_test':
+            from .latex_support import VERSION
+            fingerprint=hashlib.sha256(json.dumps([VERSION,settings.E2B_LATEX_TEMPLATE,settings.RUNNER_URL,hashlib.sha256((settings.E2B_API_KEY if profile['provider']=='e2b' else settings.RUNNER_API_KEY).encode()).hexdigest(),profile['provider'],collection,writing.id,field,code,[(rid,Asset.objects.get(record_id=rid).sha256) for rid in ids]],ensure_ascii=False).encode()).hexdigest()
+            cached=ExecutionJob.objects.filter(owner=request.user,runtime='latex',provider=profile['provider'],status='completed',cleanup_pending=False,created_at__gte=timezone.now()-__import__('datetime').timedelta(days=1),limits__compilerFingerprint=fingerprint).order_by('-created_at').first()
+            if cached and inputs_allowed(cached):
+                item=cached.artifacts.filter(name='main.pdf').first()
+                if item and item.size<=settings.SANDBOX_OUTPUT_BYTES and item.file.storage.exists(item.file.name):
+                    with item.file.open('rb') as stream:cached_bytes=stream.read(settings.SANDBOX_OUTPUT_BYTES+1)
+                    if not cached_bytes.startswith(b'%PDF-') or hashlib.sha256(cached_bytes).hexdigest()!=item.sha256:cached_bytes=None
         daily=ExecutionJob.objects.filter(owner=request.user,created_at__gte=timezone.now()-__import__('datetime').timedelta(days=1))
         daily=daily.filter(runtime='latex') if runtime=='latex' else daily.exclude(runtime='latex')
-        if daily.count()>=(settings.LATEX_DAILY_JOBS if runtime=='latex' else settings.SANDBOX_DAILY_JOBS):raise Throttled(detail='已达到当前账号的每日任务限额。')
-        if ExecutionJob.objects.filter(owner=request.user,status__in=ACTIVE+['queued']).count()>=5:raise Throttled(detail='待处理任务过多，请先完成或取消。')
-        state='queued' if profile['status']=='ready_for_remote_test' else profile['status']
+        billable=daily.filter(__import__('django.db.models',fromlist=['Q']).Q(limits__cacheHit=False)|__import__('django.db.models',fromlist=['Q']).Q(limits__cacheHit__isnull=True))
+        if cached_bytes is None and billable.count()>=(settings.LATEX_DAILY_JOBS if runtime=='latex' else settings.SANDBOX_DAILY_JOBS):raise Throttled(detail='已达到当前账号的每日任务限额。')
+        if cached_bytes is None and ExecutionJob.objects.filter(owner=request.user,status__in=ACTIVE+['queued']).count()>=5:raise Throttled(detail='待处理任务过多，请先完成或取消。')
+        state='completed' if cached_bytes is not None else 'queued' if profile['status']=='ready_for_remote_test' else profile['status']
         job=ExecutionJob.objects.create(owner=request.user,client_id=client_id,provider=profile['provider'],runtime=runtime,code=code,input_ids=ids,status=state,limits={'seconds':seconds,'cpus':settings.SANDBOX_CPUS,'memoryMb':settings.SANDBOX_MEMORY_MB,'inputBytes':settings.SANDBOX_INPUT_BYTES,'outputBytes':settings.SANDBOX_OUTPUT_BYTES})
         if writing:
-            job.limits.update(writingId=writing.id,field=field,sourceHash=hashlib.sha256(code.encode()).hexdigest());job.save(update_fields=['limits'])
+            job.limits.update(writingId=writing.id,field=field,documentCollection=collection,compilerFingerprint=fingerprint,sourceHash=hashlib.sha256(code.encode()).hexdigest())
+            if cached_bytes is not None:
+                job.limits.update(cacheHit=True,reusedFrom=str(cached.id));store_artifacts(job,[('main.pdf',cached_bytes)])
+            job.save(update_fields=['limits'])
+        if job.status=='queued':transaction.on_commit(kick_execution)
         Audit.objects.create(actor=request.user,action='execution-create',target=str(job.id))
     return Response({'job':job_json(job,True),'duplicate':False},status=202)
 
@@ -112,7 +132,11 @@ def job_detail(request,key):
     if not job:raise NotFound('任务不存在。')
     if request.method=='GET':
         if not inputs_allowed(job):raise PermissionDenied('输入文件权限已撤销，任务内容不可访问。')
-        return Response({'job':job_json(job,True)})
+        result=job_json(job,True)
+        if job.runtime=='latex' and request.query_params.get('prepared')=='1':
+            from .latex_support import prepare
+            result['preparedCode']=prepare(job.code)[0]
+        return Response({'job':result})
     action=request.data.get('action')
     if action=='cancel':
         with transaction.atomic():
@@ -132,6 +156,7 @@ def job_detail(request,key):
             profile=next(p for p in profiles() if p['id']==job.runtime)
             job.status='queued' if profile['status']=='ready_for_remote_test' else profile['status'];job.provider=profile['provider'];job.error='';job.remote_id='';job.save(update_fields=['status','provider','error','remote_id','updated_at'])
     else:raise ValidationError('任务操作无效。')
+    if job.status=='queued':transaction.on_commit(kick_execution)
     job.refresh_from_db();return Response({'job':job_json(job,True)})
 
 @api_view(['GET'])
@@ -141,6 +166,15 @@ def artifact(request,key):
     if not inputs_allowed(item.job):raise PermissionDenied('输入权限已撤销，结果不可访问。')
     from .files import protected_file
     response=protected_file(request,item.file,as_attachment=True,filename=item.name,content_type=item.mime);response['Content-Security-Policy']="sandbox; default-src 'none'";response['Cache-Control']='private, no-store';return response
+
+def kick_execution():
+    if settings.REDIS_URL:
+        try:
+            from .tasks import execution_tick
+            execution_tick.apply_async(queue='execution',expires=60)
+        except Exception:
+            import logging
+            logging.getLogger(__name__).warning('即时执行派发未完成；保留队列等待定时派发。')
 
 class ExecutionProvider(Protocol):
     def create(self,job):...
@@ -163,10 +197,15 @@ class E2BProvider:
     def run(self,job,remote_id,inputs,on_log):
         sandbox=self.connect(remote_id);info=sandbox.get_info()
         if info.cpu_count>job.limits['cpus'] or info.memory_mb>job.limits['memoryMb']:raise ValueError('Remote resources exceed approved limits')
-        root='/home/user/mathmodel-'+str(job.id);sandbox.files.make_dir(root+'/input');sandbox.files.make_dir(root+'/output')
-        for name,data in inputs:sandbox.files.write(root+'/input/'+name,data,request_timeout=20)
-        extension={'python':'py','r':'r','latex':'tex'}[job.runtime];sandbox.files.write(root+'/main.'+extension,job.code)
-        command={'python':'python main.py','r':'Rscript main.r','latex':'latexmk -norc -xelatex -latexoption=-no-shell-escape -latexoption=-interaction=nonstopmode -latexoption=-halt-on-error -latexoption=-file-line-error -outdir=output main.tex'}[job.runtime]
+        root='/home/user/mathmodel-'+str(job.id)
+        if job.runtime=='latex':
+            from .latex_support import prepare
+            sandbox.files.write_files([{'path':root+'/input/.keep','data':''},{'path':root+'/output/.keep','data':''},{'path':root+'/main.tex','data':prepare(job.code)[0]},*[{'path':root+'/input/'+name,'data':data} for name,data in inputs]],request_timeout=20)
+        else:
+            sandbox.files.make_dir(root+'/input');sandbox.files.make_dir(root+'/output')
+            for name,data in inputs:sandbox.files.write(root+'/input/'+name,data,request_timeout=20)
+            extension={'python':'py','r':'r'}[job.runtime];sandbox.files.write(root+'/main.'+extension,job.code)
+        command={'python':'python main.py','r':'Rscript main.r','latex':'latexmk -silent -norc -xelatex -latexoption=-no-shell-escape -latexoption=-interaction=nonstopmode -latexoption=-halt-on-error -latexoption=-file-line-error -outdir=output main.tex || { status=$?; tail -c 16000 output/main.log; exit "$status"; }'}[job.runtime]
         from e2b.exceptions import TimeoutException
         from e2b import CommandExitException
         try:result=sandbox.commands.run(command,cwd=root,timeout=job.limits['seconds'],request_timeout=job.limits['seconds']+10,on_stdout=on_log,on_stderr=on_log,envs={'MPLBACKEND':'Agg',**({'openin_any':'p','openout_any':'p','shell_escape':'f'} if job.runtime=='latex' else {})})
@@ -210,7 +249,9 @@ class GatewayProvider:
     def cancel(self,remote_id):self.request('DELETE','/v1/sessions/'+remote_id)
     def run(self,job,remote_id,inputs,on_log):
         import base64
-        self.request('POST','/v1/sessions/'+remote_id+'/execute',json={'code':job.code,'inputs':[{'name':name,'base64':base64.b64encode(data).decode()} for name,data in inputs]})
+        from .latex_support import prepare
+        source=prepare(job.code)[0] if job.runtime=='latex' else job.code
+        self.request('POST','/v1/sessions/'+remote_id+'/execute',json={'code':source,'inputs':[{'name':name,'base64':base64.b64encode(data).decode()} for name,data in inputs]})
         deadline=time.monotonic()+job.limits['seconds'];offset=0
         while time.monotonic()<deadline:
             payload=self.request('GET','/v1/sessions/'+remote_id+'/status',params={'logOffset':offset});on_log(str(payload.get('logs','')));offset=int(payload.get('logOffset',offset))
@@ -258,12 +299,23 @@ def store_artifacts(job,items):
 def process_job(key):
     close_old_connections();job=ExecutionJob.objects.get(pk=key);remote=None;stop=threading.Event();watcher=None;attempt_claim=job.claimed_at;identifier=None
     def append_log(text):
+        nonlocal log_buffer,log_chars,log_written,log_last_flush
         text=str(text)
+        with log_lock:
+            if log_chars+len(text)>64000:raise OutputLimit()
+            log_chars+=len(text);log_buffer.append(text)
+            if log_chars-log_written>=4096 or time.monotonic()-log_last_flush>=.5:flush_logs()
+    log_lock=threading.RLock();log_buffer=[];log_chars=len(job.logs);log_written=log_chars;log_last_flush=time.monotonic()
+    def flush_logs():
+        nonlocal log_buffer,log_written,log_last_flush
+        if not log_buffer:return
+        text=''.join(log_buffer)
         with transaction.atomic():
             current=ExecutionJob.objects.select_for_update().get(pk=key)
             if current.claimed_at!=attempt_claim or current.remote_id!=identifier:raise RuntimeError('Stale execution generation')
             if len(current.logs)+len(text)>64000:raise OutputLimit()
             current.logs+=text;current.save(update_fields=['logs','updated_at'])
+        log_buffer=[];log_written=log_chars;log_last_flush=time.monotonic()
     def monitor():
         close_old_connections()
         try:
@@ -294,7 +346,13 @@ def process_job(key):
             with asset.file.open('rb') as stream:data=stream.read(settings.SANDBOX_INPUT_BYTES+1)
             if len(data)>settings.SANDBOX_INPUT_BYTES:raise OutputLimit()
             inputs.append((str(i)+'-'+Path(asset.original_name.replace('\\','/')).name[:160],data))
-        result=remote.run(job,identifier,inputs,append_log)
+        try:result=remote.run(job,identifier,inputs,append_log)
+        finally:
+            with log_lock:flush_logs()
+        if job.runtime=='latex' and result['status']=='failed':
+            from .latex_support import diagnostics
+            errors=diagnostics(ExecutionJob.objects.get(pk=key).logs,job.code)
+            if errors:result['error']=('第'+str(errors[0]['line'])+'行：' if errors[0]['line'] else '')+errors[0]['message']+'；'+errors[0]['hint']
         with transaction.atomic():
             current=ExecutionJob.objects.select_for_update().get(pk=key)
             if current.claimed_at!=attempt_claim or current.remote_id!=identifier:return

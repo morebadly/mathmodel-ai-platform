@@ -357,7 +357,7 @@ def static_frontend(request,path='index.html'):
         target=(Path(settings.STATIC_ROOT)/path.removeprefix('static/')).resolve()
         if not target.is_relative_to(Path(settings.STATIC_ROOT).resolve()) or not target.is_file():raise Http404()
         return FileResponse(target.open('rb'),content_type=mimetypes.guess_type(path)[0] or 'application/octet-stream')
-    allowed={'index.html','styles.css','spaces.css','email.css','core.js','app.js','spaces.js','enhancements.js','platform-domain.js','platform-api.js','email-app.js','backend-adapter.js','server-app.js','workflow-ui.js','document-actions.js','assets/favicon.svg','writing-compiler.js','writing-compiler.css','academic-pages.css','academic-pages.js','academic-ui.css','academic-ui.js','academic-messages.js','design/uiux-b-prototype/assets/association-logo.png','design/uiux-b-prototype/assets/campus-watercolor-v1.png'}
+    allowed={'index.html','styles.css','spaces.css','email.css','core.js','app.js','spaces.js','enhancements.js','platform-domain.js','platform-api.js','email-app.js','backend-adapter.js','server-app.js','workflow-ui.js','document-actions.js','assets/favicon.svg','rich-text.js','writing-compiler.js','writing-compiler.css','academic-pages.css','academic-pages.js','academic-ui.css','academic-ui.js','academic-messages.js','design/uiux-b-prototype/assets/association-logo.png','design/uiux-b-prototype/assets/campus-watercolor-v1.png'}
     vendor=path.startswith('vendor/katex/') and Path(path).suffix in ['.js','.css','.woff','.woff2','.ttf'] and (settings.BASE_DIR/path).resolve().is_relative_to((settings.BASE_DIR/'vendor/katex').resolve())
     for library in ['markdown-it','dompurify','texmath','pdfjs']:
         base=(settings.BASE_DIR/'vendor'/library).resolve()

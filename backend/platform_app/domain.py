@@ -207,17 +207,19 @@ def validate_record(user,collection,data,old=None):
     if data.get('teamId'):
         team=reference(user,data['teamId'],'teams')
         if team.owner_id!=user.id and user.role!='admin':raise PermissionDenied('只能向自己的团队分配内容。')
-    if collection=='writingDrafts':
-        if data.get('format','text') not in ['text','markdown','latex']:raise ValidationError('文稿格式无效。')
-        for field in ['source','target','notes']:require_text(data,field)
+    if collection in ['writingDrafts','projects']:
         inputs=data.get('compileInputIds',[])
         if not isinstance(inputs,list) or len(inputs)>5 or any(not valid_id(rid) for rid in inputs) or len(set(inputs))!=len(inputs):raise ValidationError('编译附件最多5个且不能重复。')
         for rid in inputs:reference(user,rid,'resources')
+    if collection=='writingDrafts':
+        if data.get('format','text') not in ['text','markdown','latex']:raise ValidationError('文稿格式无效。')
+        for field in ['source','target','notes']:require_text(data,field)
     if collection=='projects':
         stages=data.get('stages')
         if not isinstance(stages,list) or len(stages)!=8:raise ValidationError('项目需要八个阶段。')
         for stage in stages:
             if not isinstance(stage,dict):raise ValidationError('阶段格式无效。')
+            if stage.get('format','latex') not in ['text','markdown','latex']:raise ValidationError('论文阶段的写作格式无效。')
             require_text(stage,'title',240,False);require_text(stage,'content')
             if not isinstance(stage.get('done'),bool):raise ValidationError('阶段状态无效。')
         for key in data.get('resourceIds',[]):reference(user,key,'resources')

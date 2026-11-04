@@ -150,7 +150,7 @@
  }
  function fullscreen(main,view){
   const route=view.route;
-  const allowed=route==='tutor'||route==='chat'||(route==='papers'&&!!main.querySelector('.lab-layout'))||(route==='writing'&&!!main.querySelector('#writing-form'));
+  const allowed=route==='tutor'||route==='chat'||(route==='papers'&&!!main.querySelector('.lab-layout'))||(route==='writing'&&!!main.querySelector('#writing-form'))||(route==='workspace'&&!!main.querySelector('.writing-preview'));
   const identity=key(route,`${view.space||''}:${view.recordId||''}`);
   if(expanded&&(!allowed||expanded.identity!==identity))leaveExpanded(false);
   if(!allowed)return;
@@ -188,7 +188,7 @@
   if(route==='training')filtering(main,'training',[...main.querySelectorAll('[data-filter-kind]')],[['all','全部'],['teaching','教师任务'],['personal','个人练习']]);
   if(route==='knowledge')knowledge(main);
   if(route==='submissions')submissions(main);
-  if(route==='writing'){writing(main);window.MMWritingCompiler?.mount(main);}
+  if(route==='writing')writing(main);window.MMWritingCompiler?.mount(main);
   if(route==='account'||route==='student-profile')account(main);
   if(route==='execution')execution(main);
   if(route==='documents')documents(main);

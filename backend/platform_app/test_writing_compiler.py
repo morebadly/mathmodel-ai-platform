@@ -93,4 +93,7 @@ class WritingCompilerTests(TestCase):
         box.files.read.return_value.__enter__=Mock(return_value=iter([b'%PDF-test']));box.files.read.return_value.__exit__=Mock(return_value=False)
         with patch.object(provider,'connect',return_value=box):result=provider.run(job,'sandbox',[],lambda text:None)
         self.assertEqual(result['status'],'completed');call=box.commands.run.call_args;self.assertIn('-no-shell-escape',call.args[0]);self.assertEqual(call.kwargs['envs']['openin_any'],'p');self.assertEqual(call.kwargs['envs']['openout_any'],'p')
-        self.assertEqual(box.files.write.call_args.args[1],'actual-source')
+        uploaded=box.files.write_files.call_args.args[0]
+        self.assertEqual(len(uploaded),3)
+        self.assertTrue(any(item['path'].endswith('/main.tex') and 'actual-source' in item['data'] for item in uploaded))
+        box.files.make_dir.assert_not_called()
